@@ -50,7 +50,7 @@ To run FastQC on uppmax you first need to load the module:
 	fastqc -o outdir fastqfile1 fastqfile2 etc.
 	
 	# You can use wildcards to run on all FASTQ files in a directory:
-	fastqc -o outdir /proj/b2013006/INBOX/FASTQ/*fastq
+	fastqc -o outdir /proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/rawdata/*fastq 
 
 In this case, only run FastQC on one file and take a look at the output. We have already prepared the outputs for all of the other samples. These can be viewed via a web-browser at:
 [FastQC results](https://export.uppmax.uu.se/b2013006/downloads/courses/RNAseqWorkshop/QC/fastQC/)
@@ -62,20 +62,16 @@ Take a look at a few other files and see if they look similar in quality.
 In this exercise we will actually not do any mapping (that will be done in a later exercise). But the commands used to run the mapping and postprocessing are:
 	
 	
-	# NOTE: do not run, just an example of how we ran the program
+	# NOTE: DO NOT RUN, just an example of how we ran the program
 	
 	module load bioinfo-tools
 	module load star/2.3.1o
 	module load samtools
 	
-	cd /proj/b2013006/INBOX
-	cd FASTQ*hg19*Gencode14.overhang75
-	cd 7*111116*AD0341ACXX*137*10*index10**hg19*Gencode14.overhang75
+	cd /proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/QC/data/
 	
-	STAR --genomeDir /proj/b2013006/INBOX/hg19_Gencode14.overhang75 \
-	--readFilesIn \
-	/proj/b2013006/INBOX/FASTQ/7*111116*AD0341ACXX*137*10*index10*1.fastq \
-	/proj/b2013006/INBOX/FASTQ/7*111116*AD0341ACXX*137*10*index10*2.fastq \
+	STAR --genomeDir /proj/b2013006/webexport/downloads/courses/RNAseqWorkshop/reference/hg19_Gencode14.overhang75 \
+	--readFilesIn 7_111116_AD0341ACXX_137_1_index1_1.fastq 7_111116_AD0341ACXX_137_1_index1_2.fastq \
 	--runThreadN 16 --outSAMstrandField intronMotif
 	
 	samtools view -bSh -o Aligned.out.bam Aligned.out.sam
@@ -190,20 +186,20 @@ This was run for each of the samples and the counts were combined into a single 
 
 The code to run in R: ::
 
-  # read in the data
-  counts <- read.delim("count_table.txt")
-  head(counts)
+	# read in the data
+  	counts <- read.delim("count_table.txt")
+  	head(counts)
 
 As you can see, the samples are ordered with the 3 replicates from each group next to each other. So when we are to define colors for the samples we only have to repeat each color 3 times (this may not always be the case!) ::
 
-  # define colors:
-  col.def<-c("red","blue","green","magenta")
-  sample.def<-c("ctrl", "t2h", "t6h", "t24h")
-  colors <- rep(col.def, each=3)
+	# define colors:
+  	col.def<-c("red","blue","green","magenta")
+  	sample.def<-c("ctrl", "t2h", "t6h", "t24h")
+  	colors <- rep(col.def, each=3)
 
 Start with a PCA to se the general distribution. PCA of RNA-seq data is usually performed in log-scale. We also add a pseudo-count of +1 to avoid logging zero (gives infinity). You need to transpose - t() - the data matrix, otherwise you will run PCA on the genes instead of samples. ::
 
-  myPca <- prcomp(t(log2(counts+1)))
+  	myPca <- prcomp(t(log2(counts+1)))
 
 This creates a list that contains:
 
@@ -213,51 +209,51 @@ This creates a list that contains:
 
 Now some plotting. In R you can either plot into a default window or direct all your output to a "device", that can be pdf, png, tiff etc. To open a new pdf device: ::
 
-  pdf('pca_plot.pdf')
-  # once you have plotted all you want to put into that file,
-  # close it with dev.off()
+  	pdf('pca_plot.pdf')
+  	# once you have plotted all you want to put into that file,
+  	# close it with dev.off()
 
 Let's first make a simple plot of the first two principal components (PC1 vs PC2): ::
 
-  plot(myPca$x[,1],myPca$x[,2],col=colors,pch=1)
-  legend("topright",sample.def,pch=1,col=col.def)
-  dev.off()
+  	plot(myPca$x[,1],myPca$x[,2],col=colors,pch=1)
+  	legend("topright",sample.def,pch=1,col=col.def)
+  	dev.off()
 
 Sometimes the first two PCs may not be the ones that will best separate the sample groups, so it is a good idea to look at more PCs.
 Here is one example that shows how to plot the top 5 PCs: ::
 
-  pdf('pca*plot*5pc.pdf')
-  tmpPcaData <- as.data.frame(myPca$x[,1:5])
-  plot(tmpPcaData, col=colors,pch=1)
-  dev.off()
+  	pdf('pca*plot*5pc.pdf')
+  	tmpPcaData <- as.data.frame(myPca$x[,1:5])
+  	plot(tmpPcaData, col=colors,pch=1)
+  	dev.off()
 
 Another thing to look at is the pairwise correlation between all the samples and see how they group based on correlation. Let's create one matrix with all pairwise Pearson correlations (again in log-space). ::
 
-  nSamples<-ncol(counts)
-  C<-mat.or.vec(nSamples,nSamples)
-  for (i in 1:nSamples) {
-     for (j in i:nSamples){
-        if (i==j){ C[i,j]<-NA }
-        else {
-             c<-cor(log2(counts[,i]+1),log2(counts[,j]+1),method="pearson")
-             C[i,j] = c
-             C[j,i] = c
-        }
-     }
-  }
-  colnames(C)<-colnames(counts)
-  rownames(C)<-colnames(counts)
+  	nSamples<-ncol(counts)
+  	C<-mat.or.vec(nSamples,nSamples)
+  	for (i in 1:nSamples) {
+     		for (j in i:nSamples){
+        		if (i==j){ C[i,j]<-NA }
+        		else {
+             			c<-cor(log2(counts[,i]+1),log2(counts[,j]+1),method="pearson")
+             			C[i,j] = c
+             			C[j,i] = c
+        		}
+     		}
+  	}
+  	colnames(C)<-colnames(counts)
+  	rownames(C)<-colnames(counts)
 
 This can also be calculated as one command with the R apply function, but to clarify what is being calculated we included a more descriptive code. Another way to do the same thing would be: ::
 
-  C<-apply(log2(counts+1),2,cor,log2(counts+1),method="pearson")
-  diag(C)<-NA
+  	C<-apply(log2(counts+1),2,cor,log2(counts+1),method="pearson")
+  	diag(C)<-NA
 
 Now you will plot a heatmap with the correlations: ::
 
-  pdf('correlation_heatmap.pdf')
-  heatmap(C,symm=TRUE)
-  dev.off()
+  	pdf('correlation_heatmap.pdf')
+  	heatmap(C,symm=TRUE)
+  	dev.off()
 
 Do the clusterings agree with what you expect? 
 Which different sample groups are more similar? Are some sample groups more dissimilar compared to the others?
