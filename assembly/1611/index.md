@@ -28,4 +28,6 @@ Held in Uppsala November 14-16 2016.
 [IGV (Integrative Genomics Viewer) Home](https://www.broadinstitute.org/igv/)  
 [Samtools Home](http://www.htslib.org/)  
 [SeqAnswers - Next-generation sequencing forum](http://seqanswers.com/)  
-[Biosupport.se - Sweden centered bioinformatics Q&A](https://biosupport.se/)   
+[Biosupport.se - Sweden centered bioinformatics Q&A](https://biosupport.se/)
+[BioStars - Bioinformatics Q&A site (similar to Biosupport.se but international)](https://www.biostars.org/)
+
