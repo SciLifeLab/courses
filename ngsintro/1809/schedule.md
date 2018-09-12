@@ -40,7 +40,7 @@ Room: Trippelrummet, E10, ground floor
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Anna Johansson + Markus Mayrhofer, Diana Ekman, Mahesh Panchal)  
 **12.00-13.00** Lunch  
 **13.00-14:00** [Lecture: Data management](slides/2018-09-13_Data_Management_for_NGS_course.pdf) (Niclas Jareborg)  
-**14.00-15:00** Lecture: RNA sequencing, transcriptome and expression quantification [html](slides/rnaseq/talk.html),[pdf](slides/rnaseq/talk.pdf) (Roy Francis)  
+**14.00-15:00** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](slides/rnaseq/talk.html),[pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
 **15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq/lab.html) (Roy Francis + Per Unneberg, Bengt Sennblad, Adnan Niazi)  
 
 **Friday 14th**  
