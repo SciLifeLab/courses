@@ -37,7 +37,7 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 **Thursday 15th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
 **09:00-10.00** [Lecture: data management]() (Niclas Jareborg)  
-**09:30-12.00** [Lecture: NGI Stockholm]() (Phil Ewels)  
+**10:30-12.00** [Lecture: NGI Stockholm]() (Phil Ewels)  
 **12.00-13.00** Lunch at Universum  
 **13.00-14:00** [Lecture: RNA sequencing, transcriptome and expression quantification]([html](slides/rnaseq/talk.html),[pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
 **14.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq/lab.html) (Nina Norgren, Allison Churcher, Roy Francis, Dag Ahrén)  

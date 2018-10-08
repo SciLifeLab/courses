@@ -27,7 +27,6 @@ Held in Umeå November 12 - 16, 2018.
 [BWA Home](http://bio-bwa.sourceforge.net/)  
 [GATK Home](https://www.broadinstitute.org/gatk/)  
 [SeqAnswers - Next-generation sequencing forum](http://seqanswers.com/)  
-[Biosupport.se - Sweden centered bioinformatics Q&A](https://biosupport.se/)   
 [Trinity](http://trinityrnaseq.github.io/)  
 [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/)  
 [Allpaths-lg](http://www.broadinstitute.org/software/allpaths-lg/blog/?page_id=12)
