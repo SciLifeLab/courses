@@ -11,6 +11,7 @@ Held in Umeå November 12 - 16, 2018.
 ## Important Links
 [Pre-course material](precourse)   
 [Schedule](schedule)  
+[Campus map](NA340.pdf)  
 
 ## Helpful Things
 [Linux cheat sheet](../common/images/linux-cheat-sheet.pdf)  
