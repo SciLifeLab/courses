@@ -90,7 +90,7 @@ pre {
 
 .instruction {
  font-size: 18px;
- border: 1px solid var(--border-color);
+ border: 1px solid var(--primary-color);
  border-left: 6px solid var(--primary-color);
  border-radius: 4px 4px 4px 4px;
  padding: 10px 10px 0px 10px;
@@ -98,7 +98,7 @@ pre {
 }
 
 .optional {
- border: 1px solid var(--border-color);
+ border: 1px solid #EF7C00;
  border-left: 6px solid #EF7C00;
  border-radius: 4px 4px 4px 4px;
  padding: 10px 10px 0px 10px;
