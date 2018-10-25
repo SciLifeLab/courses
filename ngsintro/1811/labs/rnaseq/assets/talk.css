@@ -174,7 +174,7 @@ p {
 /* logo right */
 .title-slide.remark-slide-content:before{
   position: absolute;
-  content:url(logo-color-new.svg);
+  content:url(logo.svg);
   /* height:96px; */
   width:300px;
   padding-top: 0px;
@@ -249,12 +249,12 @@ img, video, iframe {
 
 /* logo every slide top right */
 .remark-slide-content:before {
-  content: url(logo-color-new.svg);
+  content: url(logo.svg);
   width: 180px;
   float: right;
   right: 4em;
   top: 1em;
-  padding-top: 11px;
+  margin-top: 0.8em;
 }
 
 /* image size classes */
@@ -394,7 +394,7 @@ img, video, iframe {
 
 /* SLIDE PROGRESS BAR -------------------------------------------------------- */
 
-.remark-slide-number {
+/*.remark-slide-number {
   position: inherit;
 }
 
@@ -411,5 +411,10 @@ img, video, iframe {
   height: 100%;
   background-color: var(--primary-color);
 }
+*/
 
-/* */
+/* MARKDOWN TABLE STYLE ------------------------------------------------------ */
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+th,td {padding: 8px; text-align: left;}
+
