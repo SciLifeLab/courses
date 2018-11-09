@@ -21,14 +21,14 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 ## General advice
 
 1. Use tab completion when possible.
-1. Running a command without parameters will, usually, return a default help message on how to run the command.
+1. Running a command without parameters will, often, return a default help message on how to run the command.
 1. Copying and pasting commands from the exercise to terminal can result in formatting errors. Especially backslash ("&#92;"), which is used to show that the command continues on the next line, can be a bit tricky.
 1. A line starting with '#' is a comment
-1. To be more strict, use the complete path to files you are using.
 1. Once a command has resulted in successful completion, save it! You will redo the procedure again with another sample and this will save time.
 1. If you change the node you are working on you will need to reload the tool modules. (See 'Accessing programs' below)
 1. Check that the output file exists and is a reasonable size (use ls -l) after a command is completed as a quick way to see that nothing is wrong. A common mistake people make is to attempt to load input files that do not exist or create output files where they cannot write.
 1. Giving good names to your outfiles that describes what has been done will help you.
+1. Again: replace &lt;parameter&gt; with the correct parameter in the commands
 1. Google errors, someone in the world has run into EXACTLY the same problem you had and asked about it on a forum somewhere.
 
 
@@ -37,8 +37,8 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A g2018018 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2018018_12_9
-# Remember to change to g2018018_13_9 on the 4th day of the course
+salloc -A g2018028 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2018028_14
+# Remember to change to g2018028_15 on the 4th day of the course
 # We have reserved nodes during the course only
 ```
 
@@ -54,7 +54,6 @@ and to connect to the node:
 ```bash
 ssh -Y <nodename>
 ```
-
 
 ## Accessing programs
 
@@ -75,20 +74,21 @@ module load picard/2.10.3
 # Picard and GATK are java programs, which means that we need the path to the program file, therefore UPPMAX sets a variable when you load these modules ($GATK_HOME or $PICARD_HOME).
 ```
 
-## Accessing data and creating a workspace
+## Creating a workspace
 
+During this lab you should work in "your" folder under the course's nobackup folder, just like you have done during the previous labs. Start by creating a workspace for this exercise in your folder, and then move into it.
+  
+```bash
+mkdir /proj/g2018028/nobackup/<username>/ngsworkflow
+cd /proj/g2018028/nobackup/<username>/ngsworkflow
+```
+
+## Data for this lab
 All input data for this exercise is located in the folder:
 
 ```bash
 /sw/share/compstore/courses/ngsintro/reseq/data/
 # These files are read-only so that the files are not accidentally deleted
-```
-  
-During this lab you should work in "your" folder under the course's nobackup folder, just like you have done during the previous labs. Start by creating a workspace for this exercise in your folder, and then move into it.
-  
-```bash
-mkdir /proj/g2018018/nobackup/<username>/ngsworkflow
-cd /proj/g2018018/nobackup/<username>/ngsworkflow
 ```
 
 ## The reference genome
@@ -176,7 +176,7 @@ This creates an index file similarly named to the input BAM file, except with a 
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<bam file>
 ```
-* Compare the sizes of the sam and bam files using ls -l
+* Comapre the size of the sam and bam files using ls -l
 
 ## From alignments to variant calls
 The reads have now been aligend to the reference, but these files can still be improved a bit before we use them for variant calling. Genome Analysis Tool Kit (GATK) is a popular set of tools used for this and for variant calling. GATK comes with a "best practise", which gives a suggestion on how to get from raw bam to filtered variants. 
@@ -202,10 +202,11 @@ Next, we're going to use Picard to mark duplicate reads:
 ```bash
 java -Xmx16g -jar $PICARD_HOME/picard.jar MarkDuplicates INPUT=<input_bam> OUTPUT=<marked_bam> \
 METRICS_FILE=<metrics_file> READ_NAME_REGEX=null
-# marked_bam: you need to specify an output, which will be a new file used in the following steps.
-# The metrics file will be created. It contains information about the number of duplicate reads in your data.
+# marked_bam: you need to specify an output name, which will be used in the following steps. 
+# It is suggested to use file names that describe what has been done, e.g. <sample>.dedup.bam
+# The metrics file is a text file that will be created and contains some stats about duplicates. 
 ```
-* How many duplicates were detected?
+* How many duplicates were detected? Check the metrics file. 
 
 Again, we need to index the new bam file before proceeding.
 
@@ -213,28 +214,12 @@ Again, we need to index the new bam file before proceeding.
 java -Xmx16g -jar $PICARD_HOME/picard.jar BuildBamIndex INPUT=<marked_bam>
 ```
 
-#### Addition details: Viewing duplicates and understanding the bit flag 
-
-Now we can look at the duplicates we marked with Picard, using a filter on the bit flag.
-The mark for duplicates is the bit for 1024, we can use samtools view to look at them. First go to [this online utility](https://broadinstitute.github.io/picard/explain-flags.html) that is helpful for decoding sam flags. Notice that it can also be used in reverse to find the appropriate flag. Now look at your data.
-
-```bash
-# We can count the marked reads, with samtools and the -c option.
-samtools view -f 1024 -c <bam_file>
-
-#Or if we want to look at these reads:
-
-samtools view -f 1024 <bam_file> | less
-``` 
-* Do you get the same number of duplicates as in the metrics file?
-* Why do we use samtools to look at the BAM file? Could we have looked at it with just less?
-
 <img src="files/NGS_workflow/wf_bqsr.png" style="width: 100%"/>
 <!-- ![](files/NGS_workflow/wf_bqsr.png) -->
 
 ### Base quality score recalibration (BQSR)
 
-Next we want to perform quality recalibration with GATK. We do this last, because we want all the data to be as clean as possible at this point. This is performed in two steps: BaseRecalibrator and PrintReads. As usual we give our latest BAM file as input.
+Next we want to perform quality recalibration with GATK. We do this last, because we want all the data to be as clean as possible at this point. This is performed in two steps: BaseRecalibrator and PrintReads. As usual we give our latest BAM file as input_bam.
 First, we compute all the covariation of quality with various other factors using BaseRecalibrator:
 
 ```bash
@@ -287,7 +272,7 @@ cp /sw/share/compstore/courses/ngsintro/reseq/data/vcf/<sample>.g.vcf .
 
 ## Joint genotyping
 
-Now you will call genotypes from all the gVCF-files produced in the previous step with GenotypeGVCFs. This will create one file with unfiltered variants for all samples.
+Now you will call genotypes from all the gVCF-files produced in the previous step with GenotypeGVCFs. This will create one file with unfiltered variants for all samples (HG00097, HG00100 and HG00101).
 
 ```bash
 java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T GenotypeGVCFs \
@@ -358,7 +343,7 @@ vcftools --vcf <my_variants_filtered>.vcf --out <output_prefix> --remove-filtere
 # --recode is used to create a new vcf file as output, otherwise only statistics are calculated.
 
 ```
-* How many variants passed the filters?
+* How many variants passed the filters? (Check the log file)
 * Try to find out how many variants that are indels (Hint: 'man vcftools' will list available options.)
 
 ## Variant annotation
@@ -375,6 +360,8 @@ Annovar uses downloaded annotation tracks to annotate the input file. These can 
 ls $ANNOVAR_HOME/humandb/
 
 ```
+
+All datasets available through Annovar can be found [here](http://annovar.openbioinformatics.org/en/latest/user-guide/download/). 
 
 #### Input format
 Annovar can use a vcf file as input and also output the results as a vcf file. However, to make the results easier to read we will first create an annovar formatted file and produce tab delimited results. 
@@ -400,7 +387,7 @@ Your results can be found in \<myanno\>.hg19_multianno.txt. You can now try to a
 * What are the allele frequencies of the variant in different populations?
 * What is the allele frequency in the Swedish population? See the [SweGen Variant Frequency Browser](https://swegen-exac.nbis.se)
 * Are there any coding (exonic) variants in the LCT gene?
-
+* Add one or more datasets and rerun the annotation!
 
 ## Use IGV to look at your data
 Next, we want to look at the data. For that, we will use IGV (Integrative Genomics Viewer). You can launch it from UPPMAX using your graphical forwarding, -X or -Y, as you may have already tried, see [here](http://www.uppmax.uu.se/support-sv/user-guides/integrative-genomics-viewer--igv--guide/). However, here we will show how to run it on your local machine.
@@ -410,19 +397,19 @@ Go to the IGV [download page](https://software.broadinstitute.org/software/igv/d
 
 ### Download data from Uppmax
 We need to download some data to our local machines so IGV can find it. Open a new terminal, but do not log in to UPPMAX. You may want to create a new folder for the exercise (cd to the new folder). Now we’re going to use the command scp (secure copy) to copy bam (and .bai) and vcf files. **\<username\> is your UPPMAX username.** It will prompt you for your UPPMAX password, then it should download your files.
+You will need the bam files of all 3 samples: HG00097, HG00100 and HG00101.
 
 ```bash
 # You can copy your recalibrated bam files (from the BQSR exercise above) like this:
-scp <username>@rackham.uppmax.uu.se:/proj/g2018018/nobackup/<username>/ngsworkflow/HG*recal.ba* ./
+scp <username>@rackham.uppmax.uu.se:/proj/g2018028/nobackup/<username>/ngsworkflow/<recalibrated_bam>.ba* ./
 # And the filtered multi-sample vcf:
-scp <username>@rackham.uppmax.uu.se:/proj/g2018018/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
+scp <username>@rackham.uppmax.uu.se:/proj/g2018028/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
 ```
 
-If you are missing either bam files or the filtered vcf you can do this instead
-
+If you are missing some of the bam files or the vcf you can do this instead:
 ```bash
 # Copy the files from the course directory:
-scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/bam/HG*recal.ba* ./
+scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/bam/<sample>.recal.ba* ./
 scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/vcf/my_variants_filtered.vcf ./
 ```
 
@@ -478,9 +465,10 @@ http://www.genome.ucsc.edu/training/ucscGeneFishing.pdf
  
 1. Zoom in to the relevant part of the genome. We only have data for a small region on chromosome 2 surrounding the *LCT* gene. An easy way to find the relevant region is to type *"LCT"* in the search window on the top of the page, press "go", and then select "LCT (uc002tuu.1) at chr2:136545415-136594750 - Homo sapiens lactase (LCT), mRNA." under "UCSC Genes".Then use the zoom out buttons to view both the *LCT* gene and the *MCM6* gene.
 
-1. Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates (it should be displayed by default). Note how well-conserved the gene is across the listed mammals, and compare with the non-mammals. 
-
-1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235). You can type the rs-id in the search window. Again look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation across 100 vertebrates. The default view show only 10 out of the 100 species in the alignment, but by clicking on the "Conservation" header under "Comparative Genomics" you can configure the track so that all species are shown. Question: What alleles do the different species have?
+1. Zoom in to the variant that leads to retained lactase activity in adults (rs4988235).  Look at the "Multiz Alignment of 100 Vertebrates" track that shows evolutionary conservation of this genomic region across 100 vertebrates. (It is possible to directly enter the rs-number in the search window.)  
+Please answer the following questions:  
+Which species appear to have the DNA sequence surrounding the rs4988235 variant in their genomes?  
+What allele does these species have at the variant position?  
 
 1. Play around with the various annotations tracks that are available in the UCSC genome browser and explore what is known about this particular region of the human genome. All tracks can be displayed in different modes, from "full" to "hide" and this regulates at what detail the track will be displayed.
 
@@ -498,6 +486,24 @@ bedtools intersect -wo -a <vcffile> -b <bedfile> > <subset.vcf>
 ```
 * How many variants are found within the given gene regions? (Hint: use wc -l to count the lines in your output file.)
 * How would you find all variants that are *NOT* in genes? (Look at the available options using bedtools intersect -h) 
+
+### Samtools view and the bit flag
+
+Viewing duplicates and understanding the bit flag
+
+We can look at the duplicates that we marked with Picard above, using a filter on the bit flag.
+The mark for duplicates is the bit for 1024, we can use samtools view to look at them. First go to [this online utility](https://broadinstitute.github.io/picard/explain-flags.html) that is helpful for decoding sam flags. Notice that it can also be used in reverse to find the appropriate flag. Now look at your data.
+
+```bash
+# We can count the marked reads, with samtools and the -c option.
+samtools view -f 1024 -c <marked_bam>
+
+ Or if we want to look at these reads:
+samtools view -f 1024 <marked_bam> | less
+```
+* Do you get the same number of duplicates as in the metrics file?
+* Why do we use samtools to look at the BAM file? Could we have looked at it with just less?
+
 
 ### VEP
 [VEP](https://www.ensembl.org/info/docs/tools/vep/index.html) is another popular tool for variant annotation. 

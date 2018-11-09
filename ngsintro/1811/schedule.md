@@ -10,7 +10,7 @@ title:  'Schedule'
 
 **Monday 12th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
-**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Nina Norgren)  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/scilife_intro_NGS_course_HT18.pdf) (Nina Norgren)  
 **09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö, Anders Sjölander, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
 **12.00-13.00** Lunch at Universum  
@@ -46,5 +46,5 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
 **09:00-12:00** [Exercise: RNA sequencing, transcriptome and expression quantification part II](labs/rnaseq/lab.html) (Nina Norgren, Allison Churcher, Roy Francis)  
 **12.00-13.00** Lunch at Universum  
-**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Nina Norgren)    
+**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden](slides/NBIS_presentation.pdf) (Nina Norgren)    
 **13:20-15.00** Open discussions (Nina Norgren, Allison Churcher, Roy Francis)  
