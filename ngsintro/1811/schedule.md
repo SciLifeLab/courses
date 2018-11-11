@@ -11,11 +11,11 @@ title:  'Schedule'
 **Monday 12th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/scilife_intro_NGS_course_HT18.pdf) (Nina Norgren)  
-**09.15-10.00** [Lecture: Introduction to Linux]() (Anders Sjölander)  
-**10.00-12.00** [Exercise: Introduction to Linux]() (Anders Sjölander, Martin Dahlö, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
+**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Anders Sjölander)  
+**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Anders Sjölander, Martin Dahlö, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
 **12.00-13.00** Lunch at Universum  
-**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Anders Sjölander)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Anders Sjölander,Martin Dahlö, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Anders Sjölander)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Anders Sjölander,Martin Dahlö, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
 
 **Tuesday 13th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
