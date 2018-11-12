@@ -277,7 +277,7 @@ When the old module is unloaded, load samtools/0.1.18 (or try with the latest sa
 ## 6. Submitting a job
 Not all jobs are as small as converting this tiny bam file to a sam file. Usually the bam files are several gigabytes, and can take hours to convert to sam files. You will not have reserved nodes waiting for you to do something either, so running programs is done by submitting a job to the queue system. What you submit to the queue system is a script file that will be executed as soon as it reaches the front of the queue. The scripting language used in these scripts is **bash**, which is the same language as you usually use in a terminal i.e. everything so far in the lecture and lab has been in the bash language (cd, ls, cp, mv, etc.).
 
-Have a look at **job_template.txt** in your **uppmax_tutorial** folder.
+Have a look at **job_template** in your **uppmax_tutorial** folder.
 
 ```bash
 $ less job_template

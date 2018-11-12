@@ -57,7 +57,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018028 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018028_10_9 &
+$ salloc -A g2018028 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018028_13 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
