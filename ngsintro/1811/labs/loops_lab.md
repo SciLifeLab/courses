@@ -55,7 +55,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_11_9 &
+$ salloc -A g2018028 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018028_13 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -104,13 +104,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/loops/ /proj/g2018018/nobackup/<username>/loops
+$ cp -r /sw/share/compstore/courses/ngsintro/loops/ /proj/g2018028/nobackup/<username>/loops
 ```
 
-Have a look in `/proj/g2018018/nobackup/<username>/loops`:
+Have a look in `/proj/g2018028/nobackup/<username>/loops`:
 
 ```bash
-$ cd /proj/g2018018/nobackup/<username>/loops
+$ cd /proj/g2018028/nobackup/<username>/loops
 
 $ ll
 ```
@@ -180,7 +180,7 @@ First off, let's open another terminal to uppmax so that you have 2 of them open
 Scripting is a lot easier if you have one terminal on the command line ready to run commands and test things, and another one with a text editor where you write the actual code. 
 That way you will never have to close down the text editor when you want to run the script you are writing on, and then open it up again when you want to continue editing the code. 
 So open a new terminal window, connect it to uppmax and then connect it to the node you have booked.
-Make sure both terminals are in the `/proj/g2018018/nobackup/<username>/loops` directory, and start editing a new file with nano where you write your script.
+Make sure both terminals are in the `/proj/g2018028/nobackup/<username>/loops` directory, and start editing a new file with nano where you write your script.
 Name the file whatever you want, but in the examples I will refer to it as `loop_01.sh`.
 Write your loops to this file (or create a new file for each new example) and test run it in the other terminal.
 
@@ -260,7 +260,7 @@ Sam files take up ~4x more space on the hard drive compared to the same file in 
 If you have many sam files that needs converting you don't want to sit there and type all the commands by hand like some kind of animal.
 
 Write a script that converts all the sam files in a specified directory to bam files.
-Incidentally you can find 50 sam files in need of conversion in the folder called `sam` in the folder you copied to your folder earlier in this lab (`/proj/g2018018/nobackup/<username>/loops/sam/`).
+Incidentally you can find 50 sam files in need of conversion in the folder called `sam` in the folder you copied to your folder earlier in this lab (`/proj/g2018028/nobackup/<username>/loops/sam/`).
 Bonus points if you make the program take the specified directory as an argument, and another bonus point if you get the program to name the resulting bam file to the same name as the sam file but with a .bam ending instead.
 
 Remember that you have to load the samtools module to be able to run it. The way you get samtools to convert a sam file to a bam file is by typing the following command:
@@ -460,7 +460,7 @@ And if that is too easy, add that the pipeline will use the local hard drive on 
 When the analysis is done, only fastq files and sorted and indexed bam files should be in your folder.
 Read more about the `$SNIC_TMP` variable in the [disk storage guide](http://www.uppmax.uu.se/support/user-guides/disk-storage-guide/) on the UPPMAX homepage.
 
-There is a bunch of fastq files in the directory `/proj/g2018018/nobackup/<username>/loops/fastq/` that is to be used for this exercise.
+There is a bunch of fastq files in the directory `/proj/g2018028/nobackup/<username>/loops/fastq/` that is to be used for this exercise.
 
 
 Basic solution:
@@ -471,7 +471,7 @@ Basic solution:
 export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome
-reference_indexer -r /proj/g2018018/nobackup/\<username\>/filetypes/0_ref/ad2.fa
+reference_indexer -r /proj/g2018028/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 
 # go to the input files
 cd $1
@@ -484,7 +484,7 @@ do
     file_basename=$(basename $file)
 
     # align the reads
-    align_reads -r /proj/g2018018/nobackup/\<username\>/filetypes/0_ref/ad2.fa -i $file_basename -o $file_basename.sam
+    align_reads -r /proj/g2018028/nobackup/\<username\>/filetypes/0_ref/ad2.fa -i $file_basename -o $file_basename.sam
 
     # convert the sam file to a bam file
     sambam_tool -f bam -i $file_basename.sam -o $file_basename.bam
@@ -513,9 +513,9 @@ Advanced solution:
 export PATH=$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/dummy_scripts
 
 # index the reference genome once, only if needed
-if [ ! -f /proj/g2018018/nobackup/\<username\>/filetypes/0_ref/ad2.fa.idx ];
+if [ ! -f /proj/g2018028/nobackup/\<username\>/filetypes/0_ref/ad2.fa.idx ];
 then
-    reference_indexer -r /proj/g2018018/nobackup/\<username\>/filetypes/0_ref/ad2.fa
+    reference_indexer -r /proj/g2018028/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 fi
 
 
@@ -543,7 +543,7 @@ do
 
     # print a temporary script file that will be submitted to slurm
     echo "#!/bin/bash -l
-#SBATCH -A g2018018
+#SBATCH -A g2018028
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 00:05:00
@@ -557,7 +557,7 @@ export PATH=\$PATH:/sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise
 # You have to escape the dollar sign in SNIC_TMP to keep bash from resolving
 # it to it's value in the submitter script already.
 echo "Copying data to node local hard drive"
-cp /proj/g2018018/nobackup/\<username\>/filetypes/0_ref/ad2.fa* $file \$SNIC_TMP/
+cp /proj/g2018028/nobackup/\<username\>/filetypes/0_ref/ad2.fa* $file \$SNIC_TMP/
 
 # go the the nodes local hard drive
 echo "Changing directory to node local hard drive"

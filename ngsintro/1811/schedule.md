@@ -19,11 +19,11 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 
 **Tuesday 13th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
-**09.00-09.30** [Lecture: File types in bioinformatics]() (Martin Dahlö)  
-**09.30-12.00** [Exercise: File types in bioinformatics]() (Martin Dahlö, Anders Sjölander, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö, Anders Sjölander, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
 **12.00-13.00** Lunch at Universum  
-**13:00-14:00** [Lecture: Advanced Linux usage]() (Martin Dahlö)  
-**14:00-17:00** [Exercise: Advanced Linux usage]() (Martin Dahlö, Anders Sjölander, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Martin Dahlö)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Martin Dahlö, Anders Sjölander, Nina Norgren, Jeanette Tångrot, Allison Churcher)  
 
 **Wednesday 14th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
