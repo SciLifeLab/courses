@@ -57,7 +57,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2018018 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018018_10_9 &
+$ salloc -A g2018028 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2018028_10_9 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -103,13 +103,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2018018/nobackup/<username>/uppmax_pipeline_exercise
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2018028/nobackup/<username>/uppmax_pipeline_exercise
 ```
 
-Have a look in `/proj/g2018018/nobackup/<username>/uppmax_pipeline_exercise`:
+Have a look in `/proj/g2018028/nobackup/<username>/uppmax_pipeline_exercise`:
 
 ```bash
-$ cd /proj/g2018018/nobackup/<username>/uppmax_pipeline_exercise
+$ cd /proj/g2018028/nobackup/<username>/uppmax_pipeline_exercise
 
 $ ll
 ```
@@ -258,7 +258,7 @@ Try doing a complete exome sequencing analysis, following the steps below.
 First, go to the exome directory in the lab directory that you copied to your folder in step 2 in this lab:
 
 ```bash
-$ cd /proj/g2018018/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2018028/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 ```
 
 In there you will find a folder called `raw_data`, containing a fastq file: `my_reads.rawdata.fastq` .
@@ -297,7 +297,7 @@ When you are sure a command works, you copy/paste it to the terminal with the sc
 Start writing you script with nano:
 
 ```bash
-$ cd /proj/g2018018/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2018028/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 $ nano exome_analysis_script.sh
 ```
 
@@ -358,7 +358,7 @@ The next couple of rows will contain all the options you want to give SLURM:
 
 ```bash
 #!/bin/bash -l
-#SBATCH -A g2018018
+#SBATCH -A g2018028
 #SBATCH -t 00:05:00
 #SBATCH -p core
 ```
