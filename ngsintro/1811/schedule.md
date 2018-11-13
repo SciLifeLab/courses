@@ -30,13 +30,15 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 **09.00-10.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Nina Norgren)  
 **10.00-12.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
 **12.00-13.00** Lunch at Universum  
-**13.00-17.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)    
+**13.00-15.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
+**15.00-16.00** [Lecture: data management]() (Niclas Jareborg)  
+**16.00-17.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
 
 **18:00-** Course dinner  
 
 **Thursday 15th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
-**09:00-10.00** [Lecture: data management]() (Niclas Jareborg)  
+**09:00-10.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)    
 **10:30-12.00** [Lecture: Next generation sequencing and bioinformatics at NGI]() (Phil Ewels)  
 **12.00-13.00** Lunch at Universum  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification ([html](slides/rnaseq/talk.html), [pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
