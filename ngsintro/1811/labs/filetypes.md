@@ -250,7 +250,7 @@ Try viewing the index file with `less` and see how it looks.
 The samtools type of index contains one row per fasta record in the reference file.
 In this case there is only one record for the adenovirus genome, and it's called `ad2` in the fasta file.
 The human reference genome typically have one record per chromosome, so a index of the human genome would then have 24 rows.
-://github.com/SciLifeLab/courses.git
+
 The numbers after the record name specifies how many bases the record has, how far into the file (in bytes) the record starts, the number of bases on each line in the record, and how many bytes each line takes up in the file.
 Using this information the program can quickly jump to the start location of each record, without having to read the file from the first row every time.
 
