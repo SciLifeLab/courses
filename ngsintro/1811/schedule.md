@@ -31,7 +31,7 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 **10.00-12.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
 **12.00-13.00** Lunch at Universum  
 **13.00-15.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
-**15.00-16.00** [Lecture: data management]() (Niclas Jareborg)  
+**15.00-16.00** [Lecture: data management](slides/2018-11-13_Data_Management_for_courses.pdf) (Niclas Jareborg)  
 **16.00-17.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)  
 
 **18:00-** Course dinner  
