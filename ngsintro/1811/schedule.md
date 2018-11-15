@@ -39,7 +39,7 @@ Room: NA340, Naturvetarhuset A (Linnaeus väg 41)
 **Thursday 15th**  
 Room: NA340, Naturvetarhuset A (Linnaeus väg 41)  
 **09:00-10.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Nina Norgren, Allison Churcher, Jeanette Tångrot)    
-**10:30-12.00** [Lecture: Next generation sequencing and bioinformatics at NGI]() (Phil Ewels)  
+**10:30-12.00** [Lecture: Next generation sequencing and bioinformatics at NGI](slides/Phil%20Ewels%20-%20NBIS%20Intro%20to%20NGS%20Bioinfo.pdf) (Phil Ewels)  
 **12.00-13.00** Lunch at Universum  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification ([html](slides/rnaseq/talk.html), [pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
 **14.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification part I](labs/rnaseq/lab.html) (Nina Norgren, Allison Churcher, Roy Francis, Dag Ahrén)  
