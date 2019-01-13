@@ -3,13 +3,12 @@
   <head>
     <title>Introduction to RNA-Seq</title>
     <meta charset="utf-8">
-    <meta name="author" content="Roy Francis | 25-Oct-2018" />
-    <meta name="keywords" content="rnaseq, bioinformatics, course" />
-    <link href="libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-    <script src="libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-    <script src="libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
-    <link id="font-awesome-1-attachment" rel="attachment" href="libs/font-awesome-5.0.13/fonts/fontawesome-webfont.ttf"/>
-    <script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+    <meta name="author" content="Roy Francis | 06-Jan-2019" />
+    <meta name="keywords" content="rnaseq, bioinformatics, course, scilifelab, nbis" />
+    <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+    <link id="font-awesome-1-attachment" rel="attachment" href="libs/font-awesome-5.1.0/fonts/fontawesome-webfont.ttf"/>
+    <script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
     <script src="libs/plotly-binding-4.8.0/plotly.js"></script>
     <script src="libs/typedarray-0.1/typedarray.min.js"></script>
     <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -17,7 +16,7 @@
     <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
     <link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
     <script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="assets\talk.css" type="text/css" />
+    <link rel="stylesheet" href="assets/talk.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -25,13 +24,15 @@ class: center, middle, inverse, title-slide
 
 # Introduction to RNA-Seq
 ## Introduction To Bioinformatics Using NGS Data
-### <b>Roy Francis</b> | 25-Oct-2018
+### <b>Roy Francis</b> | 06-Jan-2019
 
 ---
 
 layout: true
 
+&lt;!-- custom fonts --&gt;
 &lt;link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,700" rel="stylesheet"&gt;
+&lt;link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet"&gt;
 &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"&gt;
 
 ---
@@ -142,6 +143,7 @@ class: spaced
 - Quantity &amp; quality
 - RIN values (Strong effect)
 - Batch effect
+- Extraction method bias (GC bias)
 ]
 
 .pull-right-50[
@@ -265,6 +267,15 @@ https://sequencing.qcfail.com/
 ![](images/qcfail.jpg)
 
 ---
+name: fastqc
+
+## FastQC
+
+.size-75[[![](images/fastqc_good.png)](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html)]
+
+.size-75[[![](images/fastqc_bad.png)](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html)]
+
+---
 name: read-qc-2
 
 ## Read QC | PBSQ, PSQS
@@ -302,7 +313,7 @@ name: trimming
 - Trim reads by quality
 - Sliding window trimming
 - Filter by min/max read length
-  - Remove reads less than ~22nt
+  - Remove reads less than ~18nt
 - Demultiplexing/Splitting
 
 &lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [Cutadapt](https://github.com/marcelm/cutadapt/), [fastp](https://github.com/OpenGene/fastp), [Skewer](https://github.com/relipmoc/skewer), [Prinseq](http://prinseq.sourceforge.net/)
@@ -322,6 +333,46 @@ name: mapping-intro
 - Aligning reads back to a reference sequence
 - Mapping to genome vs transcriptome
 - Splice-aware alignment (genome)
+
+&lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [STAR](https://github.com/alexdobin/STAR),  [HiSat2](https://ccb.jhu.edu/software/hisat2/index.shtml), [GSNAP](http://research-pub.gene.com/gmap/), [Novoalign](http://www.novocraft.com/products/novoalign/) (Commercial)
+
+.citation[
+&lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; Baruzzo, Giacomo, *et al*. "Simulation-based comprehensive benchmarking of RNA-seq aligners." [Nature methods 14.2 (2017): 135](https://www.nature.com/articles/nmeth.4106)&lt;/span&gt;
+]
+
+---
+name: aligner-speed
+
+## Aligners | Speed
+
+.pull-left-50[
+![](images/compare-aligners-speed.jpg)
+]
+
+.pull-right-50[
+|Program|Time_Min|Memory_GB|
+|-------|--------|---------|
+|HISATx1|22.7|4.3|
+|HISATx2|47.7|4.3|
+|HISAT|26.7|4.3|
+|STAR|25|28|
+|STARx2|50.5|28|
+|GSNAP|291.9|20.2|
+|TopHat2|1170|4.3|
+]
+
+.citation[
+&lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; Baruzzo, Giacomo, *et al*. "Simulation-based comprehensive benchmarking of RNA-seq aligners." [Nature methods 14.2 (2017): 135](https://www.nature.com/articles/nmeth.4106)&lt;/span&gt;
+]
+
+---
+name: aligner-accuracy
+
+## Aligners | Accuracy
+
+.size-80[![](images/compare-aligners-quality.jpg)]
+
+.size-40[![](images/accuracy.svg)]
 
 &lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [STAR](https://github.com/alexdobin/STAR),  [HiSat2](https://ccb.jhu.edu/software/hisat2/index.shtml), [GSNAP](http://research-pub.gene.com/gmap/), [Novoalign](http://www.novocraft.com/products/novoalign/) (Commercial)
 
@@ -380,13 +431,44 @@ ST-E00274:188:H3JWNCCXY:4:1102:32431:49900      163     1       1       60      
 
 `query flag ref pos mapq cigar mrnm mpos tlen seq qual opt`
 
-&lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [SeqMonk](https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/), [IGV](http://software.broadinstitute.org/software/igv/), [UCSC Genome Browser](https://genome.ucsc.edu/)
-
-![](images/seqmonk.png)
+|Format|Size_GB|
+|------|-------|
+|SAM|7.4|
+|BAM|1.9|
+|CRAM lossless Q|1.4|
+|CRAM 8 bins Q|0.8|
+|CRAM no Q|0.26|
 
 .citation[
 &lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; SAM file [format](http://www.htslib.org/doc/sam.html)&lt;/span&gt;
 ]
+
+---
+name: vis-tview
+
+## Visualisation | `tview`
+
+`samtools tview alignment.bam genome.fasta`
+
+![](images/tview.png)
+
+---
+name: vis-igv
+
+## Visualisation | IGV
+
+![](images/igv.png)
+
+&lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [IGV](http://software.broadinstitute.org/software/igv/), [UCSC Genome Browser](https://genome.ucsc.edu/)
+
+---
+name: vis-seqmonk
+
+## Visualisation | SeqMonk
+
+![](images/seqmonk.jpg)
+
+&lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [SeqMonk](https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/)
 
 ---
 name: alignment-qc
@@ -430,6 +512,36 @@ name: qorts-plots
 ## QoRTs
 
 ![](images/qorts.png)
+
+---
+name: alignment-qc-1
+
+## Alignment QC
+
+.pull-left-50[
+**Soft clipping**
+![](images/clipping_good.png)
+]
+
+.pull-right-50[
+**Gene body coverage**
+![](images/gene-body-coverage.png)
+]
+
+---
+name: alignment-qc-2
+
+## Alignment QC
+
+.pull-left-50[
+**Insert size**
+![](images/inner_distance.png)
+]
+
+.pull-right-50[
+**Saturation curve**
+![](images/saturation.png)
+]
 
 ---
 name: quantification-counts
@@ -551,6 +663,13 @@ ENSG00000001036    79    154   74    80    128   167   220   147   72
 ]
 
 ---
+name: multiqc
+
+## MultiQC
+
+[![](images/multiqc.png)](https://multiqc.info/examples/rna-seq/multiqc_report.html)
+
+---
 name: normalisation
 
 ## Normalisation
@@ -560,7 +679,7 @@ name: normalisation
 
 ![](images/normalisation.png)
 
-- FoR DGE using DGE packages, use raw counts
+- For DGE using DGE packages, use raw counts
 - For clustering, heatmaps etc use VST, VOOM or RLOG
 - For own analysis, plots etc, use TPM
 - Other solutions: spike-ins/house-keeping genes
@@ -593,8 +712,8 @@ name: exploratory-mds
 
 ## Exploratory | MDS
 
-<div id="htmlwidget-cd673c83519f69226500" style="width:750px;height:500px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cd673c83519f69226500">{"x":{"visdat":{"12bc69883235":["function () ","plotlyVisDat"]},"cur_data":"12bc69883235","attrs":{"12bc69883235":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text","colors":["#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","color":{},"inherit":true}},"layout":{"width":750,"height":500,"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"V1"},"yaxis":{"title":"V2"},"zaxis":{"title":"V3"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"data":[{"x":[-5.33185049177959,-7.92209817002156,-8.77692340480147],"y":[0.0432736817716184,-1.26280672685875,-1.86761681936745],"z":[1.04060988518825,-1.41087805672964,-2.80687594167858],"text":["<b>ID: <\/b>121T10571_121<br /><b>NGS ID: <\/b>P8304_117","<b>ID: <\/b>121T10571_123<br /><b>NGS ID: <\/b>P8304_119","<b>ID: <\/b>121T10571_124<br /><b>NGS ID: <\/b>P8304_120"],"hoverinfo":["text","text","text"],"type":"scatter3d","mode":"markers","name":"121T10571_12","marker":{"color":"rgba(166,206,227,1)","line":{"color":"rgba(166,206,227,1)"}},"textfont":{"color":"rgba(166,206,227,1)"},"error_y":{"color":"rgba(166,206,227,1)"},"error_x":{"color":"rgba(166,206,227,1)"},"line":{"color":"rgba(166,206,227,1)"},"frame":null},{"x":[-5.73550373147591,-6.21011122708704,-7.35383060771142,-6.59073194911667],"y":[-6.23950665019801,-6.50430598496082,-6.51161261887537,-5.34119076269499],"z":[7.24464218182632,7.38236724522226,6.0494637371315,5.38523664148418],"text":["<b>ID: <\/b>134_T6443_11_1<br /><b>NGS ID: <\/b>P8304_113","<b>ID: <\/b>134_T6443_11_2<br /><b>NGS ID: <\/b>P8304_114","<b>ID: <\/b>134_T6443_11_3<br /><b>NGS ID: <\/b>P8304_115","<b>ID: <\/b>134_T6443_11_4<br /><b>NGS ID: <\/b>P8304_116"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"134_T6443_11","marker":{"color":"rgba(31,120,180,1)","line":{"color":"rgba(31,120,180,1)"}},"textfont":{"color":"rgba(31,120,180,1)"},"error_y":{"color":"rgba(31,120,180,1)"},"error_x":{"color":"rgba(31,120,180,1)"},"line":{"color":"rgba(31,120,180,1)"},"frame":null},{"x":[-4.6497016412439,-5.10088962658455,-6.00012520521127,-4.41802453955813],"y":[3.09565456848034,1.18448065666745,2.63713128689337,0.792488532872201],"z":[1.84057242738463,1.06376484620365,0.0898534016981559,3.4308686704621],"text":["<b>ID: <\/b>153_ST132_131<br /><b>NGS ID: <\/b>P8304_101","<b>ID: <\/b>153_ST132_132<br /><b>NGS ID: <\/b>P8304_102","<b>ID: <\/b>153_ST132_133<br /><b>NGS ID: <\/b>P8304_103","<b>ID: <\/b>153_ST132_134<br /><b>NGS ID: <\/b>P8304_104"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"153_ST132_13","marker":{"color":"rgba(178,223,138,1)","line":{"color":"rgba(178,223,138,1)"}},"textfont":{"color":"rgba(178,223,138,1)"},"error_y":{"color":"rgba(178,223,138,1)"},"error_x":{"color":"rgba(178,223,138,1)"},"line":{"color":"rgba(178,223,138,1)"},"frame":null},{"x":[-5.88085854951221,-7.76790916625506,-6.25504507611664,-8.3764530117268],"y":[2.28585250238002,1.36384290506196,2.03080210880601,0.732589724202596],"z":[2.53910291233844,-0.247836766653928,1.897953832452,-0.233518938722922],"text":["<b>ID: <\/b>24_TD9169_081<br /><b>NGS ID: <\/b>P8304_109","<b>ID: <\/b>24_TD9169_082<br /><b>NGS ID: <\/b>P8304_110","<b>ID: <\/b>24_TD9169_083<br /><b>NGS ID: <\/b>P8304_111","<b>ID: <\/b>24_TD9169_084<br /><b>NGS ID: <\/b>P8304_112"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"24_TD9169_08","marker":{"color":"rgba(51,160,44,1)","line":{"color":"rgba(51,160,44,1)"}},"textfont":{"color":"rgba(51,160,44,1)"},"error_y":{"color":"rgba(51,160,44,1)"},"error_x":{"color":"rgba(51,160,44,1)"},"line":{"color":"rgba(51,160,44,1)"},"frame":null},{"x":[-3.88932422329194,-0.0729461302680156],"y":[-1.69996167204044,1.77387505239342],"z":[1.96344736048856,5.74550696017447],"text":["<b>ID: <\/b>29_T1942_083<br /><b>NGS ID: <\/b>P8304_123","<b>ID: <\/b>29_T1942_084<br /><b>NGS ID: <\/b>P8304_124"],"hoverinfo":["text","text"],"type":"scatter3d","mode":"markers","name":"29_T1942_08","marker":{"color":"rgba(251,154,153,1)","line":{"color":"rgba(251,154,153,1)"}},"textfont":{"color":"rgba(251,154,153,1)"},"error_y":{"color":"rgba(251,154,153,1)"},"error_x":{"color":"rgba(251,154,153,1)"},"line":{"color":"rgba(251,154,153,1)"},"frame":null},{"x":[-10.2163172144276,-10.596078285728,-10.2353954116357,-9.33007941422633],"y":[-0.490190092826988,-2.26662762461056,-0.333539418783384,-0.0554168358930101],"z":[-8.46229337166764,-8.5409366265751,-8.94003110723548,-8.17218218493106],"text":["<b>ID: <\/b>61_T1538_071<br /><b>NGS ID: <\/b>P8304_105","<b>ID: <\/b>61_T1538_072<br /><b>NGS ID: <\/b>P8304_106","<b>ID: <\/b>61_T1538_073<br /><b>NGS ID: <\/b>P8304_107","<b>ID: <\/b>61_T1538_074<br /><b>NGS ID: <\/b>P8304_108"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"61_T1538_07","marker":{"color":"rgba(227,26,28,1)","line":{"color":"rgba(227,26,28,1)"}},"textfont":{"color":"rgba(227,26,28,1)"},"error_y":{"color":"rgba(227,26,28,1)"},"error_x":{"color":"rgba(227,26,28,1)"},"line":{"color":"rgba(227,26,28,1)"},"frame":null},{"x":[21.8493946916054,22.7364624888557,22.8684179809813,23.401941446664],"y":[-5.14341595704935,-6.83851698747042,-14.3376040568602,-8.02483675387452],"z":[1.5998970735274,0.863612874314833,-7.37316041937378,-1.33865318696138],"text":["<b>ID: <\/b>TD11549_17_O1<br /><b>NGS ID: <\/b>P8304_125","<b>ID: <\/b>TD11549_17_O2<br /><b>NGS ID: <\/b>P8304_126","<b>ID: <\/b>TD11549_17_O3<br /><b>NGS ID: <\/b>P8304_127","<b>ID: <\/b>TD11549_17_O4<br /><b>NGS ID: <\/b>P8304_128"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"TD11549_17_O","marker":{"color":"rgba(253,191,111,1)","line":{"color":"rgba(253,191,111,1)"}},"textfont":{"color":"rgba(253,191,111,1)"},"error_y":{"color":"rgba(253,191,111,1)"},"error_x":{"color":"rgba(253,191,111,1)"},"line":{"color":"rgba(253,191,111,1)"},"frame":null},{"x":[14.4253959187119,13.2889594437547,10.7843904183293,11.3552346888775],"y":[15.1368414992242,12.1873998562284,13.2999768462921,10.3529397410905],"z":[1.81496155659233,-0.3728142071169,-0.865737731812759,-1.18694306702993],"text":["<b>ID: <\/b>TD11558_17_L1<br /><b>NGS ID: <\/b>P8304_129","<b>ID: <\/b>TD11558_17_L2<br /><b>NGS ID: <\/b>P8304_130","<b>ID: <\/b>TD11558_17_L3<br /><b>NGS ID: <\/b>P8304_131","<b>ID: <\/b>TD11558_17_L4<br /><b>NGS ID: <\/b>P8304_132"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"TD11558_17_L","marker":{"color":"rgba(255,127,0,1)","line":{"color":"rgba(255,127,0,1)"}},"textfont":{"color":"rgba(255,127,0,1)"},"error_y":{"color":"rgba(255,127,0,1)"},"error_x":{"color":"rgba(255,127,0,1)"},"line":{"color":"rgba(255,127,0,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<div id="htmlwidget-bb536d2c1ef9eb41f957" style="width:750px;height:500px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb536d2c1ef9eb41f957">{"x":{"visdat":{"2bc932a149be":["function () ","plotlyVisDat"]},"cur_data":"2bc932a149be","attrs":{"2bc932a149be":{"x":{},"y":{},"z":{},"text":{},"hoverinfo":"text","colors":["#A6CEE3","#1F78B4","#B2DF8A","#33A02C","#FB9A99","#E31A1C","#FDBF6F","#FF7F00"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","color":{},"inherit":true}},"layout":{"width":750,"height":500,"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"V1"},"yaxis":{"title":"V2"},"zaxis":{"title":"V3"}},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"data":[{"x":[-5.33185049177959,-7.92209817002156,-8.77692340480147],"y":[0.0432736817716184,-1.26280672685875,-1.86761681936745],"z":[1.04060988518825,-1.41087805672964,-2.80687594167858],"text":["<b>ID: <\/b>121T10571_121<br /><b>NGS ID: <\/b>P8304_117","<b>ID: <\/b>121T10571_123<br /><b>NGS ID: <\/b>P8304_119","<b>ID: <\/b>121T10571_124<br /><b>NGS ID: <\/b>P8304_120"],"hoverinfo":["text","text","text"],"type":"scatter3d","mode":"markers","name":"121T10571_12","marker":{"color":"rgba(166,206,227,1)","line":{"color":"rgba(166,206,227,1)"}},"textfont":{"color":"rgba(166,206,227,1)"},"error_y":{"color":"rgba(166,206,227,1)"},"error_x":{"color":"rgba(166,206,227,1)"},"line":{"color":"rgba(166,206,227,1)"},"frame":null},{"x":[-5.73550373147591,-6.21011122708704,-7.35383060771142,-6.59073194911667],"y":[-6.23950665019801,-6.50430598496082,-6.51161261887537,-5.34119076269499],"z":[7.24464218182632,7.38236724522226,6.0494637371315,5.38523664148418],"text":["<b>ID: <\/b>134_T6443_11_1<br /><b>NGS ID: <\/b>P8304_113","<b>ID: <\/b>134_T6443_11_2<br /><b>NGS ID: <\/b>P8304_114","<b>ID: <\/b>134_T6443_11_3<br /><b>NGS ID: <\/b>P8304_115","<b>ID: <\/b>134_T6443_11_4<br /><b>NGS ID: <\/b>P8304_116"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"134_T6443_11","marker":{"color":"rgba(31,120,180,1)","line":{"color":"rgba(31,120,180,1)"}},"textfont":{"color":"rgba(31,120,180,1)"},"error_y":{"color":"rgba(31,120,180,1)"},"error_x":{"color":"rgba(31,120,180,1)"},"line":{"color":"rgba(31,120,180,1)"},"frame":null},{"x":[-4.6497016412439,-5.10088962658455,-6.00012520521127,-4.41802453955813],"y":[3.09565456848034,1.18448065666745,2.63713128689337,0.792488532872201],"z":[1.84057242738463,1.06376484620365,0.0898534016981559,3.4308686704621],"text":["<b>ID: <\/b>153_ST132_131<br /><b>NGS ID: <\/b>P8304_101","<b>ID: <\/b>153_ST132_132<br /><b>NGS ID: <\/b>P8304_102","<b>ID: <\/b>153_ST132_133<br /><b>NGS ID: <\/b>P8304_103","<b>ID: <\/b>153_ST132_134<br /><b>NGS ID: <\/b>P8304_104"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"153_ST132_13","marker":{"color":"rgba(178,223,138,1)","line":{"color":"rgba(178,223,138,1)"}},"textfont":{"color":"rgba(178,223,138,1)"},"error_y":{"color":"rgba(178,223,138,1)"},"error_x":{"color":"rgba(178,223,138,1)"},"line":{"color":"rgba(178,223,138,1)"},"frame":null},{"x":[-5.88085854951221,-7.76790916625506,-6.25504507611664,-8.3764530117268],"y":[2.28585250238002,1.36384290506196,2.03080210880601,0.732589724202596],"z":[2.53910291233844,-0.247836766653928,1.897953832452,-0.233518938722922],"text":["<b>ID: <\/b>24_TD9169_081<br /><b>NGS ID: <\/b>P8304_109","<b>ID: <\/b>24_TD9169_082<br /><b>NGS ID: <\/b>P8304_110","<b>ID: <\/b>24_TD9169_083<br /><b>NGS ID: <\/b>P8304_111","<b>ID: <\/b>24_TD9169_084<br /><b>NGS ID: <\/b>P8304_112"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"24_TD9169_08","marker":{"color":"rgba(51,160,44,1)","line":{"color":"rgba(51,160,44,1)"}},"textfont":{"color":"rgba(51,160,44,1)"},"error_y":{"color":"rgba(51,160,44,1)"},"error_x":{"color":"rgba(51,160,44,1)"},"line":{"color":"rgba(51,160,44,1)"},"frame":null},{"x":[-3.88932422329194,-0.0729461302680156],"y":[-1.69996167204044,1.77387505239342],"z":[1.96344736048856,5.74550696017447],"text":["<b>ID: <\/b>29_T1942_083<br /><b>NGS ID: <\/b>P8304_123","<b>ID: <\/b>29_T1942_084<br /><b>NGS ID: <\/b>P8304_124"],"hoverinfo":["text","text"],"type":"scatter3d","mode":"markers","name":"29_T1942_08","marker":{"color":"rgba(251,154,153,1)","line":{"color":"rgba(251,154,153,1)"}},"textfont":{"color":"rgba(251,154,153,1)"},"error_y":{"color":"rgba(251,154,153,1)"},"error_x":{"color":"rgba(251,154,153,1)"},"line":{"color":"rgba(251,154,153,1)"},"frame":null},{"x":[-10.2163172144276,-10.596078285728,-10.2353954116357,-9.33007941422633],"y":[-0.490190092826988,-2.26662762461056,-0.333539418783384,-0.0554168358930101],"z":[-8.46229337166764,-8.5409366265751,-8.94003110723548,-8.17218218493106],"text":["<b>ID: <\/b>61_T1538_071<br /><b>NGS ID: <\/b>P8304_105","<b>ID: <\/b>61_T1538_072<br /><b>NGS ID: <\/b>P8304_106","<b>ID: <\/b>61_T1538_073<br /><b>NGS ID: <\/b>P8304_107","<b>ID: <\/b>61_T1538_074<br /><b>NGS ID: <\/b>P8304_108"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"61_T1538_07","marker":{"color":"rgba(227,26,28,1)","line":{"color":"rgba(227,26,28,1)"}},"textfont":{"color":"rgba(227,26,28,1)"},"error_y":{"color":"rgba(227,26,28,1)"},"error_x":{"color":"rgba(227,26,28,1)"},"line":{"color":"rgba(227,26,28,1)"},"frame":null},{"x":[21.8493946916054,22.7364624888557,22.8684179809813,23.401941446664],"y":[-5.14341595704935,-6.83851698747042,-14.3376040568602,-8.02483675387452],"z":[1.5998970735274,0.863612874314833,-7.37316041937378,-1.33865318696138],"text":["<b>ID: <\/b>TD11549_17_O1<br /><b>NGS ID: <\/b>P8304_125","<b>ID: <\/b>TD11549_17_O2<br /><b>NGS ID: <\/b>P8304_126","<b>ID: <\/b>TD11549_17_O3<br /><b>NGS ID: <\/b>P8304_127","<b>ID: <\/b>TD11549_17_O4<br /><b>NGS ID: <\/b>P8304_128"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"TD11549_17_O","marker":{"color":"rgba(253,191,111,1)","line":{"color":"rgba(253,191,111,1)"}},"textfont":{"color":"rgba(253,191,111,1)"},"error_y":{"color":"rgba(253,191,111,1)"},"error_x":{"color":"rgba(253,191,111,1)"},"line":{"color":"rgba(253,191,111,1)"},"frame":null},{"x":[14.4253959187119,13.2889594437547,10.7843904183293,11.3552346888775],"y":[15.1368414992242,12.1873998562284,13.2999768462921,10.3529397410905],"z":[1.81496155659233,-0.3728142071169,-0.865737731812759,-1.18694306702993],"text":["<b>ID: <\/b>TD11558_17_L1<br /><b>NGS ID: <\/b>P8304_129","<b>ID: <\/b>TD11558_17_L2<br /><b>NGS ID: <\/b>P8304_130","<b>ID: <\/b>TD11558_17_L3<br /><b>NGS ID: <\/b>P8304_131","<b>ID: <\/b>TD11558_17_L4<br /><b>NGS ID: <\/b>P8304_132"],"hoverinfo":["text","text","text","text"],"type":"scatter3d","mode":"markers","name":"TD11558_17_L","marker":{"color":"rgba(255,127,0,1)","line":{"color":"rgba(255,127,0,1)"}},"textfont":{"color":"rgba(255,127,0,1)"},"error_y":{"color":"rgba(255,127,0,1)"},"error_x":{"color":"rgba(255,127,0,1)"},"line":{"color":"rgba(255,127,0,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
 
 &lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [`cmdscale()`](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/cmdscale.html), [plotly](https://plot.ly/r/)
 
@@ -660,13 +779,10 @@ name: dge-2
 ## DataFrame with 1 row and 6 columns
 ##                         baseMean     log2FoldChange             lfcSE
 ##                        &lt;numeric&gt;          &lt;numeric&gt;         &lt;numeric&gt;
-## ENSG00000000003 242.307796723287 -0.932926089608558 0.114285150312647
-##                              stat               pvalue
-##                         &lt;numeric&gt;            &lt;numeric&gt;
-## ENSG00000000003 -8.16314356726468 3.26416150312236e-16
-##                                 padj
-##                            &lt;numeric&gt;
-## ENSG00000000003 1.36240610027518e-14
+## ENSG00000000003 242.307796723287 -0.932926089608558 0.114285150312515
+##                              stat              pvalue                 padj
+##                         &lt;numeric&gt;           &lt;numeric&gt;            &lt;numeric&gt;
+## ENSG00000000003 -8.16314356727411 3.2641615028674e-16 1.36240610016877e-14
 ```
 
 - Summary `summary()`
@@ -736,63 +852,6 @@ name: functional-analysis-2
 &lt;i class="fas fa-toolbox"&gt;&lt;/i&gt; [DAVID](https://david.ncifcrf.gov/), [clusterProfiler](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html), [ClueGO](http://apps.cytoscape.org/apps/cluego), [ErmineJ](https://erminej.msl.ubc.ca/), [pathview](https://bioconductor.org/packages/release/bioc/html/pathview.html)
 
 ---
-name: sc-1
-
-## Single cell RNA-Seq
-
-- Bulk RNA-Seq measures mean expression-level over many cells
-- Poor resolution for development, differentiation, heterogenous tissues
-- Identify cell types in a tissue
-- Temporal/spatial/conditional change in cellular state and composition
-
-
-.size-70[![](images/single-cell-scale.jpg)]
-
-- Zero-inflated data (~80% missing data)
-- Transcriptional bursting, drop-out
-- Low RNA, Poor capture efficiency
-- Amplification bias and background noise
-
-.citation[
-&lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; Svensson, Valentine, Roser Vento-Tormo, and Sarah A. Teichmann. "Exponential scaling of single-cell RNA-seq in the past decade." [Nature protocols 13.4 (2018): 599](https://www.nature.com/articles/nprot.2017.149)&lt;/span&gt;
-]
-
----
-name: sc-2
-
-## scRNA-Seq | Example
-
-.pull-left-50[
-.size-90[![](images/cnidaria.jpg)]
-]
-
-.pull-right-50[
-![](images/lineage.jpg)
-]
-
-.citation[
-&lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt;  Sebe-Pedros, Arnau, et al. "Cnidarian Cell Type Diversity and Regulation Revealed by Whole-Organism Single-Cell RNA-Seq." [Cell 173.6 (2018): 1520-1534](https://www.sciencedirect.com/science/article/pii/S0092867418305968)&lt;/span&gt;
-&lt;span style="display:block;"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt; Plass, Mireya, et al. "Cell type atlas and lineage tree of a whole complex animal by single-cell transcriptomics." [Science 360.6391 (2018): eaaq1723](http://science.sciencemag.org/content/360/6391/eaaq1723)&lt;/span&gt;
-]
-
----
-name: new-advances
-
-## New Advances
-
-- [Long read single molecule RNA-Seq](https://biotechnologyforbiofuels.biomedcentral.com/articles/10.1186/s13068-018-1167-z) (.medium[.altcol[Zuo *et al.*, 2018]])
-
-.size-40[![](images/pacbio.png)]
-
-- [Single-cell isoform RNA-Seq](https://www.biorxiv.org/content/early/2018/07/08/364950) (.medium[.altcol[Ishaan *et al.*, 2018]])
-
-.size-60[![](images/scisoform.png)]
-
-- [Single-cell lineage tracing](https://www.nature.com/articles/s41586-018-0414-6) (.medium[.altcol[Manno *et al.*, 2018]])
-
-.size-80[![](images/rnavelocity.jpg)]
-
----
 name: summary
 class: spaced
 
@@ -829,7 +888,7 @@ class: end-slide
 # Thank you! Questions?
 
 &lt;p style="text-align: left; font-size: small;"&gt;
-Built on : &lt;i class='fa fa-calendar' aria-hidden='true'&gt;&lt;/i&gt; 25-Oct-2018 at &lt;i class='fa fa-clock-o' aria-hidden='true'&gt;&lt;/i&gt; 17:34:39
+Built on : &lt;i class='fa fa-calendar' aria-hidden='true'&gt;&lt;/i&gt; 06-Jan-2019 at &lt;i class='fa fa-clock-o' aria-hidden='true'&gt;&lt;/i&gt; 21:11:12
 &lt;/p&gt;
 
 &lt;hr&gt;
@@ -849,11 +908,11 @@ class: spaced
 - 02 Map the reads to the reference genome using **Star**
 - 03 Assess the post-alignment quality using **QualiMap**
 - 04 Count the reads overlapping with genes using **featureCounts**
-- 05 Build a statistical model to find DE genes using **edgeR** from a prepared R script
+- 05 Find DE genes using **edgeR** in R
 
 **Bonus exercises**
 
-- 01 Functional annotation of DE genes using **GO/Reactome** databases
+- 01 Functional annotation of DE genes using **GO/Reactome/Kegg** databases
 - 02 Visualisation of RNA-seq BAM files using **IGV** genome browser
 - 03 RNA-Seq figures and plots using **R**
 - 04 De-novo transcriptome assembly using **Trinity**
@@ -861,7 +920,7 @@ class: spaced
 .large[
 **Data directory:** `/sw/share/compstore/courses/ngsintro/rnaseq/`
 
-**Work directory:** `/proj/g2018028/nobackup/&lt;user&gt;/rnaseq/`
+**Work directory:** `/proj/g2019XXX/nobackup/&lt;user&gt;/rnaseq/`
 ]
 
 ---
@@ -873,7 +932,7 @@ name: lab2
 
 - Your work directory
 
-.medium[`/proj/g2018028/nobackup/[user]/`]
+.medium[`/proj/g2019XXX/nobackup/[user]/`]
 .large[
 ```
 [user]/
