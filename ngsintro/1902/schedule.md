@@ -28,7 +28,7 @@ Room: Datorsal A6:003, BMC
 **Wednesday 6th**  
 Room: Trippelrummet, E10, ground floor  
 **09.00-11.00** [Lecture: Next Generation Sequencing Overview]() (Olga Vinnere Petterson)  
-**11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Olga Vinnere Petterson)  
+**11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Adam Ameur)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Anna Johansson)  
 **14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Anna Johansson + Payam Emami, Erik Fasterius, Ashfaq Ali)  
