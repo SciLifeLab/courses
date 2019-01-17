@@ -6,7 +6,7 @@ title:  'Introduction to Bioinformatics Using NGS Data - February 2019'
 
 # Introduction to Bioinformatics Using NGS Data
 
-Held in Uppsala  February 04 - 08, 2019.
+Held in Uppsala  February 04 - 08, 2019.  
 
 ## Important Links
 [Pre-course material](precourse)   
