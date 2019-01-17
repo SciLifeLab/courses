@@ -33,7 +33,7 @@ Room: Trippelrummet, E10, ground floor
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Anna Johansson)  
 **14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Anna Johansson + Payam Emami, Erik Fasterius, Ashfaq Ali)  
 
-**18:00-** Course dinner
+**18:00-** Course dinner  
 
 **Thursday 7th**  
 Room: Trippelrummet, E10, ground floor  
