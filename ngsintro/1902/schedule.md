@@ -18,7 +18,7 @@ Room: Trippelrummet, E10, ground floor
 **14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 
 **Tuesday 5th**  
-Room: Datorsal A6:003, BMC  
+Room: Trippelrummet, E10, ground floor  
 **09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
 **09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
