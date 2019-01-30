@@ -11,10 +11,10 @@ title:  'Schedule'
 **Monday 4th**  
 Room: Trippelrummet, E10, ground floor  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
-**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
+**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Anders Sjölander)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Martin Dahlö)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Anders Sjölander)  
 **14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 
 **Tuesday 5th**  
