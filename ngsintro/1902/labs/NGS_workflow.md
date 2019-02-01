@@ -336,7 +336,8 @@ There are several tools you can use to analyse your results, once you have your 
 ```bash
 module load vcftools/0.1.15
 
-vcftools --vcf <my_variants_filtered>.vcf --out <output_prefix> --remove-filtered-all --recode --recode-INFO-all
+vcftools --vcf <my_variants_filtered>.vcf --out <output_prefix> --remove-filtered-all --recode \
+--recode-INFO-all
 # --recode is used to create a new vcf file as output, otherwise only statistics are calculated.
 
 ```
