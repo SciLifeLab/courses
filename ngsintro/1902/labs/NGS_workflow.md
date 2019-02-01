@@ -37,8 +37,8 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A g2018028 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2018028_14
-# Remember to change to g2018028_15 on the 4th day of the course
+salloc -A snic2019-8-3 -t 04:00:00 -p core -n 5 --no-shell --reservation=snic2019-8-3_14
+# Remember to change to snic2019-8-3_15 on the 4th day of the course
 # We have reserved nodes during the course only
 ```
 
@@ -79,8 +79,8 @@ module load picard/2.10.3
 During this lab you should work in "your" folder under the course's nobackup folder, just like you have done during the previous labs. Start by creating a workspace for this exercise in your folder, and then move into it.
   
 ```bash
-mkdir /proj/g2018028/nobackup/<username>/ngsworkflow
-cd /proj/g2018028/nobackup/<username>/ngsworkflow
+mkdir /proj/snic2019-8-3/nobackup/<username>/ngsworkflow
+cd /proj/snic2019-8-3/nobackup/<username>/ngsworkflow
 ```
 
 ## Data for this lab
@@ -399,9 +399,9 @@ You will need the bam files of all 3 samples: HG00097, HG00100 and HG00101.
 
 ```bash
 # You can copy your recalibrated bam files (from the BQSR exercise above) like this:
-scp <username>@rackham.uppmax.uu.se:/proj/g2018028/nobackup/<username>/ngsworkflow/<recalibrated_bam>.ba* ./
+scp <username>@rackham.uppmax.uu.se:/proj/snic2019-8-3/nobackup/<username>/ngsworkflow/<recalibrated_bam>.ba* ./
 # And the filtered multi-sample vcf:
-scp <username>@rackham.uppmax.uu.se:/proj/g2018028/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
+scp <username>@rackham.uppmax.uu.se:/proj/snic2019-8-3/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
 ```
 
 If you are missing some of the bam files or the vcf you can do this instead:
