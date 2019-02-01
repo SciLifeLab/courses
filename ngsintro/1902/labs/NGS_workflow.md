@@ -37,9 +37,8 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A snic2019-8-3 -t 04:00:00 -p core -n 5 --no-shell --reservation=snic2019-8-3_14
-# Remember to change to snic2019-8-3_15 on the 4th day of the course
-# We have reserved nodes during the course only
+salloc -A snic2019-8-3 -t 04:00:00 -p core -n 5 --no-shell --reservation=snic2019-8-3_6 -M snowy
+# Note the -M snowy at the end. We have gotten resources on another cluster called snowy so we have to tell slurm that we want to use the reservation there instead.
 ```
 
 Once your job allocation has been granted (should not take long) you can connect to the node using ssh.
