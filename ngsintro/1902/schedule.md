@@ -11,19 +11,19 @@ title:  'Schedule'
 **Monday 4th**  
 Room: Trippelrummet, E10, ground floor  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
-**09.15-10.00** [Lecture: Introduction to Linux]() (Anders Sjölander)  
-**10.00-12.00** [Exercise: Introduction to Linux]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Anders Sjölander)  
+**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Anders Sjölander)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Anders Sjölander)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 
 **Tuesday 5th**  
 Room: Trippelrummet, E10, ground floor  
-**09.00-09.30** [Lecture: File types in bioinformatics]() (Martin Dahlö)  
-**09.30-12.00** [Exercise: File types in bioinformatics]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13:00-14:00** [Lecture: Advanced Linux usage]() (Martin Dahlö)  
-**14:00-17:00** [Exercise: Advanced Linux usage]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Martin Dahlö)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
 
 **Wednesday 6th**  
 Room: Trippelrummet, E10, ground floor  
