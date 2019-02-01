@@ -298,8 +298,6 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T VariantFiltration \
 --filterExpression "QD < 2.0" --filterName QDfilter \
 --filterExpression "MQ < 40.0" --filterName MQfilter \
 --filterExpression "FS > 60.0" --filterName FSfilter \
---filterExpression "MQRankSum < -12.5" --filterName MQRankSumfilter \
---filterExpression "ReadPosRankSum < -8.0" --filterName ReadPosRankSumfilter
 
 # Each filterName option has to immediately follow the filterExpression it matches.
 # Do not worry about the warnings here, but if you have time, try to find out why you get these warnings!
@@ -314,7 +312,6 @@ java -Xmx16g -jar $GATK_HOME/GenomeAnalysisTK.jar -T VariantFiltration \
 -R human_g1k_v37_chr2.fasta -V <raw_indels>.vcf -o <filtered_indels>.vcf \
 --filterExpression "QD < 2.0" --filterName QDfilter \
 --filterExpression "FS > 200.0" --filterName FSfilter \
---filterExpression "ReadPosRankSum < -20.0" --filterName ReadPosRankSumfilter
 ```
 
 ### Merge SNPs and Indels
