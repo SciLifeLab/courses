@@ -40,12 +40,12 @@ Room: Trippelrummet, E10, ground floor
 **09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
-**14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](),[pdf]()) (Roy Francis)  
-**14.15-17:00** [Lecture+Exercise:  RNA sequencing, transcriptome and expression quantification part I]() (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
+**14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](slides/rnaseq/talk.html), [pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
+**14.15-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](labs/rnaseq/lab.html), [pdf](labs/rnaseq/lab.pdf)) (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
 
 **Friday 8th**  
 Room: Trippelrummet, E10, ground floor  
-**09:00-12:00** [Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part II]() (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali, Erik Fasterius)  
+**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part ([html](labs/rnaseq/lab.html), [pdf](labs/rnaseq/lab.pdf)) (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali, Erik Fasterius)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Björn Nystedt)    
 **13:20-15.00** Parellel Session 1: Lecture+Exercise: RNA sequencing, transcriptome and expression quantification, continued (Roy Francis + Payam Emami, Paulo Czernawski, Erik Fasterius)  
