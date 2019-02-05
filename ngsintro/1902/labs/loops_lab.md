@@ -312,12 +312,12 @@ for file in $(ls $1/*.sam);
 do
 
     # print a message to the screen so that the user knows what's happening.
-    # ${file%.*} means that it will take the file name and remove everything
-    # after the last punctuation in the name. 
-    echo "Converting $file to ${file%.*}.bam"
+    # $(basename $file .sam) means that it will take the file name and remove .sam
+    # at the end of the name. 
+    echo "Converting $file to $(basename $file .sam).bam"
   
     # do the actual converting
-    samtools view -bS $file > ${file%.*}.bam
+    samtools view -bS $file > $(basename $file .sam).bam
 done
 {% endhighlight %}
 </details> 
@@ -392,18 +392,18 @@ do
     # check if the intended output file doesn't already exists.
     # ${file%.*} means that it will take the file name and remove everything
     # after the last punctuation in the name. 
-    if [ ! -f ${file%.*}.bam ];
+    if [ ! -f $(basename $file .sam).bam ];
     then
 
         # print a message to the screen so that the user knows what's happening.
-        echo "Converting $file to ${file%.*}.bam"
+        echo "Converting $file to $(basename $file .sam).bam"
       
         # do the actual converting
-        samtools view -bS $file > ${file%.*}.bam
+        samtools view -bS $file > $(basename $file .sam).bam
         
     else
         # inform the user that the conversion is skipped
-        echo "Skipping conversion of $file as ${file%.*}.bam already exist"
+        echo "Skipping conversion of $file as $(basename $file .sam).bam already exist"
     fi
 done
 {% endhighlight %}
@@ -539,7 +539,7 @@ do
     file_basename=$(basename $file)
 
     # save the file name without the file ending for convenience
-    file_prefix=${file_basename%.*}
+    file_prefix=$(basename $file .fastq)
 
     # print a temporary script file that will be submitted to slurm
     echo "#!/bin/bash -l
