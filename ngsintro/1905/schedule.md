@@ -1,0 +1,52 @@
+---
+layout: default
+title:  'Schedule'
+---
+
+#### Click the heading of a topic to see the lecture slides or lab instructions. Slides are added as the course progresses.
+
+
+
+
+**Monday 4th**  
+Room: Trippelrummet, E10, ground floor  
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
+**09.15-10.00** [Lecture: Introduction to Linux]() (Martin Dahlö)  
+**10.00-12.00** [Exercise: Introduction to Linux]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+**12.00-13.00** Lunch at BMC restaurant  
+**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Martin Dahlö)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Martin Dahlö + Anders Sjölander, Jacques Dainat)  
+
+**Tuesday 5th**  
+Room: Trippelrummet, E10, ground floor  
+**09.00-09.30** [Lecture: File types in bioinformatics]() (Anders Sjölander)  
+**09.30-12.00** [Exercise: File types in bioinformatics]() (Anders Sjölander + Martin Dahlö, Jacques Dainat)  
+**12.00-13.00** Lunch at BMC restaurant  
+**13:00-14:00** [Lecture: Advanced Linux usage]() (Anders Sjölander)  
+**14:00-17:00** [Exercise: Advanced Linux usage]() (Anders Sjölander + Martin Dahlö, Jacques Dainat)  
+
+**Wednesday 6th**  
+Room: Trippelrummet, E10, ground floor  
+**09.00-11.00** [Lecture: Next Generation Sequencing Overview]() (Olga Vinnere Petterson)  
+**11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Adam Ameur)  
+**12.00-13.00** Lunch at BMC restaurant  
+**13.00-14.00** [Lecture: NGS workflow]() (Anna Johansson)  
+**14.00-17.00** [Exercise: NGS workflow part I]() (Anna Johansson + Payam Emami, Erik Fasterius, Ashfaq Ali)  
+
+**18:00-** Course dinner  
+
+**Thursday 7th**  
+Room: Trippelrummet, E10, ground floor  
+**09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
+**12.00-13.00** Lunch at BMC restaurant  
+**13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
+**14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](), [pdf]() (Roy Francis)  
+**14.15-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](), [pdf]() (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
+
+**Friday 8th**  
+Room: Trippelrummet, E10, ground floor  
+**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part ([html](), [pdf]() (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali, Erik Fasterius)  
+**12.00-13.00** Lunch at BMC restaurant  
+**13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Björn Nystedt)    
+**13:20-15.00** Parellel Session 1: Lecture+Exercise: RNA sequencing, transcriptome and expression quantification, continued (Roy Francis + Payam Emami, Paulo Czernawski, Erik Fasterius)  
+**13:20-15.00** Parellel Session 2: Open discussions (Olga Vinnere Pettersson, Sebastian DiLorenzo, Manfred Grabherr, Henrik Lantz, Anna Johansson)  
