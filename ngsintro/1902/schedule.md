@@ -31,13 +31,13 @@ Room: Trippelrummet, E10, ground floor
 **11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Adam Ameur)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14.00** [Lecture: NGS workflow]() (Anna Johansson)  
-**14.00-17.00** [Exercise: NGS workflow part I]() (Anna Johansson + Payam Emami, Erik Fasterius, Ashfaq Ali)  
+**14.00-17.00** [Exercise: NGS workflow part I](labs/NGS_workflow) (Anna Johansson + Payam Emami, Erik Fasterius, Ashfaq Ali)  
 
 **18:00-** Course dinner  
 
 **Thursday 7th**  
 Room: Trippelrummet, E10, ground floor  
-**09:00-12.00** [Exercise: NGS workflow part II]() (Anna Johansson + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
+**09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Anna Johansson + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
 **14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](slides/rnaseq/talk.html), [pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
