@@ -39,7 +39,7 @@ Room: Trippelrummet, E10, ground floor
 Room: Trippelrummet, E10, ground floor  
 **09:00-12.00** [Exercise: NGS workflow part II](labs/NGS_workflow) (Anna Johansson + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14:00** [Lecture: Data management]() (Niclas Jareborg)  
+**13.00-14:00** [Lecture: Data management](slides/2019-02-07_Data-Management_for_NGS_course.pdf) (Niclas Jareborg)  
 **14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](slides/rnaseq/talk.html), [pdf](slides/rnaseq/talk.pdf)) (Roy Francis)  
 **14.15-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](labs/rnaseq/lab.html), [pdf](labs/rnaseq/lab.pdf)) (Roy Francis + Payam Emami, Paulo Czernawski, Ashfaq Ali)  
 
