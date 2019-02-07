@@ -37,7 +37,7 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A snic2019-8-3 -t 04:00:00 -p core -n 5 --no-shell --reservation=snic2019-8-3_6 -M snowy
+salloc -A snic2019-8-3 -t 04:00:00 -p core -n 5 --no-shell --reservation=snic2019-8-3_7 -M snowy
 # Note the -M snowy at the end. We have gotten resources on another cluster called snowy so we have to tell slurm that we want to use the reservation there instead.
 ```
 
