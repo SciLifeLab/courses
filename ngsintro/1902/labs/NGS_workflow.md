@@ -406,7 +406,7 @@ scp <username>@rackham.uppmax.uu.se:/proj/snic2019-8-3/nobackup/<username>/ngswo
 If you are missing some of the bam files or the vcf you can do this instead:
 ```bash
 # Copy the files from the course directory:
-scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/bam/<sample>.recal.ba* ./
+scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/bam/<sample>.dedup.recal.ba* ./
 scp <username>@rackham.uppmax.uu.se:/sw/share/compstore/courses/ngsintro/reseq/data/vcf/my_variants_filtered.vcf ./
 ```
 
