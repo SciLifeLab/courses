@@ -40,12 +40,12 @@ Room:
 **09:00-12.00** [Exercise: NGS workflow part II]() ()  
 **12.00-13.00** Lunch at   
 **13.00-14:00** [Lecture: Data management]() ()  
-**14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](), [pdf]() ()  
-**14.15-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](), [pdf]() ()  
+**14.00-14:15** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](/slides/rnaseq/presentation.html), [pdf](/slides/rnaseq/presentation.pdf)) (Viktor Jonsson)  
+**14.15-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson)  
 
 **Friday 24th**  
 Room:  
-**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part ([html](), [pdf]() ()  
+**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson)  
 **12.00-13.00** Lunch at   
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() ()    
 **13:20-15.00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ()    
