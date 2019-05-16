@@ -59,3 +59,6 @@ title:  'Welcome'
 
 ### Single cell RNA sequencing analysis
 [2017 October - Uppsala](scrnaseq/1710/)
+
+### Misc. courses
+[2019 May - RNA-seq course at SLU Uppsala](misc/rnaseqslu1905/)
