@@ -33,7 +33,7 @@ Room: Nils Wedel
 **13.00-14.00** [Lecture: NGS workflow]() (Nina Norgren)  
 **14.00-17.00** [Exercise: NGS workflow part I]() (Nina Norgren, Katarina Truve)  
 
-**18:00-** Course dinner  
+**18:00-** Course dinner at Taverna Aversa, Tredje långgatan “Auktionshuset” close to Linnégatan.  
 
 **Thursday 23rd**  
 Room: 9-9:45 : Birgit Thilander (Medicinaregatan 3, Academicum, above Arvid Carlson lecture hall)  
