@@ -45,7 +45,7 @@ Room:
 
 **Friday 24th**  
 Room:  
-**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification part ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson)  
+**09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson)  
 **12.00-13.00** Lunch at   
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Magnus Alm Rosenblad)    
 **13:20-15.00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification (Viktor Jonsson)    
