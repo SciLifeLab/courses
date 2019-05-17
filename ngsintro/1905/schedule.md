@@ -9,7 +9,7 @@ title:  'Schedule'
 
 
 **Monday 20th**  
-Room: Nils Wedel  
+Room: Nils Wedel, Medicinaregatan 9b (changed from Folke Andreasson, Medicinaregatan 11)  
 **09.30-10.00** Fika  
 **10.00-10.15** [Registration and Welcome, presentation of SciLifeLab]() (Magnus Alm Rosenblad)  
 **10.15-11.00** [Lecture: Introduction to Linux]() (Martin Dahlö)  
