@@ -28,18 +28,17 @@ Room: Nils Wedel
 
 **Wednesday 22nd**  
 Room: Nils Wedel  
-**09.00-11.00** [Lecture: Next Generation Sequencing Overview]() (Nina Norgren)  
-**11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Nina Norgren)  
+**09.00-10.00** [Lecture: Next Generation Sequencing Overview]() (Nina Norgren)  
+**10.00-11.00** [Lecture: NGS workflow]() (Nina Norgren)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
-**13.00-14.00** [Lecture: NGS workflow]() (Nina Norgren)  
-**14.00-17.00** [Exercise: NGS workflow part I]() (Nina Norgren, Katarina Truve)  
+**13.00-17.00** [Exercise: NGS workflow]() (Nina Norgren, Katarina Truve)  
 
 **18:00-** Course dinner at Taverna Aversa, Tredje långgatan “Auktionshuset” close to Linnégatan.  
 
 **Thursday 23rd**  
 Room: 9-9:45 : Birgit Thilander (Medicinaregatan 3, Academicum, above Arvid Carlson lecture hall)  
 Room: 10-12:00 : Arvid Carlson lecture hall (Medicinaregatan 3, Academicum)  
-**09:00-09.45** [Exercise: NGS workflow part II]() (Nina Norgren, Dag Ahrén)  
+**09:00-09.45** [Exercise: NGS workflow part]() (Nina Norgren, Dag Ahrén)  
 **10:00-12.00** [Lecture: BiG Talk, NGS]() (Simon Andrews, Room: Arvid Carlsson lecture hall)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](/slides/rnaseq/presentation.html), [pdf](/slides/rnaseq/presentation.pdf)) (Dag Ahrén)  
