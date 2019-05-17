@@ -30,6 +30,7 @@ Room: Nils Wedel
 Room: Nils Wedel  
 **09.00-10.00** [Lecture: Next Generation Sequencing Overview]() (Nina Norgren)  
 **10.00-11.00** [Lecture: NGS workflow]() (Nina Norgren)  
+**11.00-12.00** [Exercise: NGS workflow]() (Nina Norgren, Katarina Truve)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
 **13.00-17.00** [Exercise: NGS workflow]() (Nina Norgren, Katarina Truve)  
 
