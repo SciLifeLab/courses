@@ -12,19 +12,19 @@ title:  'Schedule'
 Room: Nils Wedel, Medicinaregatan 9b (changed from Folke Andreasson, Medicinaregatan 11)  
 **09.30-10.00** Fika  
 **10.00-10.15** [Registration and Welcome, presentation of SciLifeLab]() (Magnus Alm Rosenblad)  
-**10.15-11.00** [Lecture: Introduction to Linux]() (Martin Dahlö)  
-**11.00-12.00** [Exercise: Introduction to Linux]() (Martin Dahlö, Magnus Alm Rosenblad)  
+**10.15-11.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
+**11.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
-**13.00-14.00** [Lecture: Introduction to UPPMAX]() (Martin Dahlö)  
-**14.00-17.00** [Exercise: Introduction to UPPMAX]() (Martin Dahlö, Magnus Alm Rosenblad)  
+**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Martin Dahlö)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Martin Dahlö, Magnus Alm Rosenblad)  
 
 **Tuesday 21st**  
 Room: Nils Wedel  
-**09.00-09.30** [Lecture: File types in bioinformatics]() (Martin Dahlö)  
-**09.30-12.00** [Exercise: File types in bioinformatics]() (Martin Dahlö, Magnus Alm Rosenblad)  
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Martin Dahlö)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Martin Dahlö, Magnus Alm Rosenblad)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
-**13:00-14:00** [Lecture: Advanced Linux usage]() (Martin Dahlö)  
-**14:00-17:00** [Exercise: Advanced Linux usage]() (Martin Dahlö, Magnus Alm Rosenblad)  
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Martin Dahlö)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Martin Dahlö, Magnus Alm Rosenblad)  
 
 **Wednesday 22nd**  
 Room: Nils Wedel  
