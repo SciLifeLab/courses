@@ -44,7 +44,7 @@ Room: 10-12:00 : Arvid Carlson lecture hall (Medicinaregatan 3, Academicum)
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](/slides/rnaseq/presentation.html), [pdf](/slides/rnaseq/presentation.pdf)) (Dag Ahrén)  
 **14.00-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson, Dag Ahrén)  
-
+ 
 **Friday 24th**  
 Room: Nils Wedel  
 **09:00-12:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson, Dag Ahrén)  
