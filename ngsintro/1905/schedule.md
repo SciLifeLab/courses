@@ -52,4 +52,4 @@ Room: Nils Wedel
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Magnus Alm Rosenblad)    
 **13:20-15.00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification (Viktor Jonsson, Dag Ahrén) 
 
-[Report from Simon Andrews](/files/s_andrews_scilifelab_2019.pdf)
+[Report from Simon Andrews](/files/validating_knockout.html)
