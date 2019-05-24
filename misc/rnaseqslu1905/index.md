@@ -6,7 +6,7 @@ title:  'RNASeq course at SLU - May 2019'
 
 # RNASeq course at SLU
 
-Held at SLU Uppsala May 29th - 31, 2019.  
+Held at SLU Uppsala May 29th + June 3rd-4th, 2019.  
 
 ## Important Links
 [Pre-course material](precourse)   
