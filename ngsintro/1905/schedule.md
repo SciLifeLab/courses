@@ -40,7 +40,7 @@ Room: Nils Wedel
 Room: 9-9:45 : Birgit Thilander (Medicinaregatan 3, Academicum, above Arvid Carlson lecture hall)  
 Room: 10-12:00 : Arvid Carlson lecture hall (Medicinaregatan 3, Academicum)  
 **09:00-09.45** [Exercise: NGS workflow](labs/NGS_workflow) (Nina Norgren, Dag Ahrén)  
-**10:00-12.00** [Lecture: BiG Talk, NGS](slides/s_andrews_scilifelab_2019.pdf) [SciLifeLab Youtube Channel](https://www.youtube.com/channel/UCfWQHAK8UW0mPghV8R-Jqzg) (Simon Andrews, Room: Arvid Carlsson lecture hall)  
+**10:00-12.00** [Lecture: BiG Talk, NGS](slides/s_andrews_scilifelab_2019.pdf)[SciLifeLab Youtube Channel](https://www.youtube.com/channel/UCfWQHAK8UW0mPghV8R-Jqzg) (Simon Andrews, Room: Arvid Carlsson lecture hall)  
 **12.00-13.00** Lunch at Anatomen cafeteria, Medicinaregatan 3  
 **13.00-14:00** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](/slides/rnaseq/presentation.html), [pdf](/slides/rnaseq/presentation.pdf)) (Dag Ahrén)  
 **14.00-17:00** Lecture+Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Viktor Jonsson, Dag Ahrén)  
