@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="NBIS | 17-May-2019" />
+<meta name="author" content="NBIS | 29-May-2019" />
 
 
 <title>RNA-Seq Lab</title>
@@ -345,7 +345,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">RNA-Seq Lab</h1>
 <h3 class="subtitle">Introduction to Bioinformatics</h3>
-<h4 class="author"><b>NBIS</b> | 17-May-2019</h4>
+<h4 class="author"><b>NBIS</b> | 29-May-2019</h4>
 
 </div>
 
@@ -602,10 +602,10 @@ rnaseq/
   |   +-- mouse_chr11/
   +-- scripts/</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717103638" aria-expanded="false" aria-controls="acc2019051717103638">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915551829" aria-expanded="false" aria-controls="acc2019052915551829">
 </button>
 </p>
-<div id="acc2019051717103638" class="collapse">
+<div id="acc2019052915551829" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -768,10 +768,10 @@ sh
 </div>
 <p>Check what you have in your directory.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717103626" aria-expanded="false" aria-controls="acc2019051717103626">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915554113" aria-expanded="false" aria-controls="acc2019052915554113">
 </button>
 </p>
-<div id="acc2019051717103626" class="collapse">
+<div id="acc2019052915554113" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -795,17 +795,17 @@ drwxrwsr-x 2 user g201XXXX 4.0K Sep  4 19:32 mouse_chr11
 <h3><span class="header-section-number">2.3.2</span> Build index</h3>
 <p>Move into the <code>reference</code> directory if not already there. Load module STAR version 2.5.2b. Remember to load <code>bioinfo-tools</code> if you haven’t done so already.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717109195" aria-expanded="false" aria-controls="acc2019051717109195">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915556955" aria-expanded="false" aria-controls="acc2019052915556955">
 </button>
 </p>
-<div id="acc2019051717109195" class="collapse">
+<div id="acc2019052915556955" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.5.2b</code></pre></div>
+<span class="ex">module</span> load star/2.7.0e</code></pre></div>
 </div>
 </div>
 </div>
@@ -819,7 +819,7 @@ sh
 
 <span class="co"># load module</span>
 <span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.5.2b
+<span class="ex">module</span> load star/2.7.0e
 
 <span class="ex">star</span> \
 --runMode genomeGenerate \
@@ -838,10 +838,10 @@ sh
 </div>
 <p>Once the indexing is complete, move into the <code>mouse_chr11</code> directory and make sure you have all the files.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717104489" aria-expanded="false" aria-controls="acc2019051717104489">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915559335" aria-expanded="false" aria-controls="acc2019052915559335">
 </button>
 </p>
-<div id="acc2019051717104489" class="collapse">
+<div id="acc2019052915559335" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -876,10 +876,10 @@ output
 <p>You should be standing here to run this:</p>
 <pre><code>/proj/g2019007/nobackup/[user]/rnaseq/reference</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717109747" aria-expanded="false" aria-controls="acc2019051717109747">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915551282" aria-expanded="false" aria-controls="acc2019052915551282">
 </button>
 </p>
-<div id="acc2019051717109747" class="collapse">
+<div id="acc2019052915551282" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -933,10 +933,10 @@ sh
 <p>But, we will generalise the above script to be used as a bash script to read any two input files and to automatically create the output filename.</p>
 <p><i class="fas fa-clipboard-list"></i> Now create a new bash script file named <code>star_align.sh</code> in your <code>scripts</code> directory and add the script below to it.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717103370" aria-expanded="false" aria-controls="acc2019051717103370">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915558679" aria-expanded="false" aria-controls="acc2019052915558679">
 </button>
 </p>
-<div id="acc2019051717103370" class="collapse">
+<div id="acc2019052915558679" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -945,7 +945,7 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.5.2b
+<span class="ex">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
 <span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1##</span>*/<span class="va">}</span><span class="st">&quot;</span>
@@ -976,10 +976,10 @@ sh
 <p><strong>Optional</strong></p>
 <p>Try to create a new bash loop script (<code>star_align_batch.sh</code>) to iterate over all fastq files in the directory and run the mapping using the <code>star_align.sh</code> script. Note that there is a bit of a tricky issue here. You need to use two fastq files (<code>_1</code> and <code>_2</code>) per run rather than one file.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-optional collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717109678" aria-expanded="false" aria-controls="acc2019051717109678">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-optional collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915559118" aria-expanded="false" aria-controls="acc2019052915559118">
 </button>
 </p>
-<div id="acc2019051717109678" class="collapse">
+<div id="acc2019052915559118" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1043,10 +1043,10 @@ SRR3222409.2149741      163     1       3199933 255     101M    =       3200069 
 <p>The <code>Log.final.out</code> file gives a summary of the mapping run. This file is used by MultiQC later to collect mapping statistics.</p>
 <p><i class="fas fa-clipboard-list"></i> Inspect one of the mapping log files to identify the number of uniquely mapped reads and multi-mapped reads.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717103355" aria-expanded="false" aria-controls="acc2019051717103355">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915556707" aria-expanded="false" aria-controls="acc2019052915556707">
 </button>
 </p>
-<div id="acc2019051717103355" class="collapse">
+<div id="acc2019052915556707" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1105,10 +1105,10 @@ sh
 <p>Next, we need to index these BAM files. Indexing creates <code>.bam.bai</code> files which are required by many downstream programs to quickly and efficiently locate reads anywhere in the BAM file.</p>
 <p><i class="fas fa-clipboard-list"></i> Index all BAM files.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717100329" aria-expanded="false" aria-controls="acc2019051717100329">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555776" aria-expanded="false" aria-controls="acc2019052915555776">
 </button>
 </p>
-<div id="acc2019051717100329" class="collapse">
+<div id="acc2019052915555776" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1181,10 +1181,10 @@ sh
 <p>The line <code>prefix=&quot;${1/.bam/}&quot;</code> is used to remove <code>.bam</code> from the input filename and create a prefix which will be used to label output. The <code>export DISPLAY=&quot;&quot;</code> is used to run JAVA application in headless mode or else throws an error about X11 display. The last part <code>&gt;&amp; &quot;${prefix}-qualimap.log&quot;</code> saves the <strong>standard-out</strong> as a log file.</p>
 <p><i class="fas fa-clipboard-list"></i> create a new bash loop script named <code>qualimap_batch.sh</code> with a bash loop to run the qualimap script over all BAM files. The loop should look like below. Alternatively, you can also simply run the script below directly on the command line.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717105900" aria-expanded="false" aria-controls="acc2019051717105900">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915557021" aria-expanded="false" aria-controls="acc2019052915557021">
 </button>
 </p>
-<div id="acc2019051717105900" class="collapse">
+<div id="acc2019052915557021" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1200,10 +1200,10 @@ sh
 </div>
 <p>Run the loop script <code>qualimap_batch.sh</code> in the directory <code>4_qualimap</code>.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717105108" aria-expanded="false" aria-controls="acc2019051717105108">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555154" aria-expanded="false" aria-controls="acc2019052915555154">
 </button>
 </p>
-<div id="acc2019051717105108" class="collapse">
+<div id="acc2019052915555154" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1257,10 +1257,10 @@ sh
 <p>We could run featureCounts on each BAM file, produce a text output for each sample and combine the output. But the easier way is to provide a list of all BAM files and featureCounts will combine counts for all samples into one text file.</p>
 <p>Below is the script that we will use:</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717101077" aria-expanded="false" aria-controls="acc2019051717101077">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555458" aria-expanded="false" aria-controls="acc2019052915555458">
 </button>
 </p>
-<div id="acc2019051717101077" class="collapse">
+<div id="acc2019052915555458" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1290,10 +1290,10 @@ sh
 <p>You should be standing here to run this:</p>
 <pre><code>/proj/g2019007/nobackup/[user]/rnaseq/5_dge</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717102742" aria-expanded="false" aria-controls="acc2019051717102742">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915553008" aria-expanded="false" aria-controls="acc2019052915553008">
 </button>
 </p>
-<div id="acc2019051717102742" class="collapse">
+<div id="acc2019052915553008" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1320,10 +1320,10 @@ output
 <p><i class="fas fa-comments"></i> Inspect the files and try to make sense of them.</p>
 <p><i class="fas fa-exclamation-circle"></i> If you are running out of time or were unable to run featureCounts, you can copy the count table file <code>counts.txt</code> and it’s summary <code>counts.txt.summary</code> located here: <code>/sw/courses/ngsintro/rnaseq/main/5_dge/</code>.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717102324" aria-expanded="false" aria-controls="acc2019051717102324">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915553038" aria-expanded="false" aria-controls="acc2019052915553038">
 </button>
 </p>
-<div id="acc2019051717102324" class="collapse">
+<div id="acc2019052915553038" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1848,10 +1848,10 @@ sh
 <p><i class="fas fa-comments"></i> How many <strong>“genes”</strong> did Trinity assemble? How many transcripts? How large is the assembly? (Number of bases) What is N50?</p>
 <p><i class="fas fa-clipboard-list"></i> Filter out sequences shorter than 1000 nucleotides. (<i class="fas fa-lightbulb"></i> Do a web search for appropriate tools. Someone else must have had the exact same problem. Count the number of sequences again)</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019051717103519" aria-expanded="false" aria-controls="acc2019051717103519">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915558179" aria-expanded="false" aria-controls="acc2019052915558179">
 </button>
 </p>
-<div id="acc2019051717103519" class="collapse">
+<div id="acc2019052915558179" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1900,7 +1900,7 @@ sh
 
 <span class="co"># load modules</span>
 <span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.5.2b
+<span class="ex">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
 <span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>_*<span class="va">/}</span><span class="st">&quot;</span>
@@ -1930,7 +1930,7 @@ sh
 
 <span class="co"># load modules</span>
 <span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.5.2b
+<span class="ex">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
 <span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>_*<span class="va">/}</span><span class="st">&quot;</span>
@@ -2009,25 +2009,34 @@ sh
 ## [1] stats     datasets  grDevices utils     graphics  methods   base     
 ## 
 ## other attached packages:
-## [1] kableExtra_1.1.0 dplyr_0.8.0.1    tidyr_0.8.3      stringr_1.4.0   
-## [5] ggplot2_3.1.1    captioner_2.2.3  bookdown_0.9     knitr_1.22      
+##  [1] kableExtra_1.1.0  dplyr_0.8.0.1     tidyr_0.8.3      
+##  [4] stringr_1.4.0     captioner_2.2.3   bookdown_0.9     
+##  [7] knitr_1.22        rsconnect_0.8.13  showtext_0.6     
+## [10] showtextdb_2.0    sysfonts_0.8      ggplot2_3.1.1    
+## [13] png_0.1-7         shinyAce_0.3.3    shinythemes_1.1.2
+## [16] shiny_1.3.2      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.1        pillar_1.3.1      compiler_3.5.2   
-##  [4] plyr_1.8.4        tools_3.5.2       digest_0.6.18    
-##  [7] viridisLite_0.3.0 evaluate_0.13     tibble_2.1.1     
-## [10] gtable_0.3.0      pkgconfig_2.0.2   rlang_0.3.4      
-## [13] rstudioapi_0.10   yaml_2.2.0        xfun_0.6         
-## [16] xml2_1.2.0        httr_1.4.0        withr_2.1.2      
-## [19] hms_0.4.2         webshot_0.5.1     grid_3.5.2       
-## [22] tidyselect_0.2.5  glue_1.3.1        R6_2.4.0         
-## [25] rmarkdown_1.12    purrr_0.3.2       readr_1.3.1      
-## [28] magrittr_1.5      scales_1.0.0      htmltools_0.3.6  
-## [31] rvest_0.3.3       assertthat_0.2.1  colorspace_1.4-1 
-## [34] stringi_1.4.3     lazyeval_0.2.2    munsell_0.5.0    
-## [37] crayon_1.3.4</code></pre>
+##  [1] tidyselect_0.2.5   xfun_0.6           purrr_0.3.2       
+##  [4] reshape2_1.4.3     colorspace_1.4-1   viridisLite_0.3.0 
+##  [7] htmltools_0.3.6    yaml_2.2.0         rlang_0.3.4       
+## [10] later_0.8.0        pillar_1.3.1       glue_1.3.1        
+## [13] withr_2.1.2        plyr_1.8.4         munsell_0.5.0     
+## [16] gtable_0.3.0       rvest_0.3.3        evaluate_0.13     
+## [19] labeling_0.3       httpuv_1.5.1       curl_3.3          
+## [22] Rcpp_1.0.1         readr_1.3.1        xtable_1.8-3      
+## [25] openssl_1.3        promises_1.0.1     scales_1.0.0      
+## [28] BiocManager_1.30.4 webshot_0.5.1      jsonlite_1.6      
+## [31] mime_0.6           hms_0.4.2          askpass_1.1       
+## [34] digest_0.6.18      packrat_0.5.0      stringi_1.4.3     
+## [37] grid_3.5.2         tools_3.5.2        bitops_1.0-6      
+## [40] magrittr_1.5       lazyeval_0.2.2     RCurl_1.95-4.12   
+## [43] tibble_2.1.1       crayon_1.3.4       pkgconfig_2.0.2   
+## [46] xml2_1.2.0         httr_1.4.0         assertthat_0.2.1  
+## [49] rmarkdown_1.12     rstudioapi_0.10    R6_2.4.0          
+## [52] compiler_3.5.2</code></pre>
 <p style="text-align: left; font-size: small;">
-Built on: <i class="fa fa-calendar" aria-hidden="true"></i> 17-May-2019 at <i class="fa fa-clock-o" aria-hidden="true"></i> 17:40:10.
+Built on: <i class="fa fa-calendar" aria-hidden="true"></i> 29-May-2019 at <i class="fa fa-clock-o" aria-hidden="true"></i> 15:12:55.
 </p>
 <hr/>
 <div>
