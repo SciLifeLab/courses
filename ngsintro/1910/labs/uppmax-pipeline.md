@@ -37,8 +37,8 @@ Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
  _   _ ____  ____  __  __    _    __  __
 | | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    rackham4
 | | | | |_) | |_) | |\/| | / _ \   \  /    | User:      dahlo
-| |_| |  __/|  __/| |  | |/ ___ \  /  \    | 
- \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | 
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    |
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   |
 
 ###############################################################################
 
@@ -48,7 +48,7 @@ Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
         Write to support@uppmax.uu.se, if you have questions or comments.
 
 
-dahlo@rackham4 ~ $ 
+dahlo@rackham4 ~ $
 
 ```
 ## 2. Getting a node of your own (only if you canceled your job before lunch)
@@ -57,7 +57,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2019007 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019007_1 &
+$ salloc -A g2019015 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019015_1 -M snowy &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -72,7 +72,7 @@ should look something like this
 dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
-dahlo@rackham2 work $ 
+dahlo@rackham2 work $
 ```
 
 where **r292** is the name of the node I got (yours will probably be different).
@@ -82,7 +82,7 @@ When it reaches the time limit you requested (7 hours in this case) the session 
 Connect to this node from within uppmax.
 
 ```
-$ ssh -Y r292 
+$ ssh -Y r292
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
@@ -103,13 +103,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2019007/nobackup/<username>/uppmax_pipeline_exercise
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_pipeline_exercise/data /proj/g2019015/nobackup/<username>/uppmax_pipeline_exercise
 ```
 
-Have a look in `/proj/g2019007/nobackup/<username>/uppmax_pipeline_exercise`:
+Have a look in `/proj/g2019015/nobackup/<username>/uppmax_pipeline_exercise`:
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>/uppmax_pipeline_exercise
+$ cd /proj/g2019015/nobackup/<username>/uppmax_pipeline_exercise
 
 $ ll
 ```
@@ -258,7 +258,7 @@ Try doing a complete exome sequencing analysis, following the steps below.
 First, go to the exome directory in the lab directory that you copied to your folder in step 2 in this lab:
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2019015/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 ```
 
 In there you will find a folder called `raw_data`, containing a fastq file: `my_reads.rawdata.fastq` .
@@ -269,7 +269,7 @@ This file contains the raw data that you will analyse.
 
 ```bash
 /sw/data/uppnex/reference/Homo_sapiens/hg19/concat_rm/Homo_sapiens.GRCh37.57.dna_rm.concat.fa
-```  
+```
 
 * Find SNPs in your aligned data with the program `find_snps`.
 To find SNPs we have to have a reference to compare our data with.
@@ -297,7 +297,7 @@ When you are sure a command works, you copy/paste it to the terminal with the sc
 Start writing you script with nano:
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
+$ cd /proj/g2019015/nobackup/<username>/uppmax_pipeline_exercise/exomeSeq
 $ nano exome_analysis_script.sh
 ```
 
@@ -358,7 +358,7 @@ The next couple of rows will contain all the options you want to give SLURM:
 
 ```bash
 #!/bin/bash -l
-#SBATCH -A g2019007
+#SBATCH -A g2019015
 #SBATCH -t 00:05:00
 #SBATCH -p core
 ```

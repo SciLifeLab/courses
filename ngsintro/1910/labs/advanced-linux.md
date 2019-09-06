@@ -57,14 +57,14 @@ Start your terminal, log onto UPPMAX (check with squeue which core you had and s
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2019007 -t 04:30:00 -p core --no-shell --reservation=g2019007_1 &
+$ salloc -A g2019015 -t 04:30:00 -p core --no-shell --reservation=g2019015_1 -M snowy &
 
 ```
 
 make an empty directory we can work in and make a file.
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>
+$ cd /proj/g2019015/nobackup/<username>
 $ mkdir advlinux
 $ cd advlinux
 $ touch  filename
@@ -161,13 +161,13 @@ If you need help or further explanations to complete any assignments, please do 
 In no more than two commands, get the file permissions from
 
 ```bash
----------- 
+----------
 ```
 
 to
 
 ```bash
--rw-rw--wx 
+-rw-rw--wx
 ```
 
 Notice also that we here gave everyone writing permission to the file, that means that ANYONE can write to the file.
@@ -297,7 +297,7 @@ Then lets create a file with some text in it that we can grep around with.
 I have supplied some great text below.
 
 ```bash
-$ nano textfile 
+$ nano textfile
 
 Cats sleep anywhere, any table, any chair.
 Top of piano, window-ledge, in the middle, on the edge.
@@ -500,4 +500,4 @@ filestuff
 
 Good luck and have fun! :)
 
-If you get completely lost on some of the questions and there is nobody around to answer, here is a [cheat sheet](advanced-linux-answers) :) 
+If you get completely lost on some of the questions and there is nobody around to answer, here is a [cheat sheet](advanced-linux-answers) :)

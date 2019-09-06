@@ -37,8 +37,8 @@ Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
  _   _ ____  ____  __  __    _    __  __
 | | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    rackham4
 | | | | |_) | |_) | |\/| | / _ \   \  /    | User:      dahlo
-| |_| |  __/|  __/| |  | |/ ___ \  /  \    | 
- \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | 
+| |_| |  __/|  __/| |  | |/ ___ \  /  \    |
+ \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   |
 
 ###############################################################################
 
@@ -48,7 +48,7 @@ Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
         Write to support@uppmax.uu.se, if you have questions or comments.
 
 
-dahlo@rackham4 ~ $ 
+dahlo@rackham4 ~ $
 ```
 ## 2. Getting a node of your own
 
@@ -56,7 +56,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2019007 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019007_1 &
+$ salloc -A g2019015 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019015_1 -M snowy &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -71,7 +71,7 @@ should look something like this
 dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
-dahlo@rackham2 work $ 
+dahlo@rackham2 work $
 ```
 
 where **r292** is the name of the node I got (yours will probably be different).
@@ -81,7 +81,7 @@ When it reaches the time limit you requested (7 hours in this case) the session 
 Connect to this node from within uppmax.
 
 ```
-$ ssh -Y r292 
+$ ssh -Y r292
 ```
 
 **Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
@@ -122,7 +122,7 @@ drwxr-xr-x  6 dahlo dahlo       2048 May 17  2016 R
 lrwxrwxrwx  1 dahlo dahlo         41 Nov 14  2013 thindrives -> /var/opt/thinlinc/sessions/dahlo/6/drives
 drwxr-xr-x 26 dahlo dahlo       4096 May 18 10:43 uppmaxScripts
 drwxrwxr-x  5 dahlo dahlo    2201600 May 14 14:02 work
-[12:57:36] dahlo@rackham1 ~ $ 
+[12:57:36] dahlo@rackham1 ~ $
 ```
 
 We can start off with moving to the course's **proj folder**.
@@ -138,7 +138,7 @@ It is the equivalent of double clicking a folder in a GUI.
 To enter the course project's proj folder, simply type
 
 ```
-$ cd /proj/g2019007
+$ cd /proj/g2019015
 ```
 
 Have a look around and see which folders there are.
@@ -152,7 +152,7 @@ $ cd nobackup
 
 We can easily see that this is a relative path, since it does not start with a **/** That means that this command will only work when you are standing in your project folder.
 If you are standing somewhere else and say that you want to enter a folder named nobackup, the computer will tell you that there is no folder named nobackup where you are located at the moment.
-The absolute path to the course's nobackup folder would be **/proj/g2019007/nobackup**
+The absolute path to the course's nobackup folder would be **/proj/g2019015/nobackup**
 
 It is the exact same things as if you are using a GUI.
 If you are standing on your desktop, you can double click a folder which is located on your desktop.
@@ -200,14 +200,14 @@ For structures sake, first create a folder named as your username in the course'
 This can be done in 2 ways:
 
 ```
-$ mkdir /proj/g2019007/nobackup/<username>
-$ mkdir /proj/g2019007/nobackup/<username>/linux_tutorial
+$ mkdir /proj/g2019015/nobackup/<username>
+$ mkdir /proj/g2019015/nobackup/<username>/linux_tutorial
 ```
 
 or
 
 ```
-$ mkdir -p /proj/g2019007/nobackup/<username>/linux_tutorial
+$ mkdir -p /proj/g2019015/nobackup/<username>/linux_tutorial
 ```
 
 The reason for this is that Linux will not like it if you try to create the folder linux_tutorial inside a folder (the one named like your username) that does not exist yet.
@@ -222,7 +222,7 @@ Without it, only files directly in the source folder would be copied, NOT sub-fo
 ```
 Ex: cp -r <source folder> <destination folder>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/linux_tutorial/* /proj/g2019007/nobackup/<username>/linux_tutorial
+$ cp -r /sw/share/compstore/courses/ngsintro/linux_tutorial/* /proj/g2019015/nobackup/<username>/linux_tutorial
 ```
 
 If you are unable to copy the files on uppmax, you can download the files instead of copying them.
@@ -233,7 +233,7 @@ I.e. if you want to download the file http://somewhere.com/my.file and you give 
 ```
 Ex: wget -P <destination prefix> <source URL>
 
-$ wget -P /proj/g2019007/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/common/files/linux_additional-files.zip
+$ wget -P /proj/g2019015/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/common/files/linux_additional-files.zip
 ```
 
 ## 5. Unpack Files
@@ -242,7 +242,7 @@ Go to the folder you just copied and see what is in it.
 **NOTE: Remember to tab-complete to avoid typos and too much writing.**
 
 ```
-$ cd /proj/g2019007/nobackup/<username>/linux_tutorial
+$ cd /proj/g2019015/nobackup/<username>/linux_tutorial
 
 $ ll
 ```
@@ -264,22 +264,22 @@ Look in the folder again and see what we just unpacked:
 ```
 [valent@milou2 linux_tutorial]$ ll -la
 total 512
-drwxrwsr-x 12 valent g2019007   2048 Sep 24 13:19 .
-drwxrwsr-x  6 valent g2019007   2048 Sep 24 13:19 ..
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 a_strange_name
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 backed_up_proj_folder
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 external_hdd
--rwxrwxr-x  1 valent g2019007  17198 Sep 24 13:19 files.tar.gz
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 important_results
-drwxrwsr-x  2 valent g2019007 129024 Sep 19  2012 many_files
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 old_project
--rwxrwxr-x  1 valent g2019007      0 Sep 24 13:19 other_file.old
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 part_1
-drwxrwsr-x  2 valent g2019007   2048 Sep 19  2012 part_2
-drwxrwsr-x  2 valent g2019007   2048 Jan 28  2012 this_has_a_file
-drwxrwsr-x  2 valent g2019007   2048 Jan 28  2012 this_is_empty
--rwxrwxr-x  1 valent g2019007      0 Sep 19  2012 useless_file
-[valent@milou2 linux_tutorial]$ 
+drwxrwsr-x 12 valent g2019015   2048 Sep 24 13:19 .
+drwxrwsr-x  6 valent g2019015   2048 Sep 24 13:19 ..
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 a_strange_name
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 backed_up_proj_folder
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 external_hdd
+-rwxrwxr-x  1 valent g2019015  17198 Sep 24 13:19 files.tar.gz
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 important_results
+drwxrwsr-x  2 valent g2019015 129024 Sep 19  2012 many_files
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 old_project
+-rwxrwxr-x  1 valent g2019015      0 Sep 24 13:19 other_file.old
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 part_1
+drwxrwsr-x  2 valent g2019015   2048 Sep 19  2012 part_2
+drwxrwsr-x  2 valent g2019015   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x  2 valent g2019015   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x  1 valent g2019015      0 Sep 19  2012 useless_file
+[valent@milou2 linux_tutorial]$
 ```
 ## 6. Copying and Moving Files
 Let's move some files.
@@ -302,9 +302,9 @@ First, take a look inside the important_results folder:
 ```
 [valent@milou2 linux_tutorial]$ ll important_results/
 total 0
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 temp_file-1
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 temp_file-2
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 temp_file-1
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 temp_file-2
 [valent@milou2 linux_tutorial]$
 ```
 You see that there are some unimportant temporary files that you have no interest in.
@@ -321,9 +321,9 @@ Look in the backed up project folder to make sure you moved the file correctly.
 ```
 [valent@milou2 linux_tutorial]$ ll backed_up_proj_folder/
 total 0
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 last_years_data
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 temp_file-1
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 dna_data_analysis_result_file_that_is_important-you_should_really_use_tab_completion_for_file_names.bam
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 last_years_data
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 temp_file-1
 [valent@milou2 linux_tutorial]$
 ```
 Another use for the move command is to rename things.
@@ -342,19 +342,19 @@ Look around to see that the name change worked.
 [valent@milou2 linux_tutorial]$ mv a_strange_name a_better_name
 [valent@milou2 linux_tutorial]$ ll
 total 448
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 a_better_name
-drwxrwsr-x 2 valent g2019007   2048 Sep 24 13:40 backed_up_proj_folder
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 external_hdd
--rwxrwxr-x 1 valent g2019007  17198 Sep 24 13:36 files.tar.gz
-drwxrwsr-x 2 valent g2019007   2048 Sep 24 13:40 important_results
-drwxrwsr-x 2 valent g2019007 129024 Sep 19  2012 many_files
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 old_project
--rwxrwxr-x 1 valent g2019007      0 Sep 24 13:36 other_file.old
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 part_1
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 part_2
-drwxrwsr-x 2 valent g2019007   2048 Jan 28  2012 this_has_a_file
-drwxrwsr-x 2 valent g2019007   2048 Jan 28  2012 this_is_empty
--rwxrwxr-x 1 valent g2019007      0 Sep 19  2012 useless_file
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 a_better_name
+drwxrwsr-x 2 valent g2019015   2048 Sep 24 13:40 backed_up_proj_folder
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 external_hdd
+-rwxrwxr-x 1 valent g2019015  17198 Sep 24 13:36 files.tar.gz
+drwxrwsr-x 2 valent g2019015   2048 Sep 24 13:40 important_results
+drwxrwsr-x 2 valent g2019015 129024 Sep 19  2012 many_files
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 old_project
+-rwxrwxr-x 1 valent g2019015      0 Sep 24 13:36 other_file.old
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 part_1
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 part_2
+drwxrwsr-x 2 valent g2019015   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x 2 valent g2019015   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x 1 valent g2019015      0 Sep 19  2012 useless_file
 [valent@milou2 linux_tutorial]$
 ```
 
@@ -377,7 +377,7 @@ Take a look in the external_hdd to make sure the file got copied.
 [valent@milou2 linux_tutorial]$ cp backed_up_proj_folder/last_years_data external_hdd/
 [valent@milou2 linux_tutorial]$ ll external_hdd/
 total 0
--rwxrwxr-x 1 valent g2019007 0 Sep 24 13:46 last_years_data
+-rwxrwxr-x 1 valent g2019015 0 Sep 24 13:46 last_years_data
 [valent@milou2 linux_tutorial]$
 ```
 ## 7. Deleting Files
@@ -406,19 +406,19 @@ First, look around in the folder to see the file.
 ```
 [valent@milou2 linux_tutorial]$ ll
 total 448
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 a_better_name
-drwxrwsr-x 2 valent g2019007   2048 Sep 24 13:40 backed_up_proj_folder
-drwxrwsr-x 2 valent g2019007   2048 Sep 24 13:46 external_hdd
--rwxrwxr-x 1 valent g2019007  17198 Sep 24 13:36 files.tar.gz
-drwxrwsr-x 2 valent g2019007   2048 Sep 24 13:40 important_results
-drwxrwsr-x 2 valent g2019007 129024 Sep 19  2012 many_files
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 old_project
--rwxrwxr-x 1 valent g2019007      0 Sep 24 13:36 other_file.old
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 part_1
-drwxrwsr-x 2 valent g2019007   2048 Sep 19  2012 part_2
-drwxrwsr-x 2 valent g2019007   2048 Jan 28  2012 this_has_a_file
-drwxrwsr-x 2 valent g2019007   2048 Jan 28  2012 this_is_empty
--rwxrwxr-x 1 valent g2019007      0 Sep 19  2012 useless_file
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 a_better_name
+drwxrwsr-x 2 valent g2019015   2048 Sep 24 13:40 backed_up_proj_folder
+drwxrwsr-x 2 valent g2019015   2048 Sep 24 13:46 external_hdd
+-rwxrwxr-x 1 valent g2019015  17198 Sep 24 13:36 files.tar.gz
+drwxrwsr-x 2 valent g2019015   2048 Sep 24 13:40 important_results
+drwxrwsr-x 2 valent g2019015 129024 Sep 19  2012 many_files
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 old_project
+-rwxrwxr-x 1 valent g2019015      0 Sep 24 13:36 other_file.old
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 part_1
+drwxrwsr-x 2 valent g2019015   2048 Sep 19  2012 part_2
+drwxrwsr-x 2 valent g2019015   2048 Jan 28  2012 this_has_a_file
+drwxrwsr-x 2 valent g2019015   2048 Jan 28  2012 this_is_empty
+-rwxrwxr-x 1 valent g2019015      0 Sep 19  2012 useless_file
 [valent@milou2 linux_tutorial]$
 ```
 Now remove it:
@@ -444,7 +444,7 @@ If you look inside `this_has_a_file`:
 ```
 [valent@milou2 linux_tutorial]$ ll this_has_a_file
 total 0
--rwxrwxr-x 1 valent g2019007 0 Jan 28  2012 file
+-rwxrwxr-x 1 valent g2019015 0 Jan 28  2012 file
 [valent@milou2 linux_tutorial]$
 ```
 
@@ -475,9 +475,9 @@ Look in the project's folder, **old_project**, and find the script.
 ```
 [valent@milou2 linux_tutorial]$ ll old_project/
 total 96
--rwxrwxr-x 1 valent g2019007 39904 Sep 19  2012 a
--rwxrwxr-x 1 valent g2019007     0 Sep 19  2012 stuff_1
--rwxrwxr-x 1 valent g2019007  1008 Sep 19  2012 the_best
+-rwxrwxr-x 1 valent g2019015 39904 Sep 19  2012 a
+-rwxrwxr-x 1 valent g2019015     0 Sep 19  2012 stuff_1
+-rwxrwxr-x 1 valent g2019015  1008 Sep 19  2012 the_best
 [valent@milou2 linux_tutorial]$
 ```
 
@@ -584,14 +584,14 @@ Look around in both the folders to see what they contain.
 ```
 [valent@milou2 linux_tutorial]$ ll part_1/
 total 0
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 file_1.txt
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 file_2.txt
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 file_1.txt
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 file_2.txt
 [valent@milou2 linux_tutorial]$ ll part_2
 total 0
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 file_3.txt
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 file_4.txt
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 garbage.tmp
--rwxrwxr-x 1 valent g2019007 0 Sep 19  2012 incomplete_datasets.dat
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 file_3.txt
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 file_4.txt
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 garbage.tmp
+-rwxrwxr-x 1 valent g2019015 0 Sep 19  2012 incomplete_datasets.dat
 [valent@milou2 linux_tutorial]$
 ```
 
@@ -613,7 +613,7 @@ Try to figure out the solution on your own.
 
 <details>
   <summary>I give up, tell me how to do it!</summary><p>
- 
+
 ```
 $ ll many_files/*.txt
 ```

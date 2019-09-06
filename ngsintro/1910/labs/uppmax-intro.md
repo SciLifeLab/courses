@@ -56,7 +56,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```
-$ salloc -A g2019007 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019007_1 &
+$ salloc -A g2019015 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019015_1 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -99,13 +99,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2019007/nobackup/<username>
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2019015/nobackup/<username>
 ```
 
-Have a look in **/proj/g2019007/nobackup/\<username\>/uppmax_tutorial**:
+Have a look in **/proj/g2019015/nobackup/\<username\>/uppmax_tutorial**:
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>/uppmax_tutorial
+$ cd /proj/g2019015/nobackup/<username>/uppmax_tutorial
 
 $ ll
 total 128K
@@ -321,7 +321,7 @@ $ jobinfo -u <username>
 CLUSTER: rackham
 Running jobs:
    JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
- 3134399   devcore                               dahlo       g2019007  R 2018-05-18T16:32:54      59:25      1    1 r483
+ 3134399   devcore                               dahlo       g2019015  R 2018-05-18T16:32:54      59:25      1    1 r483
 
 Nodes in use:                            462
 Nodes in devel, free to use:               2
@@ -334,7 +334,7 @@ Nodes, all in total:                     486
 
 Waiting jobs:
    JOBID    POS PARTITION                      NAME     USER        ACCOUNT ST          START_TIME   TIME_LEFT PRIORITY CPUS NODELIST(REASON)     FEATURES DEPENDENCY
- 3134401    221      core           Template_script    dahlo       g2019007 PD                 N/A     1:00:00   100000    1           (None)       (null)
+ 3134401    221      core           Template_script    dahlo       g2019015 PD                 N/A     1:00:00   100000    1           (None)       (null)
 
 Waiting bonus jobs:
 $ 
@@ -367,7 +367,7 @@ This will create a booking for you which has a higher priority than the jobs sub
 Try closing down your current session on the reserved node you connected to in the beginning of the lab by typing exit. Then make a new booking using interactive:
 
 ```bash
-$ interactive -A g2019007 -t 02:00:00 -p core
+$ interactive -A g2019015 -t 02:00:00 -p core
 ```
 
 Congratulations, you are now ready to be let loose on the cluster!

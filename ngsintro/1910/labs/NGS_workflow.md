@@ -37,8 +37,8 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A g2019007 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019007_3
-# Remember to change to g2019007_4 on the 4th day of the course
+salloc -A g2019015 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019015_3
+# Remember to change to g2019015_4 on the 4th day of the course
 # We have reserved nodes during the course only
 ```
 
@@ -79,8 +79,8 @@ module load picard/2.10.3
 During this lab you should work in "your" folder under the course's nobackup folder, just like you have done during the previous labs. Start by creating a workspace for this exercise in your folder, and then move into it.
   
 ```bash
-mkdir /proj/g2019007/nobackup/<username>/ngsworkflow
-cd /proj/g2019007/nobackup/<username>/ngsworkflow
+mkdir /proj/g2019015/nobackup/<username>/ngsworkflow
+cd /proj/g2019015/nobackup/<username>/ngsworkflow
 ```
 
 ## Data for this lab
