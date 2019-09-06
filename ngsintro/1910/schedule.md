@@ -18,7 +18,7 @@ Room: Trippelrummet, E10, ground floor
 Room: Trippelrummet, E10, ground floor 
 **09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Anders Sjölander)  
 **09.30-11.00** [Exercise: File types in bioinformatics](labs/filetypes) (Anders Sjölander + Martin Dahlö, Jacques Dainat, Payam Emami)  
-**11.00-12.00** [Lecture: Quality of Life](slides/quality_of_life.pdf) (Anders Sjölander)  
+**11.00-12.00** [Lecture: Improving your terminal experience](slides/quality_of_life.pdf) (Anders Sjölander)  
 **12.00-13.00** Lunch at BMC restaurant  
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Anders Sjölander)  
 **14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Anders Sjölander + Martin Dahlö, Jacques Dainat, Payam Emami)  
