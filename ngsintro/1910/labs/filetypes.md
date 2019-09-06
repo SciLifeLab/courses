@@ -60,7 +60,7 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2019007 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019007_2 &
+$ salloc -A g2019015 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019015_2 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
@@ -107,13 +107,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/filetypes /proj/g2019007/nobackup/<username>/
+$ cp -r /sw/share/compstore/courses/ngsintro/filetypes /proj/g2019015/nobackup/<username>/
 ```
 
-Have a look in **/proj/g2019007/nobackup/\<username\>/:**
+Have a look in **/proj/g2019015/nobackup/\<username\>/:**
 
 ```bash
-$ cd /proj/g2019007/nobackup/<username>/filetypes
+$ cd /proj/g2019015/nobackup/<username>/filetypes
 $ tree
 ```
 
