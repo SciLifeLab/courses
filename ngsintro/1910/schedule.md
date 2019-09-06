@@ -5,8 +5,8 @@ title:  'Schedule'
 
 #### Click the heading of a topic to see the lecture slides or lab instructions. Slides are added as the course progresses.
 
-**Monday 9th** 
-Room: Trippelrummet, E10, ground floor 
+**Monday 9th**  
+Room: Trippelrummet, E10, ground floor  
 **09.00-09.15** [Registration and Welcome, presentation of SciLifeLab]() (Björn Nystedt)  
 **09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Martin Dahlö)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat, Payam Emami)  
@@ -14,8 +14,8 @@ Room: Trippelrummet, E10, ground floor
 **13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Martin Dahlö)  
 **14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Martin Dahlö + Anders Sjölander, Jacques Dainat, Payam Emami)  
 
-**Tuesday 10th** 
-Room: Trippelrummet, E10, ground floor 
+**Tuesday 10th**  
+Room: Trippelrummet, E10, ground floor  
 **09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Anders Sjölander)  
 **09.30-11.00** [Exercise: File types in bioinformatics](labs/filetypes) (Anders Sjölander + Martin Dahlö, Jacques Dainat, Payam Emami)  
 **11.00-12.00** [Lecture: Improving your terminal experience](slides/quality_of_life.pdf) (Anders Sjölander)  
@@ -23,8 +23,8 @@ Room: Trippelrummet, E10, ground floor
 **13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Anders Sjölander)  
 **14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Anders Sjölander + Martin Dahlö, Jacques Dainat, Payam Emami)  
 
-**Wednesday 11th** 
-Room: Trippelrummet, E10, ground floor 
+**Wednesday 11th**  
+Room: Trippelrummet, E10, ground floor  
 **09.00-11.00** [Lecture: Next Generation Sequencing Overview](slides/Sequencing_Overview.pdf) (Olga Vinnere Pettersson)  
 **11.00-12.00** [Lecture: NGS and bioinformatics analysis pipelines]() (Olga Vinnere Pettersson)  
 **12.00-13.00** Lunch at BMC restaurant  
