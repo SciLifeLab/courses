@@ -423,14 +423,16 @@ $ igv.sh
 If you notice that IGV over Xforwarding is excruciatingly slow, you can try to use the web based ThinLinc client instead. Unfortunately this requires you to have set up a two factor authentification (2FA) with UPPMAX, so it's something you can try on your own. [Instructions for setting up the 2FA at UPPMAX.](https://www.uppmax.uu.se/support/user-guides/setting-up-two-factor-authentication/) When you are all set up, go to the address [https://rackham-gui.uppmax.uu.se](https://rackham-gui.uppmax.uu.se) and login with your normal UPPMAX username and password together with your 2FA (described at the login screen). This will get you a remote desktop on one of the login nodes, and you can open a terminal and run IGV there instead.
 
 Once IGV is started, either using Xforwarding or the remote desktop in your web browser, we are ready to go.
-There are 3 files we have to load in IGV.
+
+There are 3 files we have to load in IGV. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/<username>/filetypes/
+
 The first is the reference genome.
 Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**.
 
 The second file you have to load is the reads.
 Press the menu button **"File - Load from File..."** and select your **3_sorted/ad2.sorted.bam**.
 
-The last fie you have to load is the annotation data.
+The last file you have to load is the annotation data.
 Press **"File - Load from File..."** again and select you annotation file in **0_ref/ad2.gtf**.
 
 This will show you the reference genome, how all the reads are aligned to it, and all the annotation data.
