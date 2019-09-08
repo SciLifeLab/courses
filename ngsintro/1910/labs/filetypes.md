@@ -424,10 +424,10 @@ If you notice that IGV over Xforwarding is excruciatingly slow, you can try to u
 
 Once IGV is started, either using Xforwarding or the remote desktop in your web browser, we are ready to go.
 
-There are 3 files we have to load in IGV. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/<username>/filetypes/
+There are 3 files we have to load in IGV. 
 
 The first is the reference genome.
-Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**.
+Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/<username>/filetypes/
 
 The second file you have to load is the reads.
 Press the menu button **"File - Load from File..."** and select your **3_sorted/ad2.sorted.bam**.
