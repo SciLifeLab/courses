@@ -427,7 +427,7 @@ Once IGV is started, either using Xforwarding or the remote desktop in your web 
 There are 3 files we have to load in IGV. 
 
 The first is the reference genome.
-Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/<username>/filetypes/
+Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/...
 
 The second file you have to load is the reads.
 Press the menu button **"File - Load from File..."** and select your **3_sorted/ad2.sorted.bam**.
