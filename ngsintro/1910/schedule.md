@@ -31,7 +31,7 @@ Room: Trippelrummet, E10, ground floor
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Anna Johansson)  
 **14.00-17.00** [Exercise: NGS workflow](labs/NGS_workflow) (Anna Johansson + Payam Emami, Lucile Soler, Markus Mayrhofer, Per Unneberg)  
 
-**18:00-** Course dinner at [Koh Phangan](https://kohphangan.se) (Fyristorg 2, next to the river)  
+**18:00-** Course dinner at [Koh Phangan](https://kohphangan.se) ([Fyristorg 2, next to the river](https://www.google.se/maps/place/Restaurang+Koh+Phangan/@59.8585975,17.635753,15z/data=!4m5!3m4!1s0x0:0x4b004e395b108348!8m2!3d59.8585975!4d17.635753))  
 
 **Thursday 12th**   
 Room: Trippelrummet, E10, ground floor  
