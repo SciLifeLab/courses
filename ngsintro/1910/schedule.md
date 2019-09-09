@@ -31,13 +31,13 @@ Room: Trippelrummet, E10, ground floor
 **13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf) (Anna Johansson)  
 **14.00-17.00** [Exercise: NGS workflow](labs/NGS_workflow) (Anna Johansson + Payam Emami, Lucile Soler, Markus Mayrhofer, Per Unneberg)  
 
-**18:00-** Course dinner at...  
+**18:00-** Course dinner at [Koh Phangan](https://kohphangan.se) (Fyristorg 2, next to the river)  
 
 **Thursday 12th**   
 Room: Trippelrummet, E10, ground floor  
 **09:00-12.00** [Exercise: NGS workflow](labs/NGS_workflow) (Anna Johansson + Payam Emami, Nima Rafati, Markus Mayrhofer, Lucile Soler)  
 **12.00-13.00** Lunch at BMC restaurant  
-**13.00-14:00** Lecture: Fata management  () (Nicla Jareborg)  
+**13.00-14:00** Lecture: Data management  () (Niclas Jareborg)  
 **14.00-15:00** Lecture: RNA sequencing, transcriptome and expression quantification  ([html](/slides/rnaseq/presentation.html), [pdf](/slides/rnaseq/presentation.pdf)) (Johan Reimegård)  
 **15.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification ([html](/labs/rnaseq/lab.html), [pdf](/labs/rnaseq/lab.pdf)) (Johan Reimegård + Mahesh Panchal, Payam Emami, Bengt Sennblad, Per Unneberg)  
 
