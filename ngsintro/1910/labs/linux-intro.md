@@ -62,7 +62,7 @@ $ salloc -A g2019015 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019015_
 check which node you got (replace **username** with your uppmax user name)
 
 ```
-$ squeue -u username
+$ squeue -u username -M snowy
 ```
 
 should look something like this
