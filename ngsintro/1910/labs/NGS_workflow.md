@@ -354,7 +354,8 @@ module load annovar/2017.07.16
 #### Annotation datasets
 Annovar uses downloaded annotation tracks to annotate the input file. These can be downloaded using Annovar, however many annotation tracks are already downloaded in the uppmax installation of annovar, and will be used in this lab. 
 ```bash
-#$ANNOVAR_HOME is set when annovar module is loaded. To see which datasets are already downloaded you can use
+#$ANNOVAR_HOME is set when annovar module is loaded. To see which datasets are already downloaded 
+# you can use
 ls $ANNOVAR_HOME/humandb/
 
 ```
