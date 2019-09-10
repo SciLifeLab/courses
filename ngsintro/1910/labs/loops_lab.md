@@ -61,13 +61,13 @@ $ salloc -A g2019015 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019015_
 check which node you got (replace **username** with your uppmax user name)
 
 ```
-$ squeue -u username
+$ squeue -u username -M snowy
 ```
 
 should look something like this
 
 ```
-dahlo@rackham2 work $ squeue -u dahlo
+dahlo@rackham2 work $ squeue -u dahlo -M snowy
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
 dahlo@rackham2 work $ 
