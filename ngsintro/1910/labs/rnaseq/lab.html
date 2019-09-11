@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="NBIS | 29-May-2019" />
+<meta name="author" content="NBIS | 11-Sep-2019" />
 
 
 <title>RNA-Seq Lab</title>
@@ -306,8 +306,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -345,7 +343,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">RNA-Seq Lab</h1>
 <h3 class="subtitle">Introduction to Bioinformatics</h3>
-<h4 class="author"><b>NBIS</b> | 29-May-2019</h4>
+<h4 class="author"><b>NBIS</b> | 11-Sep-2019</h4>
 
 </div>
 
@@ -449,7 +447,7 @@ Trinity
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">command</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">command</span></code></pre></div>
 </div>
 <p><strong>Markers:</strong>   <i class="fas fa-exclamation-circle"></i> Note   <i class="fas fa-lightbulb"></i> Tip   <i class="fas fa-comments"></i> Discuss   <i class="fas fa-clipboard-list"></i> Task</p>
 </div>
@@ -558,7 +556,7 @@ SRR3222414
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ssh</span> -XY username@rackham.uppmax.uu.se</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ssh</span> -XY username@rackham.uppmax.uu.se</code></pre></div>
 </div>
 <div id="book-a-node" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Book a node</h3>
@@ -568,25 +566,25 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">salloc</span> -A g2019007 -t 08:00:00 -p core -n 8 --reservation=g2019007_3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019015 -t 08:00:00 -p core -n 8 --reservation=g2019015_3</code></pre></div>
 </div>
 <p>Book resources for RNA-Seq day 2.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">salloc</span> -A g2019007 -t 08:00:00 -p core -n 8 --reservation=g2019007_4</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019015 -t 08:00:00 -p core -n 8 --reservation=g2019015_4</code></pre></div>
 </div>
 </div>
 <div id="set-up-directory" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Set-up directory</h3>
-<p>Setting up the directory structure is an important step as it helps to keep our raw data, intermediate data and results in an organised manner. All work must be carried out at this location <code>/proj/g2019007/nobackup</code> where <code>[user]</code> is your user name.</p>
+<p>Setting up the directory structure is an important step as it helps to keep our raw data, intermediate data and results in an organised manner. All work must be carried out at this location <code>/proj/g2019015/nobackup</code> where <code>[user]</code> is your user name.</p>
 <p>Create a directory named <code>rnaseq</code>. All RNA-Seq related activities must be carried out in this sub-directory named <code>rnaseq</code>.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">mkdir</span> rnaseq</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">mkdir</span> rnaseq</code></pre></div>
 </div>
 <p><i class="fas fa-clipboard-list"></i> Set up the below directory structure in your project directory.</p>
 <pre><code>[user]/
@@ -602,21 +600,21 @@ rnaseq/
   |   +-- mouse_chr11/
   +-- scripts/</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915551829" aria-expanded="false" aria-controls="acc2019052915551829">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122151314" aria-expanded="false" aria-controls="acc2019091122151314">
 </button>
 </p>
-<div id="acc2019052915551829" class="collapse">
+<div id="acc2019091122151314" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> rnaseq
-<span class="fu">mkdir</span> 1_raw 2_fastqc 3_mapping 4_qualimap 5_dge 6_multiqc reference scripts
-<span class="bu">cd</span> reference
-<span class="fu">mkdir</span> mouse
-<span class="fu">mkdir</span> mouse_chr11
-<span class="bu">cd</span> ..</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cd</span> rnaseq
+<span class="kw">mkdir</span> 1_raw 2_fastqc 3_mapping 4_qualimap 5_dge 6_multiqc reference scripts
+<span class="kw">cd</span> reference
+<span class="kw">mkdir</span> mouse
+<span class="kw">mkdir</span> mouse_chr11
+<span class="kw">cd</span> ..</code></pre></div>
 </div>
 </div>
 </div>
@@ -628,20 +626,20 @@ sh
 <div id="create-symbolic-links" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Create symbolic links</h3>
 <p>We have the raw fastq files in this remote directory: <code>/sw/courses/ngsintro/rnaseq/main/1_raw/</code>. We are going to create symbolic links (soft-links) for these files from our <code>1_raw</code> directory to the remote directory. We do this because they are large files and simply copying them would use up a lot of storage space. Soft-linking files and folders allows us to work with those files as if they were actually there. Use <code>pwd</code> to check if you are standing in the correct directory. You should be standing here:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/1_raw</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/1_raw</code></pre>
 <p>Run below to create softlinks. Note that the command ends in a space followed by a period.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ln</span> -s /sw/courses/ngsintro/rnaseq/main/1_raw/*.fastq.gz .</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ln</span> -s /sw/courses/ngsintro/rnaseq/main/1_raw/*.fastq.gz .</code></pre></div>
 </div>
 <p>Check if your files have linked correctly. You should be able to see as below.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -668,31 +666,31 @@ SRR3222414_2.fastq.gz -&gt; /sw/courses/ngsintro/rnaseq/main/1_raw/SRR3222414_2.
 <p><strong>Quality check using FastQC</strong></p>
 <p>After receiving raw reads from a high throughput sequencing centre it is essential to check their quality. <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> provides a simple way to do some quality control check on raw sequence data. It provides a modular set of analyses which you can use to get a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.</p>
 <p><i class="fas fa-clipboard-list"></i> Change into the <code>2_fastqc</code> directory. Use <code>pwd</code> to check if you are standing in the correct directory. You should be standing here:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/2_fastqc</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc</code></pre>
 <p>Load Uppmax modules <code>bioinfo-tools</code> and FastQC <code>FastQC/0.11.5</code>.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load FastQC/0.11.5</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load FastQC/0.11.5</code></pre></div>
 </div>
 <p>Once the module is loaded, FastQC program is available through the command <code>fastqc</code>. Use <code>fastqc --help</code> to see the various parameters available to the program. We will use <code>-t 8</code>, to specify number of threads, <code>-o</code> to specify the output directory path and finally, the name of the input fastq file to analyse. The syntax will look like below.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">fastqc</span> -t 8 -o . ../1_raw/filename.fastq.gz</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">fastqc</span> -t 8 -o . ../1_raw/filename.fastq.gz</code></pre></div>
 </div>
 <p>Based on the above command, we will write a bash loop to process all fastq files in the directory. Writing multi-line commands through the terminal can be a pain. Therefore, we will run larger scripts from a bash script file. Move to your <code>scripts</code> directory and create a new file named <code>fastqc.sh</code>.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/scripts</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/scripts</code></pre>
 <p>The command below creates a new file in the current directory.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">touch</span> fastqc.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">touch</span> fastqc.sh</code></pre></div>
 </div>
 <p>Use <code>nano</code>,<code>vim</code> or <code>gedit</code> to edit <code>fastqc.sh</code>.</p>
 <div class="block-title-parent">
@@ -700,27 +698,27 @@ sh
 sh
 </div>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
-<span class="kw">for</span> <span class="ex">i</span> in ../1_raw/*.fastq.gz
+<span class="kw">for</span> <span class="kw">i</span> in ../1_raw/*.fastq.gz
 <span class="kw">do</span>
-    <span class="bu">echo</span> <span class="st">&quot;Running </span><span class="va">$i</span><span class="st"> ...&quot;</span>
-    <span class="ex">fastqc</span> -t 8 -o . <span class="st">&quot;</span><span class="va">$i</span><span class="st">&quot;</span>
+    <span class="kw">echo</span> <span class="st">&quot;Running </span><span class="ot">$i</span><span class="st"> ...&quot;</span>
+    <span class="kw">fastqc</span> -t 8 -o . <span class="st">&quot;</span><span class="ot">$i</span><span class="st">&quot;</span>
 <span class="kw">done</span></code></pre></div>
 </div>
 <p>While standing in the <code>2_fastqc</code> directory, run the file <code>fastqc.sh</code>. Use <code>pwd</code> to check if you are standing in the correct directory.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/2_fastqc</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc</code></pre>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/fastqc.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/fastqc.sh</code></pre></div>
 </div>
 <p>After the fastqc run, there should be a <code>.zip</code> file and a <code>.html</code> file for every fastq file. The <code>.html</code> file is the report that you need. Open the <code>.html</code> in the browser and view it. You only need to do this for one file now. We will do a comparison with all samples when using the MultiQC tool.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">firefox</span> file.html <span class="kw">&amp;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">firefox</span> file.html <span class="kw">&amp;</span></code></pre></div>
 </div>
 <p><i class="fas fa-lightbulb"></i> Adding <code>&amp;</code> at the end sends that process to the background, so that the console is free to accept new commands.</p>
 <div class="optional">
@@ -732,7 +730,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">scp</span> user@rackham.uppmax.uu.se:/proj/g2019007/nobackup/[user]/rnaseq/2_fastqc/SRR3222409_1_fastqc.html ./</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc/SRR3222409_1_fastqc.html ./</code></pre></div>
 </div>
 </div>
 <p><i class="fas fa-clipboard-list"></i> Go back to the FastQC website and compare your report with the sample report for <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html">Good Illumina data</a> and <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html">Bad Illumina data</a>.</p>
@@ -749,35 +747,35 @@ sh
 <p><i class="fas fa-comments"></i> What is the idea behind building STAR index? What files are needed to build one? Where do we take them from? Could one use a STAR index that was generated before? Browse through <a href="https://www.ensembl.org/index.html">Ensembl</a> and try to find the files needed. Note that we are working with Mouse (<em>Mus musculus</em>).</p>
 <p><i class="fas fa-clipboard-list"></i> Move into the <code>reference</code> directory and download the Chr 11 genome (<code>.fasta</code>) file and the genome-wide annotation file (<code>.gtf</code>) from Ensembl.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/reference</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/reference</code></pre>
 <p>You are most likely to use the <a href="https://www.ensembl.org/index.html">latest version</a> of ensembl release genome and annotations when starting a new analysis. For this exercise, we will choose an older version (79) for compatibility with old code/results.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">wget</span> ftp://ftp.ensembl.org/pub/release-79/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.11.fa.gz
-<span class="fu">wget</span> ftp://ftp.ensembl.org/pub/release-79/gtf/mus_musculus/Mus_musculus.GRCm38.79.gtf.gz</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">wget</span> ftp://ftp.ensembl.org/pub/release-79/fasta/mus_musculus/dna/Mus_musculus.GRCm38.dna.chromosome.11.fa.gz
+<span class="kw">wget</span> ftp://ftp.ensembl.org/pub/release-79/gtf/mus_musculus/Mus_musculus.GRCm38.79.gtf.gz</code></pre></div>
 </div>
 <p>Decompress the files for use.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">gunzip</span> Mus_musculus.GRCm38.dna.chromosome.11.fa.gz
-<span class="fu">gunzip</span> Mus_musculus.GRCm38.79.gtf.gz</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">gunzip</span> Mus_musculus.GRCm38.dna.chromosome.11.fa.gz
+<span class="kw">gunzip</span> Mus_musculus.GRCm38.79.gtf.gz</code></pre></div>
 </div>
 <p>Check what you have in your directory.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915554113" aria-expanded="false" aria-controls="acc2019052915554113">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122167719" aria-expanded="false" aria-controls="acc2019091122167719">
 </button>
 </p>
-<div id="acc2019052915554113" class="collapse">
+<div id="acc2019091122167719" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 </div>
 </div>
@@ -795,17 +793,17 @@ drwxrwsr-x 2 user g201XXXX 4.0K Sep  4 19:32 mouse_chr11
 <h3><span class="header-section-number">2.3.2</span> Build index</h3>
 <p>Move into the <code>reference</code> directory if not already there. Load module STAR version 2.5.2b. Remember to load <code>bioinfo-tools</code> if you haven’t done so already.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915556955" aria-expanded="false" aria-controls="acc2019052915556955">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122160737" aria-expanded="false" aria-controls="acc2019091122160737">
 </button>
 </p>
-<div id="acc2019052915556955" class="collapse">
+<div id="acc2019091122160737" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.7.0e</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load star/2.7.0e</code></pre></div>
 </div>
 </div>
 </div>
@@ -818,10 +816,10 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># load module</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.7.0e
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load star/2.7.0e
 
-<span class="ex">star</span> \
+<span class="kw">star</span> \
 --runMode genomeGenerate \
 --runThreadN 8 \
 --genomeDir ./mouse_chr11 \
@@ -834,20 +832,20 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/star_index.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/star_index.sh</code></pre></div>
 </div>
 <p>Once the indexing is complete, move into the <code>mouse_chr11</code> directory and make sure you have all the files.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915559335" aria-expanded="false" aria-controls="acc2019052915559335">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122167158" aria-expanded="false" aria-controls="acc2019091122167158">
 </button>
 </p>
-<div id="acc2019052915559335" class="collapse">
+<div id="acc2019091122167158" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 </div>
 </div>
@@ -874,19 +872,19 @@ output
 <p>This index for chr11 was created just to familiarise with the steps. We will use the index built on the whole genome for downstream exercises. The index for the whole genome was prepared for us before class in the very same way as for the chromosome 11 in steps above. It just requires more time (ca. 4h) to run. The index is found here: <code>/sw/courses/ngsintro/rnaseq/reference/mouse/</code>.</p>
 <p>Soft-link all the files inside <code>/sw/courses/ngsintro/rnaseq/reference/mouse/</code> to the directory named <code>mouse</code> which is inside your <code>rnaseq/reference/</code>.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/reference</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/reference</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915551282" aria-expanded="false" aria-controls="acc2019052915551282">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122164269" aria-expanded="false" aria-controls="acc2019091122164269">
 </button>
 </p>
-<div id="acc2019052915551282" class="collapse">
+<div id="acc2019091122164269" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> mouse
-<span class="fu">ln</span> -s /sw/share/compstore/courses/ngsintro/rnaseq/reference/mouse/* .</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cd</span> mouse
+<span class="kw">ln</span> -s /sw/share/compstore/courses/ngsintro/rnaseq/reference/mouse/* .</code></pre></div>
 </div>
 </div>
 </div>
@@ -895,14 +893,14 @@ sh
 <h3><span class="header-section-number">2.3.3</span> Map reads</h3>
 <p>Now that we have the index ready, we are ready to map reads. Move to the directory <code>3_mapping</code>. Use <code>pwd</code> to check if you are standing in the correct directory.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/3_mapping</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/3_mapping</code></pre>
 <p>We will create softlinks to the fastq files from here to make things easier.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> 3_mapping
-<span class="fu">ln</span> -s ../1_raw/* .</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cd</span> 3_mapping
+<span class="kw">ln</span> -s ../1_raw/* .</code></pre></div>
 </div>
 <p>These are the parameters that we want to specify for the STAR mapping run:</p>
 <ul>
@@ -920,7 +918,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">star</span> \
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">star</span> \
 --runMode alignReads \
 --genomeDir <span class="st">&quot;../reference/mouse&quot;</span> \
 --runThreadN 8 \
@@ -933,10 +931,10 @@ sh
 <p>But, we will generalise the above script to be used as a bash script to read any two input files and to automatically create the output filename.</p>
 <p><i class="fas fa-clipboard-list"></i> Now create a new bash script file named <code>star_align.sh</code> in your <code>scripts</code> directory and add the script below to it.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915558679" aria-expanded="false" aria-controls="acc2019052915558679">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122169721" aria-expanded="false" aria-controls="acc2019091122169721">
 </button>
 </p>
-<div id="acc2019052915558679" class="collapse">
+<div id="acc2019091122169721" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -944,21 +942,21 @@ sh
 </div>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.7.0e
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1##</span>*/<span class="va">}</span><span class="st">&quot;</span>
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>_*<span class="va">/}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1##</span>*/<span class="ot">}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1/</span>_*<span class="ot">/}</span><span class="st">&quot;</span>
 
-<span class="ex">star</span> \
+<span class="kw">star</span> \
 --runMode alignReads \
 --genomeDir <span class="st">&quot;../reference/mouse&quot;</span> \
 --runThreadN 8 \
 --readFilesCommand zcat \
---readFilesIn <span class="va">$1</span> <span class="va">$2</span> \
+--readFilesIn <span class="ot">$1</span> <span class="ot">$2</span> \
 --sjdbGTFfile <span class="st">&quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</span> \
---outFileNamePrefix <span class="st">&quot;</span><span class="va">$prefix</span><span class="st">&quot;</span> \
+--outFileNamePrefix <span class="st">&quot;</span><span class="ot">$prefix</span><span class="st">&quot;</span> \
 --outSAMtype BAM SortedByCoordinate</code></pre></div>
 </div>
 </div>
@@ -969,30 +967,30 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/star_align.sh sample_1.fastq.gz sample_2.fastq.gz</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/star_align.sh sample_1.fastq.gz sample_2.fastq.gz</code></pre></div>
 </div>
 <p>Now, do the same for the other samples as well if you have time. Otherwise just run for one sample and results for the other samples can be copied (See end of this section).</p>
 <div class="optional">
 <p><strong>Optional</strong></p>
 <p>Try to create a new bash loop script (<code>star_align_batch.sh</code>) to iterate over all fastq files in the directory and run the mapping using the <code>star_align.sh</code> script. Note that there is a bit of a tricky issue here. You need to use two fastq files (<code>_1</code> and <code>_2</code>) per run rather than one file.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-optional collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915559118" aria-expanded="false" aria-controls="acc2019052915559118">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-optional collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122167164" aria-expanded="false" aria-controls="acc2019091122167164">
 </button>
 </p>
-<div id="acc2019052915559118" class="collapse">
+<div id="acc2019091122167164" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">## find only files for read 1 and extract the sample name</span>
-<span class="va">lines=$(</span><span class="fu">find</span> *_1.fastq.gz <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&quot;s/_1.fastq.gz//&quot;</span><span class="va">)</span>
+<span class="ot">lines=$(</span><span class="kw">find</span> *_1.fastq.gz <span class="kw">|</span> <span class="kw">sed</span> <span class="st">&quot;s/_1.fastq.gz//&quot;</span><span class="ot">)</span>
 
-<span class="kw">for</span> <span class="ex">i</span> in <span class="va">${lines}</span>
+<span class="kw">for</span> <span class="kw">i</span> in <span class="ot">${lines}</span>
 <span class="kw">do</span>
   <span class="co">## use the sample name and add suffix (_1.fastq.gz or _2.fastq.gz)</span>
-  <span class="bu">echo</span> <span class="st">&quot;Mapping </span><span class="va">${i}</span><span class="st">_1.fastq.gz and </span><span class="va">${i}</span><span class="st">_2.fastq.gz ...&quot;</span>
-  <span class="fu">bash</span> ../scripts/star_align.sh <span class="st">&quot;</span><span class="va">${i}</span><span class="st">_1.fastq.gz </span><span class="va">${i}</span><span class="st">_2.fastq.gz&quot;</span>
+  <span class="kw">echo</span> <span class="st">&quot;Mapping </span><span class="ot">${i}</span><span class="st">_1.fastq.gz and </span><span class="ot">${i}</span><span class="st">_2.fastq.gz ...&quot;</span>
+  <span class="kw">bash</span> ../scripts/star_align.sh <span class="st">&quot;</span><span class="ot">${i}</span><span class="st">_1.fastq.gz </span><span class="ot">${i}</span><span class="st">_2.fastq.gz&quot;</span>
 <span class="kw">done</span></code></pre></div>
 </div>
 </div>
@@ -1002,7 +1000,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/star_align_batch.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/star_align_batch.sh</code></pre></div>
 </div>
 </div>
 <p>At the end of the mapping jobs, you should have the following list of output files for every sample:</p>
@@ -1010,7 +1008,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1028,8 +1026,8 @@ drwx--S--- 2 user g201XXXX 4.0K Sep  6 00:50 SRR3222409_STARgenome</code></pre>
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load samtools/1.6
-<span class="ex">samtools</span> view SRR3222409Aligned.sortedByCoord.out.bam <span class="kw">|</span> <span class="fu">head</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load samtools/1.6
+<span class="kw">samtools</span> view SRR3222409Aligned.sortedByCoord.out.bam <span class="kw">|</span> <span class="kw">head</span></code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1043,16 +1041,16 @@ SRR3222409.2149741      163     1       3199933 255     101M    =       3200069 
 <p>The <code>Log.final.out</code> file gives a summary of the mapping run. This file is used by MultiQC later to collect mapping statistics.</p>
 <p><i class="fas fa-clipboard-list"></i> Inspect one of the mapping log files to identify the number of uniquely mapped reads and multi-mapped reads.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915556707" aria-expanded="false" aria-controls="acc2019052915556707">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122160552" aria-expanded="false" aria-controls="acc2019091122160552">
 </button>
 </p>
-<div id="acc2019052915556707" class="collapse">
+<div id="acc2019091122160552" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cat</span> SRR3222409Log.final.out</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cat</span> SRR3222409Log.final.out</code></pre></div>
 </div>
 </div>
 </div>
@@ -1100,26 +1098,26 @@ output
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">rename</span> <span class="st">&quot;Aligned.sortedByCoord.out&quot;</span> <span class="st">&quot;&quot;</span> *.bam</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">rename</span> <span class="st">&quot;Aligned.sortedByCoord.out&quot;</span> <span class="st">&quot;&quot;</span> *.bam</code></pre></div>
 </div>
 <p>Next, we need to index these BAM files. Indexing creates <code>.bam.bai</code> files which are required by many downstream programs to quickly and efficiently locate reads anywhere in the BAM file.</p>
 <p><i class="fas fa-clipboard-list"></i> Index all BAM files.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555776" aria-expanded="false" aria-controls="acc2019052915555776">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122169715" aria-expanded="false" aria-controls="acc2019091122169715">
 </button>
 </p>
-<div id="acc2019052915555776" class="collapse">
+<div id="acc2019091122169715" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load samtools/1.8
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load samtools/1.8
 
-<span class="kw">for</span> <span class="ex">i</span> in *.bam
+<span class="kw">for</span> <span class="kw">i</span> in *.bam
   <span class="kw">do</span>
-    <span class="bu">echo</span> <span class="st">&quot;Indexing </span><span class="va">$i</span><span class="st"> ...&quot;</span>
-    <span class="ex">samtools</span> index <span class="va">$i</span>
+    <span class="kw">echo</span> <span class="st">&quot;Indexing </span><span class="ot">$i</span><span class="st"> ...&quot;</span>
+    <span class="kw">samtools</span> index <span class="ot">$i</span>
   <span class="kw">done</span></code></pre></div>
 </div>
 </div>
@@ -1129,7 +1127,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1143,7 +1141,7 @@ output
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> -r /sw/courses/ngsintro/rnaseq/main/3_mapping/* /proj/g2019007/nobackup/[user]/rnaseq/3_mapping/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> -r /sw/courses/ngsintro/rnaseq/main/3_mapping/* /proj/g2019015/nobackup/[user]/rnaseq/3_mapping/</code></pre></div>
 </div>
 <p><br></p>
 </div>
@@ -1162,54 +1160,54 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># load modules</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load QualiMap/2.2.1
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load QualiMap/2.2.1
 
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1##</span>*/<span class="va">}</span><span class="st">&quot;</span>
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>.bam<span class="va">/}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1##</span>*/<span class="ot">}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1/</span>.bam<span class="ot">/}</span><span class="st">&quot;</span>
 
-<span class="bu">export</span> <span class="va">DISPLAY=</span><span class="st">&quot;&quot;</span>
+<span class="kw">export</span> <span class="ot">DISPLAY=</span><span class="st">&quot;&quot;</span>
 
-<span class="ex">qualimap</span> rnaseq -pe \
--bam <span class="va">$1</span> \
+<span class="kw">qualimap</span> rnaseq -pe \
+-bam <span class="ot">$1</span> \
 -gtf <span class="st">&quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</span> \
--outdir <span class="st">&quot;../4_qualimap/</span><span class="va">${prefix}</span><span class="st">/&quot;</span> \
--outfile <span class="st">&quot;</span><span class="va">$prefix</span><span class="st">&quot;</span> \
+-outdir <span class="st">&quot;../4_qualimap/</span><span class="ot">${prefix}</span><span class="st">/&quot;</span> \
+-outfile <span class="st">&quot;</span><span class="ot">$prefix</span><span class="st">&quot;</span> \
 -outformat <span class="st">&quot;HTML&quot;</span> \
---java-mem-size=64G <span class="op">&gt;</span><span class="kw">&amp;</span> <span class="st">&quot;</span><span class="va">${prefix}</span><span class="st">-qualimap.log&quot;</span></code></pre></div>
+--java-mem-size=64G <span class="kw">&gt;&amp;</span> <span class="st">&quot;</span><span class="ot">${prefix}</span><span class="st">-qualimap.log&quot;</span></code></pre></div>
 </div>
 <p>The line <code>prefix=&quot;${1/.bam/}&quot;</code> is used to remove <code>.bam</code> from the input filename and create a prefix which will be used to label output. The <code>export DISPLAY=&quot;&quot;</code> is used to run JAVA application in headless mode or else throws an error about X11 display. The last part <code>&gt;&amp; &quot;${prefix}-qualimap.log&quot;</code> saves the <strong>standard-out</strong> as a log file.</p>
 <p><i class="fas fa-clipboard-list"></i> create a new bash loop script named <code>qualimap_batch.sh</code> with a bash loop to run the qualimap script over all BAM files. The loop should look like below. Alternatively, you can also simply run the script below directly on the command line.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915557021" aria-expanded="false" aria-controls="acc2019052915557021">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122167871" aria-expanded="false" aria-controls="acc2019091122167871">
 </button>
 </p>
-<div id="acc2019052915557021" class="collapse">
+<div id="acc2019091122167871" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">for</span> <span class="ex">i</span> in ../3_mapping/*.bam
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">for</span> <span class="kw">i</span> in ../3_mapping/*.bam
 <span class="kw">do</span>
-    <span class="bu">echo</span> <span class="st">&quot;Running QualiMap on </span><span class="va">$i</span><span class="st"> ...&quot;</span>
-    <span class="fu">bash</span> ../scripts/qualimap.sh <span class="va">$i</span>
+    <span class="kw">echo</span> <span class="st">&quot;Running QualiMap on </span><span class="ot">$i</span><span class="st"> ...&quot;</span>
+    <span class="kw">bash</span> ../scripts/qualimap.sh <span class="ot">$i</span>
 <span class="kw">done</span></code></pre></div>
 </div>
 </div>
 </div>
 <p>Run the loop script <code>qualimap_batch.sh</code> in the directory <code>4_qualimap</code>.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555154" aria-expanded="false" aria-controls="acc2019052915555154">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122161764" aria-expanded="false" aria-controls="acc2019091122161764">
 </button>
 </p>
-<div id="acc2019052915555154" class="collapse">
+<div id="acc2019091122161764" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/qualimap_batch.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/qualimap_batch.sh</code></pre></div>
 </div>
 </div>
 </div>
@@ -1218,7 +1216,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1236,14 +1234,14 @@ drwxrwxr-x 2 user g201XXXX 4.0K Sep 14 17:24 raw_data_qualimapReport
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">firefox</span> qualimapReport.html <span class="kw">&amp;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">firefox</span> qualimapReport.html <span class="kw">&amp;</span></code></pre></div>
 </div>
 <p><i class="fas fa-exclamation-circle"></i> If you are running out of time or were unable to run QualiMap, you can also copy pre-run QualiMap output from this location: <code>/sw/courses/ngsintro/rnaseq/main/4_qualimap/</code>.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> -r /sw/courses/ngsintro/rnaseq/main/4_qualimap/* /proj/g2019007/nobackup/[user]/rnaseq/4_qualimap/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> -r /sw/courses/ngsintro/rnaseq/main/4_qualimap/* /proj/g2019015/nobackup/[user]/rnaseq/4_qualimap/</code></pre></div>
 </div>
 <p><i class="fas fa-comments"></i> Check the QualiMap report for one sample and discuss if the sample is of good quality. You only need to do this for one file now. We will do a comparison with all samples when using the MultiQC tool.</p>
 <p><br></p>
@@ -1257,10 +1255,10 @@ sh
 <p>We could run featureCounts on each BAM file, produce a text output for each sample and combine the output. But the easier way is to provide a list of all BAM files and featureCounts will combine counts for all samples into one text file.</p>
 <p>Below is the script that we will use:</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915555458" aria-expanded="false" aria-controls="acc2019052915555458">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122165914" aria-expanded="false" aria-controls="acc2019091122165914">
 </button>
 </p>
-<div id="acc2019052915555458" class="collapse">
+<div id="acc2019091122165914" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1269,10 +1267,10 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># load modules</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load subread/1.5.2
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load subread/1.5.2
 
-<span class="ex">featureCounts</span> \
+<span class="kw">featureCounts</span> \
 -a <span class="st">&quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</span> \
 -o <span class="st">&quot;counts.txt&quot;</span> \
 -F <span class="st">&quot;GTF&quot;</span> \
@@ -1288,18 +1286,18 @@ sh
 <p>In the above script, we indicate the path of the annotation file (<code>-a &quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</code>), specify the output file name (<code>-o &quot;counts.txt&quot;</code>), specify that that annotation file is in GTF format (<code>-F &quot;GTF&quot;</code>), specify that reads are to be counted over exonic features (<code>-t &quot;exon&quot;</code>) and summarised to the gene level (<code>-g &quot;gene_id&quot;</code>). We also specify that the reads are paired-end (<code>-p</code>), the library is unstranded (<code>-s 0</code>) and the number of threads to use (<code>-T 8</code>).</p>
 <p>Run the featurecounts bash script in the directory <code>5_dge</code>. Use <code>pwd</code> to check if you are standing in the correct directory.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/5_dge</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/5_dge</code></pre>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915553008" aria-expanded="false" aria-controls="acc2019052915553008">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122164022" aria-expanded="false" aria-controls="acc2019091122164022">
 </button>
 </p>
-<div id="acc2019052915553008" class="collapse">
+<div id="acc2019091122164022" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/featurecounts.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/featurecounts.sh</code></pre></div>
 </div>
 </div>
 </div>
@@ -1308,7 +1306,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1320,16 +1318,16 @@ output
 <p><i class="fas fa-comments"></i> Inspect the files and try to make sense of them.</p>
 <p><i class="fas fa-exclamation-circle"></i> If you are running out of time or were unable to run featureCounts, you can copy the count table file <code>counts.txt</code> and it’s summary <code>counts.txt.summary</code> located here: <code>/sw/courses/ngsintro/rnaseq/main/5_dge/</code>.</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915553038" aria-expanded="false" aria-controls="acc2019052915553038">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122166318" aria-expanded="false" aria-controls="acc2019091122166318">
 </button>
 </p>
-<div id="acc2019052915553038" class="collapse">
+<div id="acc2019091122166318" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/counts*.txt /proj/g2019007/nobackup/[user]/rnaseq/5_dge/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/counts*.txt /proj/g2019015/nobackup/[user]/rnaseq/5_dge/</code></pre></div>
 </div>
 </div>
 </div>
@@ -1340,22 +1338,22 @@ sh
 <p><strong>Combined QC report using MultiQC</strong></p>
 <p>We will use the tool <strong>MultiQC</strong> to crawl through the output, log files etc from FastQC, STAR, QualiMap and featureCounts to create a combined QC report.</p>
 <p>Run MultiQC as shown below in the <code>6_multiqc</code> directory. You should be standing here to run this:</p>
-<pre><code>/proj/g2019007/nobackup/[user]/rnaseq/6_multiqc</code></pre>
+<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/6_multiqc</code></pre>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load MultiQC/1.6
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load MultiQC/1.6
 
-<span class="ex">multiqc</span> --interactive ../</code></pre></div>
+<span class="kw">multiqc</span> --interactive ../</code></pre></div>
 </div>
 <p>The output should look like below:</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1369,7 +1367,7 @@ output
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">firefox</span> multiqc_report.html <span class="kw">&amp;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">firefox</span> multiqc_report.html <span class="kw">&amp;</span></code></pre></div>
 </div>
 <p><br></p>
 </div>
@@ -1382,8 +1380,8 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load R/3.5.2
-<span class="ex">module</span> load R_packages/3.5.2</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load R/3.5.2
+<span class="kw">module</span> load R_packages/3.5.2</code></pre></div>
 </div>
 <p>Use <code>pwd</code> to check if you are standing in the correct directory. Copy the following files to the <code>5_dge</code> directory.</p>
 <ul>
@@ -1398,23 +1396,23 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/annotations.txt .
-<span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge.R .
-<span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/counts.txt .</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/annotations.txt .
+<span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge.R .
+<span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/counts.txt .</code></pre></div>
 </div>
 <p>Now, run the R script from the schell in <code>5_dge</code> directory.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> dge.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> dge.R</code></pre></div>
 </div>
 <p>This should have produced the following output files:</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1430,8 +1428,8 @@ output
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge_results.txt .
-<span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge_data.Rdata .</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge_results.txt .
+<span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/main/5_dge/dge_data.Rdata .</code></pre></div>
 </div>
 <p><br></p>
 </div>
@@ -1467,7 +1465,7 @@ R
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">scp</span> -r user@rackham.uppmax.uu.se:/sw/courses/ngsintro/rnaseq/bonus/funannot ./</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">scp</span> -r user@rackham.uppmax.uu.se:/sw/courses/ngsintro/rnaseq/bonus/funannot ./</code></pre></div>
 </div>
 <p>Alternatively, all users can use an SFTP browser like <a href="https://filezilla-project.org/">Filezilla</a> or <a href="https://cyberduck.io/">Cyberduck</a> for a GUI interface. Windows users can also use the MobaXterm SFTP file browser to drag and drop.</p>
 </div>
@@ -1478,7 +1476,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> -r /sw/courses/ngsintro/rnaseq/bonus/funannot /proj/g2019007/nobackup/[user]/rnaseq/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> -r /sw/courses/ngsintro/rnaseq/bonus/funannot /proj/g2019015/nobackup/[user]/rnaseq/</code></pre></div>
 </div>
 </div>
 </div>
@@ -1509,22 +1507,22 @@ R
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load R/3.5.2
-<span class="ex">module</span> load R_packages/3.5.2</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load R/3.5.2
+<span class="kw">module</span> load R_packages/3.5.2</code></pre></div>
 </div>
 <p>Change to the <code>funannot</code> directory in your <code>rnaseq</code> directory.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> funannot</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cd</span> funannot</code></pre></div>
 </div>
 <p>The <code>funannot</code> directory should look like this:</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1539,7 +1537,7 @@ drwxrwsr-x 4 user g201XXXX 4.0K Sep  6 20:13 data</code></pre>
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> annotate_de_results.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> annotate_de_results.R</code></pre></div>
 </div>
 </div>
 <p>Now your <code>funannot</code> directory should look like this:</p>
@@ -1547,17 +1545,17 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">drwxrwsr-x</span> 2 user g201XXXX 4.0K Sep  6 20:13 annot
-<span class="ex">-rw-rw-r--</span> 1 user g201XXXX 4.7K Sep  6 20:13 annotate_de_results.R
-<span class="ex">drwxrwsr-x</span> 4 user g201XXXX 4.0K Sep  6 20:13 data
-<span class="ex">drwxrwsr-x</span> 2 user g201XXXX 4.0K Sep  6 20:18 GO_react_results
-<span class="ex">-rw-rw-r--</span> 1 user g201XXXX  52K Sep  6 20:18 Rplots.pdf</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">drwxrwsr-x</span> 2 user g201XXXX 4.0K Sep  6 20:13 annot
+<span class="kw">-rw-rw-r--</span> 1 user g201XXXX 4.7K Sep  6 20:13 annotate_de_results.R
+<span class="kw">drwxrwsr-x</span> 4 user g201XXXX 4.0K Sep  6 20:13 data
+<span class="kw">drwxrwsr-x</span> 2 user g201XXXX 4.0K Sep  6 20:18 GO_react_results
+<span class="kw">-rw-rw-r--</span> 1 user g201XXXX  52K Sep  6 20:18 Rplots.pdf</code></pre></div>
 </div>
 <p>The results are saved in the directory <code>GO_react_results</code>. The plot <code>Rplots.pdf</code> can be opened in the firefox browser as such <code>firefox Rplots.pdf</code>.</p>
 </div>
@@ -1569,7 +1567,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">head</span> GO_term_genes_dn.txt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">head</span> GO_term_genes_dn.txt</code></pre></div>
 </div>
 <p>The columns of the results tables are:</p>
 <div class="block-title-parent">
@@ -1587,7 +1585,7 @@ category over_represented_pvalue under_represented_pvalue numDEInCat numInCat pa
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cat</span> reactome_pway_genes_up.txt <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;phosphorylation&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cat</span> reactome_pway_genes_up.txt <span class="kw">|</span> <span class="kw">grep</span> <span class="st">&quot;phosphorylation&quot;</span></code></pre></div>
 </div>
 <p><i class="fas fa-comments"></i> Have a look at the GO terms and see if you think the functional annotation reflects the biology of the experiments we have just analysed?</p>
 </div>
@@ -1605,10 +1603,10 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">scp</span> user@rackham.uppmax.uu.se:/proj/g2019007/nobackup/rnaseq/[user]/3_mapping/SRR3222409.bam ./
-<span class="fu">scp</span> user@rackham.uppmax.uu.se:/proj/g2019007/nobackup/rnaseq/[user]/3_mapping/SRR3222409.bam.bai ./
-<span class="fu">scp</span> user@rackham.uppmax.uu.se:/proj/g2019007/nobackup/rnaseq/[user]/3_mapping/SRR3222412.bam ./
-<span class="fu">scp</span> user@rackham.uppmax.uu.se:/proj/g2019007/nobackup/rnaseq/[user]/3_mapping/SRR3222412.bam.bai ./</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/rnaseq/[user]/3_mapping/SRR3222409.bam ./
+<span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/rnaseq/[user]/3_mapping/SRR3222409.bam.bai ./
+<span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/rnaseq/[user]/3_mapping/SRR3222412.bam ./
+<span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/rnaseq/[user]/3_mapping/SRR3222412.bam.bai ./</code></pre></div>
 </div>
 <p>Alternatively, all users can use an SFTP browser like <a href="https://filezilla-project.org/">Filezilla</a> or <a href="https://cyberduck.io/">Cyberduck</a> for a GUI interface. Windows users can also use the MobaXterm SFTP file browser to drag and drop.</p>
 </div>
@@ -1620,8 +1618,8 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ssh</span> -Y username@rackham.uppmax.uu.se
-<span class="fu">ssh</span> -Y computenode</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ssh</span> -Y username@rackham.uppmax.uu.se
+<span class="kw">ssh</span> -Y computenode</code></pre></div>
 </div>
 <p>An alternative method is to login through <a href="https://rackham-gui.uppmax.uu.se/main/">Rackham-GUI</a>. Once you log into this interface you will have a linux desktop interface in a browser window. This interface is running on the login node, so if you want to do any heavy lifting you need to login to your reserved compute node also here. This is done by opening a terminal in the running linux environment and log on to your compute node as before. NB! If you have no active reservation you have to do that first.</p>
 <p>Load necessary modules and start IGV</p>
@@ -1629,9 +1627,9 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load IGV/2.4.2
-<span class="ex">igv-core</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load IGV/2.4.2
+<span class="kw">igv-core</span></code></pre></div>
 </div>
 <p>This should start the IGV so that it is visible on your screen. If not please try to reconnect to Uppmax or consider running IGV locally as that is often the fastest and most convenient solution.</p>
 </div>
@@ -1660,14 +1658,14 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/bonus/visual/*.R /proj/g2019007/nobackup/[user]/rnaseq/5_dge/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/bonus/visual/*.R /proj/g2019015/nobackup/[user]/rnaseq/5_dge/</code></pre></div>
 </div>
 <p>You should have the following files:</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">ls</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">ls</span> -l</code></pre></div>
 </div>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -1687,7 +1685,7 @@ output
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> mds.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> mds.R</code></pre></div>
 </div>
 <p>This generates a file named <strong>MDS.png</strong> in the <code>5_dge</code> folder. To view it, use <code>eog MDS.png &amp;</code> or copy it to your local disk.</p>
 <p><img src="images/MDS.png" width="500px" style="display: block; margin: auto auto auto 0;" /></p>
@@ -1701,7 +1699,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> ma.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> ma.R</code></pre></div>
 </div>
 <p>This generates a file named <strong>MA.png</strong> in the <code>5_dge</code> folder. To view it, use <code>eog MA.png &amp;</code> or copy it to your local disk.</p>
 <p><img src="images/MA.png" width="500px" style="display: block; margin: auto auto auto 0;" /></p>
@@ -1715,7 +1713,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> volcano.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> volcano.R</code></pre></div>
 </div>
 <p>This generates a file named <strong>Volcano.png</strong> in the <code>5_dge</code> folder. To view it, use <code>eog Volcano.png &amp;</code> or copy it to your local disk.</p>
 <p><img src="images/Volcano.png" width="500px" style="display: block; margin: auto auto auto 0;" /></p>
@@ -1729,7 +1727,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Rscript</span> heatmap.R</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Rscript</span> heatmap.R</code></pre></div>
 </div>
 <p>This generates a file named <strong>Heatmap.png</strong> in the <code>5_dge</code> folder. To view it, use <code>eog Heatmap.png &amp;</code> or copy it to your local disk.</p>
 <p><img src="images/Heatmap.png" width="500px" style="display: block; margin: auto auto auto 0;" /></p>
@@ -1759,11 +1757,11 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">Trinity</span> \
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">Trinity</span> \
 --seqType (fq for fastq or fa for fast) <span class="kw">\</span>
-<span class="ex">--left</span> ~/path/to/reads_1.fq \
+<span class="kw">--left</span> ~/path/to/reads_1.fq \
 --right ~/path/to/reads_2.fq (or --single for single reads) <span class="kw">\</span>
-<span class="ex">--CPU</span> 8 \
+<span class="kw">--CPU</span> 8 \
 --output ~/path/to/output_dir</code></pre></div>
 </div>
 </div>
@@ -1778,10 +1776,10 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="bu">cd</span> rnaseq
-<span class="fu">mkdir</span> assembly
-<span class="bu">cd</span> assembly
-<span class="fu">cp</span> /sw/courses/ngsintro/rnaseq/bonus/assembly/*.fasta /proj/g2019007/nobackup/[user]/rnaseq/assembly/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cd</span> rnaseq
+<span class="kw">mkdir</span> assembly
+<span class="kw">cd</span> assembly
+<span class="kw">cp</span> /sw/courses/ngsintro/rnaseq/bonus/assembly/*.fasta /proj/g2019015/nobackup/[user]/rnaseq/assembly/</code></pre></div>
 </div>
 <p>Have a look at the example data used in this exercise. The data is obtained from mouse dendritic cells (<strong>mouse_left.fasta</strong> and <strong>mouse_right.fasta</strong>) and a whitefly (<strong>whitefly_both.fasta</strong>). The mouse data is strand-specific (RF) and the whitefly data is unstranded. For strand-specific data, specify the library type. There are four library types:</p>
 <p><strong>Paired reads:</strong> RF: first read (/1) of fragment pair is sequenced as anti-sense (reverse(R)), and second read (/2) is in the sense strand (forward(F)); typical of the dUTP/UDG sequencing method. FR: first read (/1) of fragment pair is sequenced as sense (forward), and second read (/2) is in the antisense strand (reverse)</p>
@@ -1797,13 +1795,13 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># load modules</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load trinity/2.8.2
-<span class="ex">module</span> load samtools/1.6
-<span class="ex">module</span> load jellyfish/2.2.6
-<span class="ex">module</span> load Salmon/0.9.1
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load trinity/2.8.2
+<span class="kw">module</span> load samtools/1.6
+<span class="kw">module</span> load jellyfish/2.2.6
+<span class="kw">module</span> load Salmon/0.9.1
 
-<span class="ex">Trinity</span> \
+<span class="kw">Trinity</span> \
 --seqType fa \
 --left <span class="st">&quot;mouse_left.fasta&quot;</span> \
 --right <span class="st">&quot;mouse_right.fasta&quot;</span> \
@@ -1818,7 +1816,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">bash</span> ../scripts/trinity.sh</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">bash</span> ../scripts/trinity.sh</code></pre></div>
 </div>
 </div>
 <div id="assess-the-data" class="section level3">
@@ -1835,7 +1833,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">cat</span> Trinity.fasta <span class="kw">|</span> <span class="fu">grep</span> <span class="st">&quot;&gt;&quot;</span> <span class="kw">|</span> <span class="fu">wc</span> -l</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">cat</span> Trinity.fasta <span class="kw">|</span> <span class="kw">grep</span> <span class="st">&quot;&gt;&quot;</span> <span class="kw">|</span> <span class="kw">wc</span> -l</code></pre></div>
 </div>
 <p><i class="fas fa-comments"></i> What is <code>grep</code> doing? What is the <code>-l</code> switch doing?</p>
 <p>Get basic information about the assembly with TrinityStats.</p>
@@ -1843,24 +1841,24 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">/sw/apps/bioinfo/trinity/2.8.2/rackham/util/TrinityStats.pl</span> Trinity.fasta</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">/sw/apps/bioinfo/trinity/2.8.2/rackham/util/TrinityStats.pl</span> Trinity.fasta</code></pre></div>
 </div>
 <p><i class="fas fa-comments"></i> How many <strong>“genes”</strong> did Trinity assemble? How many transcripts? How large is the assembly? (Number of bases) What is N50?</p>
 <p><i class="fas fa-clipboard-list"></i> Filter out sequences shorter than 1000 nucleotides. (<i class="fas fa-lightbulb"></i> Do a web search for appropriate tools. Someone else must have had the exact same problem. Count the number of sequences again)</p>
 <p>
-<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019052915558179" aria-expanded="false" aria-controls="acc2019052915558179">
+<button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091122165493" aria-expanded="false" aria-controls="acc2019091122165493">
 </button>
 </p>
-<div id="acc2019052915558179" class="collapse">
+<div id="acc2019091122165493" class="collapse">
 <div class="card card-body">
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load Fastx
-<span class="ex">fasta_formatter</span> -i Trinity.fasta -o Trinity.formatted  
-<span class="ex">fastx_clipper</span> -l 1000 -i Trinity.formatted -o Trinity1000.fasta</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load Fastx
+<span class="kw">fasta_formatter</span> -i Trinity.fasta -o Trinity.formatted  
+<span class="kw">fastx_clipper</span> -l 1000 -i Trinity.formatted -o Trinity1000.fasta</code></pre></div>
 </div>
 </div>
 </div>
@@ -1899,20 +1897,20 @@ sh
 <div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># load modules</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.7.0e
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>_*<span class="va">/}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1/</span>_*<span class="ot">/}</span><span class="st">&quot;</span>
 
-<span class="ex">star</span> \
+<span class="kw">star</span> \
 --runMode alignReads \
 --genomeDir <span class="st">&quot;../reference/mouse&quot;</span> \
 --runThreadN 8 \
 --readFilesCommand zcat \
---readFilesIn <span class="va">$1</span> <span class="va">$2</span> \
+--readFilesIn <span class="ot">$1</span> <span class="ot">$2</span> \
 --sjdbGTFfile <span class="st">&quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</span> \
---outFileNamePrefix <span class="st">&quot;</span><span class="va">$prefix</span><span class="st">&quot;</span> \
+--outFileNamePrefix <span class="st">&quot;</span><span class="ot">$prefix</span><span class="st">&quot;</span> \
 --outSAMtype BAM SortedByCoordinate</code></pre></div>
 </div>
 <p>We add <code>SBATCH</code> commands to the above script. The new script looks like this:</p>
@@ -1929,20 +1927,20 @@ sh
 <span class="co">#SBATCH -J star-align</span>
 
 <span class="co"># load modules</span>
-<span class="ex">module</span> load bioinfo-tools
-<span class="ex">module</span> load star/2.7.0e
+<span class="kw">module</span> load bioinfo-tools
+<span class="kw">module</span> load star/2.7.0e
 
 <span class="co"># create output file name</span>
-<span class="va">prefix=</span><span class="st">&quot;</span><span class="va">${1/</span>_*<span class="va">/}</span><span class="st">&quot;</span>
+<span class="ot">prefix=</span><span class="st">&quot;</span><span class="ot">${1/</span>_*<span class="ot">/}</span><span class="st">&quot;</span>
 
-<span class="ex">star</span> \
+<span class="kw">star</span> \
 --runMode alignReads \
 --genomeDir <span class="st">&quot;../reference/mouse&quot;</span> \
 --runThreadN 8 \
 --readFilesCommand zcat \
---readFilesIn <span class="va">$1</span> <span class="va">$2</span> \
+--readFilesIn <span class="ot">$1</span> <span class="ot">$2</span> \
 --sjdbGTFfile <span class="st">&quot;../reference/Mus_musculus.GRCm38.79.gtf&quot;</span> \
---outFileNamePrefix <span class="st">&quot;</span><span class="va">$prefix</span><span class="st">&quot;</span> \
+--outFileNamePrefix <span class="st">&quot;</span><span class="ot">$prefix</span><span class="st">&quot;</span> \
 --outSAMtype BAM SortedByCoordinate</code></pre></div>
 </div>
 <p>The <code>SBATCH</code> commands in the above script is specifying the account name to use resources from, the required number of cores, the time required for the job and a job name.</p>
@@ -1952,7 +1950,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">jobinfo</span> -u user</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">jobinfo</span> -u user</code></pre></div>
 </div>
 <p>And this gives a list like this:</p>
 <div class="block-title-parent">
@@ -1973,9 +1971,9 @@ Running jobs:
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="fu">head</span> slurm-XXXX.out
-<span class="fu">tail</span> slurm-XXXX.out
-<span class="fu">cat</span> slurm-XXXX.out</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">head</span> slurm-XXXX.out
+<span class="kw">tail</span> slurm-XXXX.out
+<span class="kw">cat</span> slurm-XXXX.out</code></pre></div>
 </div>
 <p><br></p>
 </div>
@@ -1989,54 +1987,40 @@ sh
 </div>
 <div id="session-info" class="section level1">
 <h1><span class="header-section-number">6</span> Session info</h1>
-<pre><code>## R version 3.5.2 (2018-12-20)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 18.04.2 LTS
+<pre><code>## R version 3.5.1 (2018-07-02)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS High Sierra 10.13.6
 ## 
 ## Matrix products: default
-## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.7.1
-## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.7.1
+## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
-##  [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
-##  [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
-##  [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+## [1] C
 ## 
 ## attached base packages:
-## [1] stats     datasets  grDevices utils     graphics  methods   base     
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] kableExtra_1.1.0  dplyr_0.8.0.1     tidyr_0.8.3      
-##  [4] stringr_1.4.0     captioner_2.2.3   bookdown_0.9     
-##  [7] knitr_1.22        rsconnect_0.8.13  showtext_0.6     
-## [10] showtextdb_2.0    sysfonts_0.8      ggplot2_3.1.1    
-## [13] png_0.1-7         shinyAce_0.3.3    shinythemes_1.1.2
-## [16] shiny_1.3.2      
+## [1] kableExtra_1.1.0 dplyr_0.8.1      tidyr_0.8.3      stringr_1.4.0   
+## [5] ggplot2_3.1.1    captioner_2.2.3  bookdown_0.11    knitr_1.23      
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_0.2.5   xfun_0.6           purrr_0.3.2       
-##  [4] reshape2_1.4.3     colorspace_1.4-1   viridisLite_0.3.0 
-##  [7] htmltools_0.3.6    yaml_2.2.0         rlang_0.3.4       
-## [10] later_0.8.0        pillar_1.3.1       glue_1.3.1        
-## [13] withr_2.1.2        plyr_1.8.4         munsell_0.5.0     
-## [16] gtable_0.3.0       rvest_0.3.3        evaluate_0.13     
-## [19] labeling_0.3       httpuv_1.5.1       curl_3.3          
-## [22] Rcpp_1.0.1         readr_1.3.1        xtable_1.8-3      
-## [25] openssl_1.3        promises_1.0.1     scales_1.0.0      
-## [28] BiocManager_1.30.4 webshot_0.5.1      jsonlite_1.6      
-## [31] mime_0.6           hms_0.4.2          askpass_1.1       
-## [34] digest_0.6.18      packrat_0.5.0      stringi_1.4.3     
-## [37] grid_3.5.2         tools_3.5.2        bitops_1.0-6      
-## [40] magrittr_1.5       lazyeval_0.2.2     RCurl_1.95-4.12   
-## [43] tibble_2.1.1       crayon_1.3.4       pkgconfig_2.0.2   
-## [46] xml2_1.2.0         httr_1.4.0         assertthat_0.2.1  
-## [49] rmarkdown_1.12     rstudioapi_0.10    R6_2.4.0          
-## [52] compiler_3.5.2</code></pre>
+##  [1] Rcpp_1.0.1        pillar_1.4.1      compiler_3.5.1   
+##  [4] plyr_1.8.4        tools_3.5.1       digest_0.6.19    
+##  [7] viridisLite_0.3.0 evaluate_0.14     tibble_2.1.2     
+## [10] gtable_0.3.0      pkgconfig_2.0.2   rlang_0.3.4      
+## [13] rstudioapi_0.10   yaml_2.2.0        xfun_0.7         
+## [16] xml2_1.2.0        httr_1.4.0        withr_2.1.2      
+## [19] hms_0.4.2         webshot_0.5.1     grid_3.5.1       
+## [22] tidyselect_0.2.5  glue_1.3.1        R6_2.4.0         
+## [25] rmarkdown_1.13    purrr_0.3.2       readr_1.3.1      
+## [28] magrittr_1.5      scales_1.0.0      htmltools_0.3.6  
+## [31] rvest_0.3.4       assertthat_0.2.1  colorspace_1.4-1 
+## [34] stringi_1.4.3     lazyeval_0.2.2    munsell_0.5.0    
+## [37] crayon_1.3.4</code></pre>
 <p style="text-align: left; font-size: small;">
-Built on: <i class="fa fa-calendar" aria-hidden="true"></i> 29-May-2019 at <i class="fa fa-clock-o" aria-hidden="true"></i> 15:12:55.
+Built on: <i class="fa fa-calendar" aria-hidden="true"></i> 11-Sep-2019 at <i class="fa fa-clock-o" aria-hidden="true"></i> 22:16:16.
 </p>
 <hr/>
 <div>
