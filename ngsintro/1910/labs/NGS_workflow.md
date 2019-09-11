@@ -37,7 +37,8 @@ This signifies that you should replace &lt;parameter&gt; with the correct parame
 First, let us book a node and set up the programs that we will be using. Make sure you only do this once!
 
 ```bash
-salloc -A g2019015 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019015_3 -M snowy &
+salloc -A g2019015 -t 04:00:00 -p core -n 5 --no-shell --reservation=g2019015_3 \ 
+-M snowy &
 # Remember to change to g2019015_4 on the 4th day of the course
 # We have reserved nodes during the course only
 ```
