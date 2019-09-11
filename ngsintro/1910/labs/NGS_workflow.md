@@ -47,7 +47,7 @@ Once your job allocation has been granted (should not take long) you can connect
 
 To find out the name of your node, use:
 ```bash
-squeue -u <username>
+squeue -u <username> -m snowy
 # Node name is found under nodelist header. You should only see one node here.
 ```
 
