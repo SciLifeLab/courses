@@ -401,9 +401,9 @@ You will need the bam files of all 3 samples: HG00097, HG00100 and HG00101.
 
 ```bash
 # You can copy your recalibrated bam files (from the BQSR exercise above) like this:
-scp <username>@rackham.uppmax.uu.se:/proj/snic2019-8-3/nobackup/<username>/ngsworkflow/<recalibrated_bam>.ba* ./
+scp <username>@rackham.uppmax.uu.se:/proj/g2019015/nobackup/<username>/ngsworkflow/<recalibrated_bam>.ba* ./
 # And the filtered multi-sample vcf:
-scp <username>@rackham.uppmax.uu.se:/proj/snic2019-8-3/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
+scp <username>@rackham.uppmax.uu.se:/proj/g2019015/nobackup/<username>/ngsworkflow/<my_filtered_variants>.vcf ./
 ```
 
 If you are missing some of the bam files or the vcf you can do this instead:
