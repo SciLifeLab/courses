@@ -180,7 +180,7 @@ First off, let's open another terminal to uppmax so that you have 2 of them open
 Scripting is a lot easier if you have one terminal on the command line ready to run commands and test things, and another one with a text editor where you write the actual code. 
 That way you will never have to close down the text editor when you want to run the script you are writing on, and then open it up again when you want to continue editing the code. 
 So open a new terminal window, connect it to uppmax and then connect it to the node you have booked.
-Make sure both terminals are in the `/proj/g2019015/nobackup/<username>/loops` directory, and start editing a new file with nano where you write your script.
+Make sure both terminals are in the `/proj/g2019015/nobackup/<username>/loops` directory, and start editing a new file with gedit or nano where you write your script.
 Name the file whatever you want, but in the examples I will refer to it as `loop_01.sh`.
 Write your loops to this file (or create a new file for each new example) and test run it in the other terminal.
 
@@ -195,7 +195,7 @@ done
 ```
 
 which will print the value of `$i` in each iteration of the loop. 
-Write this loop in the file you are editing with nano, save the file, and then run it in the other terminal you have open.
+Write this loop in the file you are editing with gedit/nano, save the file, and then run it in the other terminal you have open.
 
 ```bash
 $ bash loop_01.sh
@@ -290,7 +290,7 @@ module load bioinfo-tools samtools/1.3
 
 # use ls to get the list to iterate over.
 # You have to be standing in the correct directory for the script to work
-for file in $(ls *.sam);
+for file in *.sam;
 do
     # do the actual converting, just slapping on .bam at the end of the name
     samtools view -bS $file > $file.bam
@@ -308,16 +308,16 @@ module load bioinfo-tools samtools/1.3
 
 # use ls to get the list to iterate over.
 # $1 contains the first argument given to the program
-for file in $(ls $1/*.sam);
+for file in $1/*.sam;
 do
 
     # print a message to the screen so that the user knows what's happening.
     # $(basename $file .sam) means that it will take the file name and remove .sam
     # at the end of the name. 
-    echo "Converting $file to $(basename $file .sam).bam"
+    echo "Converting $file to $1/$(basename $file .sam).bam"
   
     # do the actual converting
-    samtools view -bS $file > $(basename $file .sam).bam
+    samtools view -bS $file > $1/$(basename $file .sam).bam
 done
 {% endhighlight %}
 </details> 
@@ -364,7 +364,7 @@ module load bioinfo-tools samtools/1.3
 
 # use ls to get the list to iterate over.
 # You have to be standing in the correct directory for the script to work
-for file in $(ls *.sam);
+for file in *.sam;
 do
     # check if the intended output file doesn't already exists
     if [ ! -f $file.bam ];
@@ -386,24 +386,33 @@ module load bioinfo-tools samtools/1.3
 
 # use ls to get the list to iterate over.
 # $1 contains the first argument given to the program
-for file in $(ls $1/*.sam);
+for file in $1/*.sam;
 do
+
+    # basename will remove the path information to the file, and will also remove the .sam ending
+    filename_bam=$(basename $file .sam)
+    
+    # add the .bam file ending to the filename
+    filename_bam=$filename_bam.bam
+    
+    # add the path information to the bam file name to save the bam in the same folder as the sam file
+    filename_bam=$1/$filename_bam
     
     # check if the intended output file doesn't already exists.
     # ${file%.*} means that it will take the file name and remove everything
     # after the last punctuation in the name. 
-    if [ ! -f $(basename $file .sam).bam ];
+    if [ ! -f $filename_bam ];
     then
 
         # print a message to the screen so that the user knows what's happening.
-        echo "Converting $file to $(basename $file .sam).bam"
+        echo "Converting $file to $filename_bam"
       
         # do the actual converting
-        samtools view -bS $file > $(basename $file .sam).bam
+        samtools view -bS $file > $filename_bam
         
     else
         # inform the user that the conversion is skipped
-        echo "Skipping conversion of $file as $(basename $file .sam).bam already exist"
+        echo "Skipping conversion of $file as $filename_bam already exist"
     fi
 done
 {% endhighlight %}
@@ -477,23 +486,20 @@ reference_indexer -r /proj/g2019015/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 cd $1
 
 # loop over all the fastq files
-for file in $(ls *.fastq);
+for file in *.fq;
 do
 
-    # save the file name without the path information for convenience
-    file_basename=$(basename $file)
-
     # align the reads
-    align_reads -r /proj/g2019015/nobackup/\<username\>/filetypes/0_ref/ad2.fa -i $file_basename -o $file_basename.sam
+    align_reads -r /proj/g2019015/nobackup/\<username\>/filetypes/0_ref/ad2.fa -i $file -o $file.sam
 
     # convert the sam file to a bam file
-    sambam_tool -f bam -i $file_basename.sam -o $file_basename.bam
+    sambam_tool -f bam -i $file.sam -o $file.bam
 
     # sort the bam file
-    sambam_tool -f sort -i $file_basename.bam -o $file_basename.sorted.bam
+    sambam_tool -f sort -i $file.bam -o $file.sorted.bam
 
     # index the bam file
-    sambam_tool -f index -i $file_basename.sorted.bam
+    sambam_tool -f index -i $file.sorted.bam
 
 done
 {% endhighlight %}
@@ -529,7 +535,7 @@ cd -
 
 
 # loop over all the fastq files
-for file in $(ls $input_absolute_path/*.fastq);
+for file in $input_absolute_path/*.fastq;
 do
 
     # print status report
