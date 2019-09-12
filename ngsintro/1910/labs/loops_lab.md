@@ -257,7 +257,7 @@ Let's try to do something similar to the example in the lecture slides, to run t
 In the [Uppmax intro](uppmax-intro) we learned how to use samtools to convert bam files to sam files so that humans can read them.
 In real life you will never do this, instead you will most likely always do it the other way around.
 Sam files take up ~4x more space on the hard drive compared to the same file in bam format, so as soon as you see a sam file you should convert it to a bam file instead to conserve hard drive space.
-If you have many sam files that needs converting you don't want to sit there and type all the commands by hand like some kind of animal.
+If you have many sam files that needs converting you don't want to sit there and type all the commands by hand like a pleb.
 
 Write a script that converts all the sam files in a specified directory to bam files.
 Incidentally you can find 50 sam files in need of conversion in the folder called `sam` in the folder you copied to your folder earlier in this lab (`/proj/g2019015/nobackup/<username>/loops/sam/`).
@@ -269,12 +269,6 @@ Remember that you have to load the samtools module to be able to run it. The way
 samtools view -bS sample_1.sam > sample_1.bam
 ```
 The `-b` option tells samtools to output bam format, and the `-S` option tells samtools that the input is in sam format.
-
-Due to a technical reason with linux and the module system, you will have to tell bash to 'invoke as a login shell' for the module command to work when being run as a script. The way to do this is to run the script using the `-l` option for bash, like this>
-
-```bash
-$ bash -l my_script.sh
-```
 
 Remember, Google is a good place to get help. If you get stuck, google "bash remove file ending" or "bash argument to script" and look for hits from Stackoverflow/Stackexchange or similar pages.
 There are always many different way to solve a problem.
@@ -288,8 +282,10 @@ Basic, without bonus points:
 {% highlight bash %}# load the modules needed for samtools
 module load bioinfo-tools samtools/1.3
 
-# use ls to get the list to iterate over.
-# You have to be standing in the correct directory for the script to work
+# move to the sam files directory to start with
+cd sam
+
+# use ls to get the list to iterate over
 for file in *.sam;
 do
     # do the actual converting, just slapping on .bam at the end of the name
@@ -306,18 +302,21 @@ Advanced, with bonus points:
 {% highlight bash %}# load the modules needed for samtools
 module load bioinfo-tools samtools/1.3
 
-# use ls to get the list to iterate over.
+# move to the sam files directory to start with.
 # $1 contains the first argument given to the program
-for file in $1/*.sam;
+cd $1
+
+# use ls to get the list to iterate over.
+for file in *.sam;
 do
 
     # print a message to the screen so that the user knows what's happening.
     # $(basename $file .sam) means that it will take the file name and remove .sam
     # at the end of the name. 
-    echo "Converting $file to $1/$(basename $file .sam).bam"
+    echo "Converting $file to $(basename $file .sam).bam"
   
     # do the actual converting
-    samtools view -bS $file > $1/$(basename $file .sam).bam
+    samtools view -bS $file > $(basename $file .sam).bam
 done
 {% endhighlight %}
 </details> 
@@ -362,8 +361,10 @@ Basic:
 {% highlight bash %}# load the modules needed for samtools
 module load bioinfo-tools samtools/1.3
 
+# move to the sam files directory to start with.
+cd sam
+
 # use ls to get the list to iterate over.
-# You have to be standing in the correct directory for the script to work
 for file in *.sam;
 do
     # check if the intended output file doesn't already exists
@@ -384,9 +385,11 @@ Advanced:
 {% highlight bash %}# load the modules needed for samtools
 module load bioinfo-tools samtools/1.3
 
+cd $1
+
 # use ls to get the list to iterate over.
 # $1 contains the first argument given to the program
-for file in $1/*.sam;
+for file in *.sam;
 do
 
     # basename will remove the path information to the file, and will also remove the .sam ending
@@ -395,12 +398,7 @@ do
     # add the .bam file ending to the filename
     filename_bam=$filename_bam.bam
     
-    # add the path information to the bam file name to save the bam in the same folder as the sam file
-    filename_bam=$1/$filename_bam
-    
     # check if the intended output file doesn't already exists.
-    # ${file%.*} means that it will take the file name and remove everything
-    # after the last punctuation in the name. 
     if [ ! -f $filename_bam ];
     then
 
@@ -452,6 +450,10 @@ do
 
     # set factorial to whatever factorial is at the moment, multiplied with the variable $i
     factorial=$(( $factorial * $i ))
+    
+    # an alternative solution which gives exactly the same result, but makes it a bit more readable maybe
+    # temporary_sum=$(( $factorial * $i ))
+    # factorial=$temporary_sum
 
 done
 
