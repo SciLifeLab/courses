@@ -486,7 +486,7 @@ reference_indexer -r /proj/g2019015/nobackup/\<username\>/filetypes/0_ref/ad2.fa
 cd $1
 
 # loop over all the fastq files
-for file in *.fq;
+for file in *.fastq;
 do
 
     # align the reads

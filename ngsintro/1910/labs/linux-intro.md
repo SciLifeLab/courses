@@ -233,7 +233,7 @@ I.e. if you want to download the file http://somewhere.com/my.file and you give 
 ```
 Ex: wget -P <destination prefix> <source URL>
 
-$ wget -P /proj/g2019015/nobackup/<username>/linux_tutorial {{site.url}}/ngsintro/common/files/linux_additional-files.zip
+$ wget -P /proj/g2019015/nobackup/<username>/linux_tutorial/ {{site.url}}/ngsintro/common/files/files.tar.gz
 ```
 
 ## 5. Unpack Files
