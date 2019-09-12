@@ -47,7 +47,7 @@ Room: Trippelrummet, E10, ground floor
 **12.00-13.00** Lunch at BMC restaurant  
 **13.00-13.20** [Lecture: The Bioinformatics Infrastructure in Sweden]() (Björn Nystedt)  
 **13:20-15.00** Parallel session 1: Exercise: RNA sequencing, transcriptome and expression quantification, continued (Mahesh Panchal, Nima Rafati, Payam Emami, Per Unneberg)  
-**13:20-15.00** Parallel session 2: Open discussions (Olga Vinnere Pettersson, Anna Johansson, Henrik Lantz, Roy Francis)  
+**13:20-15.00** Parallel session 2: Open discussions (Olga Vinnere Pettersson, Anna Johansson, Jacques Dainat)  
 
 
 
