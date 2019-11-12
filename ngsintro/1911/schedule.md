@@ -24,6 +24,8 @@ Room:
 **13:00-14:00** Lecture: Advanced Linux usage   
 **14:00-17:00** Exercise: Advanced Linux usage   
 
+**18:00-** Course dinner, [Kulturen Restaurang](https://www.kulturensrestaurang.com/) 
+
 **Wednesday 27th**  
 Room:  
 **09.00-11.00** Lecture: Next Generation Sequencing   
@@ -31,8 +33,6 @@ Room:
 **12.00-13.00** Lunch    
 **13.00-14.00** Lecture: NGS workflow   
 **14.00-17.00** Exercise: NGS workflow   
-
-**18:00-** Course dinner   
 
 **Thursday 28th**   
 Room:    
