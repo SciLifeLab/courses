@@ -50,25 +50,20 @@ Last login: Fri May 18 15:03:59 2018 from micro046.icm.uu.se
 dahlo@rackham4 ~ $ 
 
 ```
-## 2. Getting a node of your own (only if you canceled your job before lunch)
+## 2. Logging on to your node
 
-Usually you would do most of the work in this lab directly on one of the login nodes at uppmax, but we have arranged for you to have one core each to avoid disturbances.
-This was covered briefly in the lecture notes.
-
-```
-$ salloc -A g2019015 -t 04:00:00 -p core -n 1 --no-shell --reservation=g2019015_1 -M snowy &
-```
+During the morning we booked a node to work on, and you will log back on to it now. 
 
 check which node you got (replace **username** with your uppmax user name)
 
 ```
-$ squeue -u username -M snowy
+$ squeue -u username
 ```
 
 should look something like this
 
 ```
-dahlo@rackham2 work $ squeue -u dahlo -M snowy
+dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
 dahlo@rackham2 work $ 
@@ -79,12 +74,13 @@ Note the numbers in the Time column.
 They show for how long the job has been running.
 When it reaches the time limit you requested (7 hours in this case) the session will shut down, and you will lose all unsaved data.
 Connect to this node from within uppmax.
+**Note:** If nothing shows up (you canceled your reservation in the morning), you will need to book a new node. Look at the exercises from this morning on how to book a node again if you need it.
 
 ```
 $ ssh -Y r292 
 ```
 
-**Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that you can use as well (```$ jobinfo -u username```).
+**Note:** there is a uppmax specific tool called jobinfo that supplies the same kind of information as squeue that yIf nothing shows up (you canceled your reservation in the morning), you will need to book a new node. Look at the exercises from this morning on how to book a node again if you need it.ou can use as well (```$ jobinfo -u username```).
 
 
 ## 3. Copying files needed for laboratory
@@ -99,13 +95,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2019015/nobackup/<username>
+$ cp -r /sw/share/compstore/courses/ngsintro/uppmax_tutorial /proj/g2019020/nobackup/<username>
 ```
 
-Have a look in **/proj/g2019015/nobackup/\<username\>/uppmax_tutorial**:
+Have a look in **/proj/g2019020/nobackup/\<username\>/uppmax_tutorial**:
 
 ```bash
-$ cd /proj/g2019015/nobackup/<username>/uppmax_tutorial
+$ cd /proj/g2019020/nobackup/<username>/uppmax_tutorial
 
 $ ll
 total 128K
@@ -321,7 +317,7 @@ $ jobinfo -u <username>
 CLUSTER: rackham
 Running jobs:
    JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
- 3134399   devcore                               dahlo       g2019015  R 2018-05-18T16:32:54      59:25      1    1 r483
+ 3134399   devcore                               dahlo       g2019020  R 2018-05-18T16:32:54      59:25      1    1 r483
 
 Nodes in use:                            462
 Nodes in devel, free to use:               2
@@ -334,7 +330,7 @@ Nodes, all in total:                     486
 
 Waiting jobs:
    JOBID    POS PARTITION                      NAME     USER        ACCOUNT ST          START_TIME   TIME_LEFT PRIORITY CPUS NODELIST(REASON)     FEATURES DEPENDENCY
- 3134401    221      core           Template_script    dahlo       g2019015 PD                 N/A     1:00:00   100000    1           (None)       (null)
+ 3134401    221      core           Template_script    dahlo       g2019020 PD                 N/A     1:00:00   100000    1           (None)       (null)
 
 Waiting bonus jobs:
 $ 
@@ -367,7 +363,7 @@ This will create a booking for you which has a higher priority than the jobs sub
 Try closing down your current session on the reserved node you connected to in the beginning of the lab by typing exit. Then make a new booking using interactive:
 
 ```bash
-$ interactive -A g2019015 -t 02:00:00 -p core
+$ interactive -A g2019020 -t 02:00:00 -p core
 ```
 
 Congratulations, you are now ready to be let loose on the cluster!

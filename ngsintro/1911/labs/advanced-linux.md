@@ -57,14 +57,14 @@ Start your terminal, log onto UPPMAX (check with squeue which core you had and s
 
 ```bash
 # ONLY IF YOU DON'T ALREADY HAVE AN ACTIVE ALLOCATION SINCE BEFORE
-$ salloc -A g2019015 -t 04:30:00 -p core --no-shell --reservation=g2019015_1 -M snowy &
+$ salloc -A g2019020 -t 04:30:00 -p core --no-shell --reservation=g2019020_25 &
 
 ```
 
 make an empty directory we can work in and make a file.
 
 ```bash
-$ cd /proj/g2019015/nobackup/<username>
+$ cd /proj/g2019020/nobackup/<username>
 $ mkdir advlinux
 $ cd advlinux
 $ touch  filename
@@ -375,7 +375,7 @@ The pipe command has this syntax
 command 1 | command 2
 ```
 
-The "|" is the pipe symbol(on mac keyboard alt+7), signifying that whatever output usually comes out of command 1 should instead be directly sent to command 2 and output in the manner that command 2 outputs.
+The "\|" is the pipe symbol(on mac keyboard alt+7), signifying that whatever output usually comes out of command 1 should instead be directly sent to command 2 and output in the manner that command 2 outputs.
 
 In a hypothetical situation you have a folder with hundreds of files and you know the file you are looking for is very large but you can't remember its name.
 Lets do a ls -lh and pipe the output to be sorted by file size.

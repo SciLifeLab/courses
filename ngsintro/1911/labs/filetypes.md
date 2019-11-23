@@ -60,19 +60,19 @@ Usually you would do most of the work in this lab directly on one of the login n
 This was covered briefly in the lecture notes.
 
 ```bash
-$ salloc -A g2019015 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019015_2 -M snowy &
+$ salloc -A g2019020 -t 07:00:00 -p core -n 1 --no-shell --reservation=g2019020_26 &
 ```
 
 check which node you got (replace **username** with your uppmax user name)
 
 ```bash
-$ squeue -u username -M snowy
+$ squeue -u username
 ```
 
 should look something like this
 
 ```
-dahlo@rackham2 work $ squeue -u dahlo -M snowy
+dahlo@rackham2 work $ squeue -u dahlo
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            3132376      core       sh    dahlo  R       0:04      1 r292
 dahlo@rackham2 work $ 
@@ -107,13 +107,13 @@ Ex.
 ```bash
 $ cp -r <source> <destination>
 
-$ cp -r /sw/share/compstore/courses/ngsintro/filetypes /proj/g2019015/nobackup/<username>/
+$ cp -r /sw/share/compstore/courses/ngsintro/filetypes /proj/g2019020/nobackup/<username>/
 ```
 
-Have a look in **/proj/g2019015/nobackup/\<username\>/:**
+Have a look in **/proj/g2019020/nobackup/\<username\>/:**
 
 ```bash
-$ cd /proj/g2019015/nobackup/<username>/filetypes
+$ cd /proj/g2019020/nobackup/<username>/filetypes
 $ tree
 ```
 
@@ -427,7 +427,7 @@ Once IGV is started, either using Xforwarding or the remote desktop in your web 
 There are 3 files we have to load in IGV. 
 
 The first is the reference genome.
-Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019015/nobackup/...
+Press the menu button located at **"Genomes - Load Genome from File..."** and find your reference genome in **0_ref/ad2.fa**. If you are having trouble finding your files, note that IGV always starts in your home directory. Use the dropdown menu at the top to navigate to /proj/g2019020/nobackup/...
 
 The second file you have to load is the reads.
 Press the menu button **"File - Load from File..."** and select your **3_sorted/ad2.sorted.bam**.
