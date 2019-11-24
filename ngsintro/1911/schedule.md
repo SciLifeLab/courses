@@ -9,20 +9,20 @@ title:  'Schedule'
 Room: Green room, Sölvegatan 35, Biology Building. Lund University
   
 **09.00-09.15** Registration and Welcome, presentation of SciLifeLab   
-**09.15-10.00** Lecture: Introduction to Linux   
-**10.00-12.00** Exercise: Introduction to Linux  
+**09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Anders Sjölander)  
+**10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Anders Sjölander + Fredrik Levander)  
 **12.00-13.00** Lunch  
-**13.00-14.00** Lecture: Introduction to UPPMAX   
-**14.00-17.00** Exercise: Introduction to UPPMAX  
+**13.00-14.00** [Lecture: Introduction to UPPMAX](slides/UPPMAX-tutorial.pdf) (Anders Sjölander)  
+**14.00-17.00** [Exercise: Introduction to UPPMAX](labs/uppmax-intro) (Anders Sjölander + Fredrik Levander)  
 
 **Tuesday 26th**  
 Room:  
-**09.00-09.30** Lecture: File types in bioinformatics   
-**09.30-11.00** Exercise: File types in bioinformatics   
-**11.00-12.00** Lecture: Improving your terminal experience   
+**09.00-09.30** [Lecture: File types in bioinformatics](slides/file_types.pdf) (Anders Sjölander)  
+**09.30-12.00** [Exercise: File types in bioinformatics](labs/filetypes) (Anders Sjölander + Fredrik Levander)  
+**11.00-11.30** [Lecture: Improving your terminal experience](slides/quality_of_life.pdf) (Anders Sjölander)  
 **12.00-13.00** Lunch    
-**13:00-14:00** Lecture: Advanced Linux usage   
-**14:00-17:00** Exercise: Advanced Linux usage   
+**13:00-14:00** [Lecture: Advanced Linux usage](slides/advanced_linux.pdf) (Anders Sjölander)  
+**14:00-17:00** [Exercise: Advanced Linux usage](labs/loops_lab) (Anders Sjölander + Fredrik Levander)  
 
 **18:00-** Course dinner, [Kulturen Restaurang](https://www.kulturensrestaurang.com/) 
 
