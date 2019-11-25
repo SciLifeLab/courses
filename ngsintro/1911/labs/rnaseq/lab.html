@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="NBIS | 12-Sep-2019" />
+<meta name="author" content="NBIS | 20-Nov-2019" />
 
 
 <title>RNA-Seq Lab</title>
@@ -566,19 +566,19 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019015 -t 08:00:00 -p core -n 8 --reservation=g2019015_4 -M snowy</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019020 -t 08:00:00 -p core -n 8 --reservation=g2019020_4 -M snowy</code></pre></div>
 </div>
 <p>Book resources for RNA-Seq day 2.</p>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019015 -t 08:00:00 -p core -n 8 --reservation=g2019015_5 -M snowy</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">salloc</span> -A g2019020 -t 08:00:00 -p core -n 8 --reservation=g2019020_5 -M snowy</code></pre></div>
 </div>
 </div>
 <div id="set-up-directory" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Set-up directory</h3>
-<p>Setting up the directory structure is an important step as it helps to keep our raw data, intermediate data and results in an organised manner. All work must be carried out at this location <code>/proj/g2019015/nobackup</code> where <code>[user]</code> is your user name.</p>
+<p>Setting up the directory structure is an important step as it helps to keep our raw data, intermediate data and results in an organised manner. All work must be carried out at this location <code>/proj/g2019020/nobackup</code> where <code>[user]</code> is your user name.</p>
 <p>Create a directory named <code>rnaseq</code>. All RNA-Seq related activities must be carried out in this sub-directory named <code>rnaseq</code>.</p>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -626,7 +626,7 @@ sh
 <div id="create-symbolic-links" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Create symbolic links</h3>
 <p>We have the raw fastq files in this remote directory: <code>/sw/courses/ngsintro/rnaseq/main/1_raw/</code>. We are going to create symbolic links (soft-links) for these files from our <code>1_raw</code> directory to the remote directory. We do this because they are large files and simply copying them would use up a lot of storage space. Soft-linking files and folders allows us to work with those files as if they were actually there. Use <code>pwd</code> to check if you are standing in the correct directory. You should be standing here:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/1_raw</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/1_raw</code></pre>
 <p>Run below to create softlinks. Note that the command ends in a space followed by a period.</p>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -666,7 +666,7 @@ SRR3222414_2.fastq.gz -&gt; /sw/courses/ngsintro/rnaseq/main/1_raw/SRR3222414_2.
 <p><strong>Quality check using FastQC</strong></p>
 <p>After receiving raw reads from a high throughput sequencing centre it is essential to check their quality. <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> provides a simple way to do some quality control check on raw sequence data. It provides a modular set of analyses which you can use to get a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.</p>
 <p><i class="fas fa-clipboard-list"></i> Change into the <code>2_fastqc</code> directory. Use <code>pwd</code> to check if you are standing in the correct directory. You should be standing here:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/2_fastqc</code></pre>
 <p>Load Uppmax modules <code>bioinfo-tools</code> and FastQC <code>FastQC/0.11.5</code>.</p>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -684,7 +684,7 @@ sh
 </div>
 <p>Based on the above command, we will write a bash loop to process all fastq files in the directory. Writing multi-line commands through the terminal can be a pain. Therefore, we will run larger scripts from a bash script file. Move to your <code>scripts</code> directory and create a new file named <code>fastqc.sh</code>.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/scripts</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/scripts</code></pre>
 <p>The command below creates a new file in the current directory.</p>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -706,7 +706,7 @@ sh
 </div>
 <p>While standing in the <code>2_fastqc</code> directory, run the file <code>fastqc.sh</code>. Use <code>pwd</code> to check if you are standing in the correct directory.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/2_fastqc</code></pre>
 <div class="block-title-parent">
 <div class="block-title small">
 sh
@@ -730,7 +730,7 @@ sh
 <div class="block-title small">
 sh
 </div>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019015/nobackup/[user]/rnaseq/2_fastqc/SRR3222409_1_fastqc.html ./</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">scp</span> user@rackham.uppmax.uu.se:/proj/g2019020/nobackup/[user]/rnaseq/2_fastqc/SRR3222409_1_fastqc.html ./</code></pre></div>
 </div>
 </div>
 <p><i class="fas fa-clipboard-list"></i> Go back to the FastQC website and compare your report with the sample report for <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/good_sequence_short_fastqc.html">Good Illumina data</a> and <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/bad_sequence_fastqc.html">Bad Illumina data</a>.</p>
@@ -747,7 +747,7 @@ sh
 <p><i class="fas fa-comments"></i> What is the idea behind building STAR index? What files are needed to build one? Where do we take them from? Could one use a STAR index that was generated before? Browse through <a href="https://www.ensembl.org/index.html">Ensembl</a> and try to find the files needed. Note that we are working with Mouse (<em>Mus musculus</em>).</p>
 <p><i class="fas fa-clipboard-list"></i> Move into the <code>reference</code> directory and download the Chr 11 genome (<code>.fasta</code>) file and the genome-wide annotation file (<code>.gtf</code>) from Ensembl.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/reference</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/reference</code></pre>
 <p>You are most likely to use the <a href="https://www.ensembl.org/index.html">latest version</a> of ensembl release genome and annotations when starting a new analysis. For this exercise, we will choose an older version (79) for compatibility with old code/results.</p>
 <div class="block-title-parent">
 <div class="block-title small">
@@ -872,7 +872,7 @@ output
 <p>This index for chr11 was created just to familiarise with the steps. We will use the index built on the whole genome for downstream exercises. The index for the whole genome was prepared for us before class in the very same way as for the chromosome 11 in steps above. It just requires more time (ca. 4h) to run. The index is found here: <code>/sw/courses/ngsintro/rnaseq/reference/mouse/</code>.</p>
 <p>Soft-link all the files inside <code>/sw/courses/ngsintro/rnaseq/reference/mouse/</code> to the directory named <code>mouse</code> which is inside your <code>rnaseq/reference/</code>.</p>
 <p>You should be standing here to run this:</p>
-<pre><code>/proj/g2019015/nobackup/[user]/rnaseq/reference</code></pre>
+<pre><code>/proj/g2019020/nobackup/[user]/rnaseq/reference</code></pre>
 <p>
 <button class="btn btn-sm btn-primary btn-collapse btn-collapse-normal collapsed" type="button" data-toggle="collapse" data-target="#acc2019091217302332" aria-expanded="false" aria-controls="acc2019091217302332">
 </button>
