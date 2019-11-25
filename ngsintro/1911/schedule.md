@@ -8,7 +8,7 @@ title:  'Schedule'
 **Monday 25th**  
 Room: Green room, Sölvegatan 35, Biology Building. Lund University
   
-**09.00-09.15** Registration and Welcome, presentation of SciLifeLab   
+**09.00-09.15** [Registration and Welcome, presentation of SciLifeLab](slides/Intro_SciLifeLab_NGS_Data_Lund.pdf)   
 **09.15-10.00** [Lecture: Introduction to Linux](slides/linux-tutorial.pdf) (Anders Sjölander)  
 **10.00-12.00** [Exercise: Introduction to Linux](labs/linux-intro) (Anders Sjölander + Fredrik Levander)  
 **12.00-13.00** Lunch  
