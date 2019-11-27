@@ -38,9 +38,9 @@ Room:
 Room:    
 **09:00-12.00** Exercise: NGS workflow   
 **12.00-13.00** Lunch   
-**13.00-14:00** Lecture: Data management   
-**14.00-15:00** Lecture: RNA sequencing, transcriptome and expression quantification   
-**15.00-17:00** Exercise: RNA sequencing, transcriptome and expression quantification   
+**13.00-14:00** Lecture: Data management (Markus Ringner)   
+**14.00-15:00** [Lecture: RNA sequencing, transcriptome and expression quantification](slides/rnaseq/RNA-Seq-presentation.pdf)   
+**15.00-17:00** [Exercise: RNA sequencing, transcriptome and expression quantification](labs/rnaseq/lab.html)   
 
 **Friday 29th**  
 Room:   
