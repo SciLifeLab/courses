@@ -31,8 +31,8 @@ Room:
 **09.00-11.00** Lecture: Next Generation Sequencing   
 **11.00-12.00** Lecture: NGS and bioinformatics analysis pipelines   
 **12.00-13.00** Lunch    
-**13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf)   
-**14.00-17.00** [Exercise: NGS workflow](labs/NGS_workflow)  
+**13.00-14.00** [Lecture: NGS workflow](slides/NGS_workflow.pdf)(Nikolay Oskolkov)   
+**14.00-17.00** [Exercise: NGS workflow](labs/NGS_workflow.md)(Nikolay Oskolkov)   
 
 **Thursday 28th**   
 Room:    
