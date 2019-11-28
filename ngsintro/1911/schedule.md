@@ -44,7 +44,7 @@ Room:
 **Friday 29th**  
 Room:   
 **09:00-11:00** Exercise: RNA sequencing, transcriptome and expression quantification   
-**11.00-12:00** [Lecture: Data management](2019-09-12-Data_Management_for_NGS_course.pdf)   
+**11.00-12:00** [Lecture: Data management](slides/2019-09-12-Data_Management_for_NGS_course.pdf)   
 **12.00-13.00** Lunch    
 **13.00-13.20** Lecture: The Bioinformatics Infrastructure in Sweden   
 **13:20-15.00** Parallel session 1: Exercise: RNA sequencing, transcriptome and expression quantification, continued   
